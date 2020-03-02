@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :favourites
   has_many :nights
   has_many :venue_reviews
+  has_one_attached :photo
 end
