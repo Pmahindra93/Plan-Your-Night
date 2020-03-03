@@ -32,7 +32,6 @@ class VenuesController < ApplicationController
       end
       end
     end
-        raise
 
   def show; end
 
