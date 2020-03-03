@@ -1,0 +1,11 @@
+
+<div class="card-trip">
+  <%= cl_image_tag bar.photos[0].key %>
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= bar.name %></h2>
+      <p><%= bar.address %></p>
+    </div>
+    <h5 class="card-trip-pricing"><%= bar.price_segment %></h5>
+  </div>
+</div>

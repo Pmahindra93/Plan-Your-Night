@@ -1,0 +1,14 @@
+<div class="container mt-5">
+  <% if @venues.empty? %>
+    <div class="text-center">
+      <h3 >No Search Results</h3>
+      <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
+    </div>
+  <% else %>
+<h5>1) Choose your bar</h5>
+ <div class="container mt-5">
+    <% @bars.each do |bar| %>
+      <%= render 'components/card-index', bar: bar  %>
+    <% end %>
+  <% end %>
+</div>
