@@ -1,1 +1,11 @@
-_card-index.html.erb
+
+<div class="card-trip">
+  <%= cl_image_tag @venue.photos[0].key %>
+  <div class="card-trip-infos">
+    <div>
+      <h2>Title here</h2>
+      <p>Short description here!</p>
+    </div>
+    <h2 class="card-trip-pricing">£99.99</h2>
+  </div>
+</div>
