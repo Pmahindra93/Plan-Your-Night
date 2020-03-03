@@ -46,8 +46,8 @@ matrix = Venue.new(
 )
 matrix1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1583229930/matrix1_weg4lx.jpg')
 matrix2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1583229933/matrix2_zcsote.jpg')
-matrix.photos.attach(io: matrix1, filename: ‘matrix1.jpg’, content_type: 'image/jpg')
-matrix.photos.attach(io: matrix2, filename: ‘matrix2.jpg’, content_type: 'image/jpg')
+matrix.photos.attach(io: matrix1, filename: 'matrix1.jpg', content_type: 'image/jpg')
+matrix.photos.attach(io: matrix2, filename: 'matrix2.jpg', content_type: 'image/jpg')
 matrix.save
 
 puts "finish"

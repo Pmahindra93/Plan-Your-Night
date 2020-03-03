@@ -12,16 +12,15 @@ class PagesController < ApplicationController
       category = params[:search][:category]
       budget = params[:search][:budget]
 
-      if (location != "" && category == "" && budget == "")
+      if (location == "Berlin" && category == "" && budget != "")
         @venues = Venue.all
-      elsif location != "" && category == "both" && budget == ""
-        @venues = Venue.all
-      elsif location != "" && category !== "" && budget == ""
+      # elsif location == "Berlin" && category == "both" && budget == ""
+      #   @venues = Venue.all
+      elsif location == "Berlin" && category != "" && budget != ""
         @venues = Venue.where(params[:category])
+      end
     else
       @venues = Venue.all
     end
   end
 end
-
-

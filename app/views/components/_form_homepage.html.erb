@@ -1,0 +1,18 @@
+<p class="first-p font-page">Discover the best <br>
+ places to enjoy your <br>
+night.</p>
+<br><br><br><br>
+<div class=" mt-5 font-page">
+  <div class="d-flex justify-content-start">
+    <div class="col-12 col-md-8 col-lg-5 search-form mt-5">
+      <%= simple_form_for :search, url: venues_path, method: :get do |f| %>
+        <%= f.input :location, label: 'WHERE?' , collection: ["Berlin"] %>
+        <%= f.input :category, label: 'WHAT IS YOUR STYLE?' , collection: [ "retro", "modern", "all" ] %>
+
+        <%= f.input :budget, label: 'YOUR BUDGET', as: :radio_buttons, collection: ['Broke', 'Reasonable', 'Rich'] , class: "radio_buttons", collection_wrapper_tag: :div, collection_wrapper_class: 'd-flex' %>
+        <br><br><br>
+        <%= f.button :submit, 'PLAN YOUR NIGHT!', class:"form-control btn btn-outline-light w-100 mt-3 search-button"%>
+      <% end %>
+    </div>
+  </div>
+</div>
