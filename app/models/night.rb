@@ -1,4 +1,4 @@
 class Night < ApplicationRecord
-  belongs_to :night_venue
   belongs_to :user
+  has_many :night_venues
 end
