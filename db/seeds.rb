@@ -10,7 +10,7 @@ require 'open-uri'
 Venue.delete_all
 User.delete_all
 solar = Venue.new(
-  venue_type: 'bar',
+  type: 'bar',
   category: 'retro',
   name: 'solar bar',
   address: 'Stresemannstrasse 76, Berlin',
@@ -27,7 +27,7 @@ solar.photos.attach(io: solar1, filename: ‘solar.jpg’, content_type: 'image/
 solar.photos.attach(io: solar2, filename: ‘solar1.jpg’, content_type: 'image/jpg')
 solar.save
 matrix = Venue.new(
-  venue_type: 'club',
+  type: 'club',
   category: 'modern',
   name: 'matrix',
   address: 'Charlottenstraße 34, Berlin',
