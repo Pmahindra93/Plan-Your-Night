@@ -1,5 +1,5 @@
 <!-- navbar -->
-<div>
+<div class="container">
   <div class="row p-0">
     <div class="col-12 p-0">
       <div class="d-flex align-items-center my-2">
@@ -12,6 +12,10 @@
           <% end %>
           <%= link_to "#", class:"nav-icon" do %>
             <i class="far fa-heart"></i>
+          <% end %>
+          <%= simple_form_for [@venue, @favourite] do |f|%>
+            <i class="far fa-heart"></i>
+            <%= f.button :submit, class:"btn " %>
           <% end %>
         </div>
       </div>
