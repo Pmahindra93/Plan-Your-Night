@@ -1,12 +1,17 @@
 class VenuesController < ApplicationController
   before_action :find_venue, only: :show
+  before_action :search, only: :index
   skip_before_action :authenticate_user! , only: :show
 
+
+
   def index
-    # @venues = Venue.all
+    @bars = @venues.select {|venue| venue.venue_type == "bar" }
+    @clubs = @venues.select {|venue| venue.venue_type == "club" }
   end
 
-    def search
+
+  def search
     # query_location = 'location ILIKE ?'
     # query_brand = 'brand ILIKE ?'
     # query_both = 'brand ILIKE ? AND name ILIKE ?'

@@ -22,7 +22,7 @@ solar = Venue.new(
   opening_hours: "17:00 – 02:00 O'Clock",
   price_segment: '€€€',
   card_accepted: true,
-  description: 'Unser einmaliger Außenfahrstuhl führt aus dem Eingangsbereich im Erdgeschoss direkt ins Restaurant in 70 Meter Höhe im Himmel über Berlin. Ein spektakuläres 270-Grad-Panorama trifft bei uns auf gemütliches und urbanes Design. Von jedem Platz aus beobachtet man den wunderschönen Sonnenuntergang und das nächtliche, bunt strahlende Lichtermeer der Hauptstadt.'
+  description: 'Unser einmaliger Außenfahrstuhl führt aus dem Eingangsbereich im Erdgeschoss direkt ins Restaurant in 70 Meter Höhe im Himmel über Berlin.'
 )
 
 solar1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1583229290/solar_mdtetd.jpg')
@@ -51,4 +51,5 @@ matrix.photos.attach(io: matrix2, filename: 'matrix2.jpg', content_type: 'image/
 matrix.save
 
 puts "finish"
+
 

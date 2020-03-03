@@ -11,12 +11,11 @@
 
 // Your CSS partials
 @import "components/index";
+@import "components/custom-btns";
 @import "pages/index";
 
 @import "pages/home";
 @import "pages/show";
-
-
 
 @import "config/basic-reboot";
 @import "config/custom-layout";
