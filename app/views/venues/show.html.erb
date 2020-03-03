@@ -1,6 +1,5 @@
-<!-- navbar -->
-<div class="container">
-  <div class="row p-0">
+<div class="w-100">
+  <div class="row m-0">
     <div class="col-12 p-0">
       <div class="d-flex align-items-center my-2">
         <%= link_to "#" , class:"nav-icon", id:"back" do %>
@@ -17,11 +16,10 @@
       </div>
     </div>
   </div>
-  <!-- fullscreen-width carrousell -->
-  <div class="row p-0">
+  <div class="row m-0">
     <div class="col-12 p-0">
       <% if @venue.photos.attached? %>
-        <div id="showCarousel" class="carousel slide" data-ride="carousel">
+        <div id="showCarousel" class="carousel slide image" data-ride="carousel">
           <div class="carousel-inner">
             <div class="carousel-item active">
               <%= cl_image_tag @venue.photos[0].key, crop: :fit, class:"d-block w-100 h-100" %>
@@ -44,18 +42,44 @@
           </a>
         </div>
       <% else %>
-        <%= image_tag asset_url('standard') %>
+        <%= image_tag asset_url('standard'), class:'image' %>
       <% end %>
     </div>
   </div>
+  <div class="container mt-3">
+    <h2><%= @venue.name.capitalize %></h2>
+    <h6 class="mb-1"><strong><%= @venue.price_segment %></strong></h6>
+    <div class="d-flex align-items-baseline">
+      <div class="d-flex">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="far fa-star"></i>
+      </div>
+      <p class="pl-1 mb-1"><%= @venue.venue_type %>, <%= @venue.category  %></p>
+    </div>
+    <div class="d-flex align-items-center">
+      <i class="fas fa-map-marker-alt" id="marker"></i>
+      <p class="pl-1"><%= @venue.address %></p>
+    </div>
+    <div class="d-flex align-items-center" id="info">
+      <p class="light">Opening Hours</p>
+      <p class="pl-1"><%= @venue.opening_hours %></p>
+    </div>
+    <div class="d-flex align-items-center">
+      <p class="light">Card Payment</p>
+      <% if @venue.card_accepted %>
+        <i class="far fa-check-circle card-indicate light pl-2" id="true"></i>
+      <% else %>
+        <i class="far fa-times-circle card-indicate light pl-2" id="false"></i>
+      <% end %>
+    </div>
+    <div id="description">
+      <p class="light"><%= @venue.description %></p>
+    </div>
+    <%= link_to '#', class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
+      <p><strong>Add to Night Out</strong></p>
+    <% end %>
+  </div>
 </div>
-<!-- title -->
-<!-- flexbox: -->
-<!-- overall rating type, category, price_category -->
-<!-- flexbox: -->
-<!-- marker:icon address -->
-<!-- Opening hours -->
-<!-- flexbox: -->
-<!-- card_accepted  true/false:icon -->
-<!-- description -->
-<!-- button -->
