@@ -38,8 +38,9 @@ class VenuesController < ApplicationController
       end
     end
 
-
-  def show; end
+  def show
+    @favourite = Favourite.new
+  end
 
   private
 
