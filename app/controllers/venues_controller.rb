@@ -5,7 +5,10 @@ class VenuesController < ApplicationController
 
   def index
     @venues = Venue.all
-    @bars = @venues[category: bars]
+    @bars = @venues.select {|venue| venue.venue_type == "bar" }
+    @clubs = @venues.select {|venue| venue.venue_type == "club" }
+  end
+
 
 
   def show; end
