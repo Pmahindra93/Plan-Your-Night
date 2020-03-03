@@ -12,9 +12,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-@import "pages/show";
+
+@import "pages/home";
+@import "pages/show"
+
 
 // Your custom basic css
 @import "config/basic-reboot";
 @import "config/custom-layout";
 @import "config/custom-typography";
+
