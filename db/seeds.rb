@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts("Start of the seed")
+venue1 = Venue.create(type: "Bar", category: "Cocktail-bar", name: "La Tasca", address: "Checkpoint-Charlie")
+venue2 = Venue.create(type: "club", category: "Latino", name: "808", address: "Checkpoint-Charlie")
+
+puts("End of the seed")
