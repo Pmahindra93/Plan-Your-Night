@@ -10,3 +10,20 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+.navbar-header {
+position: absolute;
+left: 2%;
+right: 0%;
+top: 28%;
+bottom: 0%;
+
+font-family: Roboto;
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 28px;
+display: flex;
+align-items: center;
+letter-spacing: 0.02em;
+color: #000000;
+}
