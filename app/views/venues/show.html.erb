@@ -1,7 +1,7 @@
 <!-- navbar -->
-<div>
-  <div class="row p-0">
-    <div class="col-12 p-0">
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
       <div class="d-flex align-items-center my-2">
         <%= link_to "#" , class:"nav-icon", id:"back" do %>
           <i class="fas fa-chevron-left"></i>
@@ -18,8 +18,8 @@
     </div>
   </div>
   <!-- fullscreen-width carrousell -->
-  <div class="row p-0">
-    <div class="col-12 p-0">
+  <div class="row">
+    <div class="col-12">
       <% if @venue.photos.attached? %>
         <div id="showCarousel" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
