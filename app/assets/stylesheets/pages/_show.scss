@@ -1,3 +1,19 @@
 #back{
   flex-grow: 1;
 }
+
+.nav-icon{
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  padding: 0 7px;
+  &:hover{
+    text-decoration: none;
+    color: black;
+  }
+}
+
+.carousel-item{
+  height: 200px;
+  width: 100%;
+}
