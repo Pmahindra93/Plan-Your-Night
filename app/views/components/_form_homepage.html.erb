@@ -5,7 +5,7 @@ night.</p>
 <div class=" mt-5 font-page">
   <div class="d-flex justify-content-start">
     <div class="col-12 col-md-8 col-lg-5 search-form mt-5">
-      <%= simple_form_for :search, url: venues_path, method: :get do |f| %>
+      <%= simple_form_for :search, url: custom_search_path, method: :get do |f| %>
         <%= f.input :location, label: 'WHERE?' , collection: ["Berlin"] %>
         <%= f.input :category, label: 'WHAT IS YOUR STYLE?' , collection: [ "retro", "modern", "all" ] %>
 
