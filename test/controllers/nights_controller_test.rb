@@ -10,5 +10,4 @@ class NightsControllerTest < ActionDispatch::IntegrationTest
     get nights_create_url
     assert_response :success
   end
-
 end
