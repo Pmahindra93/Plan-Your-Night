@@ -40,7 +40,7 @@
               <div class="col-12">
                 <% @nightouts.each do |nightout| %>
                   <%= link_to nightout_path(nightout) do %>
-                    <%= render 'components/nightout-card', nightout: nightout %>
+                    <%= render 'components/card-dashboard', venue: nightout.night_venue.first  %>
                   <% end %>
                 <% end %>
               </div>
