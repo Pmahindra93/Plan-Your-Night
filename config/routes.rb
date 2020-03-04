@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'pages#home'
+  root to: 'nights#new'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :venues, only: [:index,:show] do
-     get :clubs, on: :collection
+
+  resources :nights, only: [:new, :create] do
+     resources :venues, only: [:index, :show]
   end
-
-
-
 end
