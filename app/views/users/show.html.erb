@@ -1,21 +1,77 @@
-<h5> Welcome <%= @user.email %>!</h5>
-<p>your favourites Nightouts</p>
-
-<% if @favourites.present? %>
-  <% @favourites.each do |favourite| %>
-    <div class="card-trip">
-      <% if favourite.venue.photos.attached? %>
-        <%= cl_image_tag favourite.venue.photos[0].key %>
-      <% end %>
-      <div class="card-trip-infos">
-        <div>
-          <h2><%= favourite.venue.name %></h2>
-          <p><%= favourite.venue.address %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 menu">
+      <div class="text-center">
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, class:'avatar-large' %>
+        <% else %>
+          <%= image_tag asset_url('empty-avatar'), class:'avatar-large' %>
+        <% end %>
+        <p class="bold-lg"><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+      </div>
+      <div class="menu-list d-flex justify-content-between">
+        <p class="menu-item active" id="acc-info">Account Info</p>
+        <p class="menu-item" id="nightout">Nightouts</p>
+        <p class="menu-item" id="favourite">Favourites</p>
+      </div>
+      <hr id="seperation-line">
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="hidden content" data-info-type="acc-info">
+          <p class="content-title">Account Info</p>
+          <div>
+            <p class="bold-lg">Name:</p>
+            <p><%= @user.first_name %> <%= @user.last_name %></p>
+            <p class="bold-lg">Email:</p>
+            <p><%= @user.email %></p>
+            <div id="change-links">
+              <%= link_to 'Change Accout Info', edit_user_registration_path %>
+              <br>
+              <%= link_to 'Change Password', edit_user_password_path %>
+            </div>
+          </div>
         </div>
-        <h2 class="card-trip-pricing"><%= favourite.venue.price_segment %>€/day</h2>
+        <div class="hidden content" data-info-type="nightout">
+          <p class="content-title">Your nightouts</p>
+          <% if @nightouts.present? %>
+            <% @nightouts.each do |nightout| %>
+              <div class="row">
+                <div class="col-12">
+                  <div class="night-box">
+                    <div class="d-flex align-items-baseline">
+                      <p class="content-title" id="night-date"><%= nightout.created_at.strftime("%FT%T") %></p>
+                      <i class="far fa-share-square"></i>
+                    </div>
+                    <% nightout.venues.each do |venue| %>
+                      <%= render 'components/card-dashboard', venue: venue %>
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p class="mt-2"> Currently, you have no nightout planned! </p>
+          <% end %>
+        </div>
+        <div class="hidden content" data-info-type="favourite">
+          <p class="content-title">Your Favourites</p>
+          <% if @favourites.present? %>
+            <% @favourites.each do |fav| %>
+              <div class="row">
+                <div class="col-12">
+                  <%= render 'components/card-dashboard', venue: fav.venue %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p class="mt-2"> Currently, you have no Favourites! </p>
+          <% end %>
+        </div>
       </div>
     </div>
-  <% end %>
-<% else %>
-  <p> Currently, you have no saved listings! </p>
-<% end %>
+  </div>
+</div>
+
