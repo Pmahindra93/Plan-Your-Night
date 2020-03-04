@@ -25,16 +25,16 @@ class VenueReviewsController < ApplicationController
   def create
     @review = VenueReview.new(review_params)
     # we need `restaurant_id` to associate review with corresponding restaurant
-    @restaurant = Restaurant.find(params[:restaurant_id])
-    @review.restaurant = @restaurant
+    @venue = Venue.find(params[:venue_id])
+    @review.venue = @venue
     @review.save
-    redirect_to restaurant_path(@restaurant)
+    redirect_to venue_path(@venue)
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:venue_review).permit(:content)
   end
 end
 
