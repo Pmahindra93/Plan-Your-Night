@@ -6,10 +6,16 @@ Rails.application.routes.draw do
 
 
   resources :nights, only: [:new, :create] do
-     resources :venues, only: [:index, :show] do
-       resources :favourites, only: :create
-     end
+     resources :venues, only: [:index, :show]
+
   end
+  # edit and only outside everything
+  resources :venues do
+    resources :favourites, only: :create
+       # resources for :venue_reviews inside venues
+    resources :venue_reviews, only: :create
+  end
+  resources :venue_reviews, only: [:edit, :update]
 
 end
 
