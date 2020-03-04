@@ -1,11 +1,11 @@
 <div class="card-trip rounded">
-  <%= cl_image_tag bar.photos[0].key %>
+  <%= cl_image_tag venue.photos[0].key %>
   <div class="card-trip-infos">
     <div>
-      <h3 class="mb-2"><%= bar.name %></h3>
-      <p class="ct-text-light"><%= bar.venue_type %> / <%= bar.category %></p>
-      <p><%= bar.address %></p>
+      <h3 class="mb-2"><%= venue.name %></h3>
+      <p class="ct-text-light"><%= venue.venue_type %> / <%= venue.category %></p>
+      <p><%= venue.address %></p>
     </div>
-    <h5 class="card-trip-pricing"><%= bar.price_segment %></h5>
+    <h5 class="card-trip-pricing"><%= venue.price_segment %></h5>
   </div>
 </div>

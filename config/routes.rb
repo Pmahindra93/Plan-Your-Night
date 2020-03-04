@@ -17,4 +17,5 @@ Rails.application.routes.draw do
     resources :venue_reviews, only: :create
   end
   resources :venue_reviews, only: [:edit, :update]
+
 end
