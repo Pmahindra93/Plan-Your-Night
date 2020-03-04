@@ -1,4 +1,4 @@
-<div class="container mt-5">
+<div class="container position-absolute mt-5 ">
   <% if @venues.empty? %>
     <div class="text-center">
       <h3>No Search Results</h3>
@@ -12,8 +12,10 @@
           <%= render 'components/card-index', venue: venue  %>
         <% end %>
       <% end %>
+      <br>
+      <br>
 
-    <%= link_to 'Skip', clubs_night_venues_path %>
+    <%= link_to 'Skip this step', clubs_night_venues_path, class: "btn btn-primary ct-btn btn-block w-90", id: "skip-btn" %>
   <% end %>
 </div>
 
