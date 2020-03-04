@@ -10,6 +10,7 @@ puts "start"
 require 'open-uri'
 Venue.delete_all
 User.delete_all
+Night.delete_all
 
 solar = Venue.new(
   venue_type: 'bar',
@@ -19,7 +20,6 @@ solar = Venue.new(
   longitude: 0.0,
   latitude: 0.0,
   opening_hours: '17:00 – 02:00 O’Clock',
-  opening_hours: "17:00 – 02:00 O'Clock",
   price_segment: '€€€',
   card_accepted: true,
   description: 'Unser einmaliger Außenfahrstuhl führt aus dem Eingangsbereich im Erdgeschoss direkt ins Restaurant in 70 Meter Höhe im Himmel über Berlin.'
@@ -33,14 +33,13 @@ solar.save
 
 matrix = Venue.new(
   venue_type: 'club',
-  category: 'modern',
+  category: 'retro',
   name: 'matrix',
   address: 'Charlottenstraße 34, Berlin',
   longitude: 0.0,
   latitude: 0.0,
   opening_hours: "20:00 – 06:00 O’Clock",
-  opening_hours: "20:00 – 06:00 O'Clock",
-  price_segment: '€€',
+  price_segment: '€€€',
   card_accepted: false,
   description: 'Unser einmaliger Außenfahrstuhl führt aus dem Eingangsbereich im Erdgeschoss direkt ins Restaurant in 70 Meter Höhe im Himmel über Berlin. Ein spektakuläres 270-Grad-Panorama trifft bei uns auf gemütliches und urbanes Design. Von jedem Platz aus beobachtet man den wunderschönen Sonnenuntergang und das nächtliche, bunt strahlende Lichtermeer der Hauptstadt.'
 )

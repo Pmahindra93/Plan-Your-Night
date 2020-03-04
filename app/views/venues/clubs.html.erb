@@ -1,13 +1,13 @@
-<div class="container position-absolute mt-5 ">
+<div class="container position-absolute mt-5">
   <% if @venues.empty? %>
     <div class="text-center">
       <h3>No Search Results</h3>
       <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
     </div>
   <% else %>
-    <h5>1) Choose your bar</h5>
+    <h5>2) Choose your club</h5>
     <div class="container mt-5">
-      <% @bars.each do |venue| %>
+      <% @clubs.each do |venue| %>
         <%= link_to night_venue_path(@night, venue) do %>
           <%= render 'components/card-index', venue: venue  %>
         <% end %>
@@ -15,9 +15,6 @@
       <br>
       <br>
 
-    <%= link_to 'Skip this step', clubs_night_venues_path, class: "btn btn-primary ct-btn btn-block w-90", id: "skip-btn" %>
+    <%= link_to 'Skip this step', clubs_night_venues_path, class: "btn btn-primary ct-btn btn-block", id: "skip-btn" %>
   <% end %>
 </div>
-
-
-
