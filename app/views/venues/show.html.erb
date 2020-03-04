@@ -68,6 +68,11 @@
     <div id="description">
       <p class="light"><%= @venue.description %></p>
     </div>
+    <%= simple_form_for([@night, @night_venue]) do |f| %>
+      <%= f.input :venue_id, input_html: {value: @venue.id}, as: :hidden%>
+      <%= f.submit %>
+    <% end %>
+
     <%= link_to '#', class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
       <p><strong>Add to Night Out</strong></p>
     <% end %>

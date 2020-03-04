@@ -36,7 +36,8 @@ def search
 
   def show
     @favourite = Favourite.new
-
+    @night = Night.find(params[:night_id])
+    @night_venue = NightVenue.new
   end
 
   private

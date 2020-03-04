@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :favourites
   has_many :nights
+  has_many :night_venues , through: :nights
   has_many :venue_reviews
   has_one_attached :photo
 end
