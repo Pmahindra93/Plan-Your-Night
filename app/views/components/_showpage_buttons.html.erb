@@ -1,0 +1,11 @@
+<%= link_to "#" , class:"nav-icon", id:"back" do %>
+  <i class="fas fa-chevron-left"></i>
+<% end %>
+<div class="d-flex align-items-center">
+  <%= link_to "#", class:"nav-icon" do %>
+    <i class="far fa-share-square"></i>
+  <% end %>
+  <%= button_to venue_favourites_path(@venue), class:"nav-button nav-icon" do %>
+    <i class="far fa-heart"></i>
+  <% end %>
+</div>
