@@ -12,9 +12,6 @@ class VenuesController < ApplicationController
 
 
   def search
-    # query_location = 'location ILIKE ?'
-    # query_brand = 'brand ILIKE ?'
-    # query_both = 'brand ILIKE ? AND name ILIKE ?'
     unless params[:search].nil?
       location = params[:search][:location]
       category = params[:search][:category]
@@ -35,8 +32,8 @@ class VenuesController < ApplicationController
       elsif params[:search][:location] == "Berlin" && category != "" && budget == "Rich"
         @venues = Venue.where(category: category, price_segment: "€€€")
       end
-      end
     end
+  end
 
   def show
     @favourite = Favourite.new

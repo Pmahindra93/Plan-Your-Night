@@ -5,15 +5,12 @@
         <%= link_to "#" , class:"nav-icon", id:"back" do %>
           <i class="fas fa-chevron-left"></i>
         <% end %>
-        <div>
+        <div class="d-flex align-items-center">
           <%= link_to "#", class:"nav-icon" do %>
             <i class="far fa-share-square"></i>
           <% end %>
-          <%= link_to "#", class:"nav-icon" do %>
+          <%= button_to venue_favourites_path(@venue), class:"nav-button nav-icon" do %>
             <i class="far fa-heart"></i>
-          <% end %>
-          <%= simple_form_for [@venue, @favourite] do |f|%>
-            <%= f.button :submit, class:"btn " %>
           <% end %>
         </div>
       </div>

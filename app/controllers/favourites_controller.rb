@@ -5,5 +5,6 @@ class FavouritesController < ApplicationController
     @favourite.venue = @venue
     @favourite.user = current_user
     @favourite.save
+    redirect_to venue_path(@venue)
   end
 end
