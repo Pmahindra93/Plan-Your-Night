@@ -5,9 +5,9 @@
       <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
     </div>
   <% else %>
-    <h5>1) Choose your bar</h5>
+    <h5>2) Choose your club</h5>
     <div class="container mt-5">
-      <% @bars.each do |venue| %>
+      <% @clubs.each do |venue| %>
         <%= link_to night_venue_path(@night, venue) do %>
           <%= render 'components/card-index', venue: venue  %>
         <% end %>
@@ -16,6 +16,3 @@
     <%= link_to 'Skip', clubs_night_venues_path %>
   <% end %>
 </div>
-
-
-

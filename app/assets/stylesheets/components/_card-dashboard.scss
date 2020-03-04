@@ -1,0 +1,22 @@
+.card-dashboard {
+  display: flex;
+  box-shadow: 0 2px 5px rgba(33,32,50,0.2);
+  color: #2e3f46;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.card-description {
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.pic > img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+

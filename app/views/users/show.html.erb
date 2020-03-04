@@ -7,10 +7,6 @@
       <% if favourite.venue.photos.attached? %>
         <%= cl_image_tag favourite.venue.photos[0].key %>
       <% end %>
-
-
-
-
       <div class="card-trip-infos">
         <div>
           <h2><%= favourite.venue.name %></h2>
