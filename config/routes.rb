@@ -7,5 +7,5 @@ Rails.application.routes.draw do
     resources :favourites, only: :create
   end
   get '/search', to: 'venues#search', as: :custom_search
-  get 'users/:id', to: 'users#show', as: :user
+  get '/users/:id', to: 'users#show', as: :user
 end

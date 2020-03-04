@@ -1,65 +1,74 @@
 <div class="container">
-  <div class="dark">
-    <%= render 'components/navbar'%>
-  </div>
   <div class="row">
-    <div class="col-3 menu">
+    <div class="col-12 menu">
       <div class="text-center">
-        <h1>Welcome <strong><%= @user.first_name %> <%= @user.last_name %>!</strong></h1>
+        <% if @user.photo.attached? %>
+          <%= cl_image_tag @user.photo.key, class:'avatar-large' %>
+        <% else %>
+          <%= image_tag asset_url('empty-avatar'), class:'avatar-large' %>
+        <% end %>
+        <p class="bold-lg"><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
       </div>
-      <ul class="list-inline">
-        <li class="list-inline-item active" id="info">Account Info</li>
-        <li class="list-inline-item" id="listing">Nightouts</li>
-        <li class="list-inline-item" id="booking">Favourites</li>
-      </ul>
+      <div class="menu-list d-flex justify-content-between">
+        <p class="menu-item active" id="acc-info">Account Info</p>
+        <p class="menu-item" id="nightout">Nightouts</p>
+        <p class="menu-item" id="favourite">Favourites</p>
+      </div>
     </div>
   </div>
-  <!-- <div class="row">
-    <div class="col-12">
-      <div class="hidden content" data-info-type="info">
-        <h3>Account Info</h3>
-        <div>
-          <h4>Email:</h4>
-          <p><%= @user.email %></p>
-          <h4>Display Name:</h4>
-          <p><%= @user.name %></p>
-          <%= link_to 'Change Accout Info' %>
-          <%= link_to 'Change Password' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="hidden content" data-info-type="acc-info">
+          <p class="content-title">Account Info</p>
+          <div>
+            <p class="bold-lg">Name:</p>
+            <p><%= @user.first_name %> <%= @user.last_name %></p>
+            <p class="bold-lg">Email:</p>
+            <p><%= @user.email %></p>
+            <div id="change-links">
+              <%= link_to 'Change Accout Info', edit_user_registration_path %>
+              <br>
+              <%= link_to 'Change Password', edit_user_password_path %>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="hidden content" data-info-type="listing">
-        <h3> Your listings are: </h3>
-        <div class ="cards">
-          <% if @listings.present? %>
-            <% @listings.each do |listing| %>
-              <%= link_to listing_path(listing) do %>
-                <%= render 'components/listing-card', listing: listing %>
-              <% end %>
-            <% end %>
+        <div class="hidden content" data-info-type="nightout">
+          <p class="content-title">Your nightouts</p>
+          <% if @nightouts.present? %>
+            <div class="row">
+              <div class="col-12">
+                <% @nightouts.each do |nightout| %>
+                  <%= link_to nightout_path(nightout) do %>
+                    <%= render 'components/nightout-card', nightout: nightout %>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
           <% else %>
-            <p> Currently, you have no listing! </p>
+            <p class="mt-2"> Currently, you have no nightout! </p>
           <% end %>
         </div>
-      </div>
-      <div class="hidden content" data-info-type="booking">
-        <h3> Your bookings are: </h3>
-          <div class ="cards">
-              <% if @bookings.present? %>
-                <% @bookings.each do |booking| %>
-                  <%= render 'components/booking-card', booking: booking %>
-                <% end %>
-              <% else %>
-                <p> Currently, you have no bookings! </p>
-            <% end %>
-          </div>
-      </div>
-      <div class="hidden content" data-info-type="saved">
-        <h3> Your Saved Listings are: </h3>
-        <div class ="cards">
-          <%= render 'components/savedlisting-form' %>
+<!--         <div class="hidden content" data-info-type="booking">
+          <h3> Your bookings are: </h3>
+            <div class ="cards">
+                <#% if @bookings.present? %>
+                  <#% @bookings.each do |booking| %>
+                    <#%= render 'components/booking-card', booking: booking %>
+                  <#% end %>
+                <#% else %>
+                  <p> Currently, you have no bookings! </p>
+              <#% end %>
+            </div>
         </div>
+        <div class="hidden content" data-info-type="saved">
+          <h3> Your Saved Listings are: </h3>
+          <div class ="cards">
+            <#%= render 'components/savedlisting-form' %>
+          </div>
+        </div> -->
       </div>
     </div>
   </div>
-</div> -->
+</div>
 

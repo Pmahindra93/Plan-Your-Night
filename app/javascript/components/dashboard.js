@@ -1,6 +1,6 @@
 // find the item with the same data target as the thing clicked
  // remove the hidden class from its content
-const menu = document.querySelectorAll('.list-group.list-group-flush');
+const menu = document.querySelectorAll('.menu-list');
 const contents = document.querySelectorAll('.content');
 
 const hideContent = () => {
@@ -11,15 +11,16 @@ const hideContent = () => {
 
 const revealContent = () => {
   hideContent();
-  const active = document.querySelector('.list-group-item.active');
+  const active = document.querySelector('.menu-item.active');
   const content = document.querySelector(`[data-info-type='${active.id}']`);
   content.classList.remove('hidden');
 };
 
 const toggleActive = () => {
+  revealContent();
   menu.forEach(item => {
     item.addEventListener('click', (event) => {
-    document.querySelector('.list-group-item.active').classList.remove('active');
+    document.querySelector('.menu-item.active').classList.remove('active');
     event.target.classList.add('active');
     revealContent();
     });
