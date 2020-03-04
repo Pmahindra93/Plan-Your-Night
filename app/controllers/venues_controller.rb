@@ -43,8 +43,13 @@ class VenuesController < ApplicationController
 
 
   def show
-    @favourite = Favourite.new
+    @favourite = Favourite.new()
+    @reviews = VenueReview.where(venue_id: @venue)
+    @review = VenueReview.new()
+  end
 
+  def blank_stars
+      5 - @review.rating
   end
 
   private
