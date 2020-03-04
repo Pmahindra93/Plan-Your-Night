@@ -1,7 +1,8 @@
 .card-trip {
-  overflow: hidden;
   background: white;
   box-shadow: 0 2px 5px rgba(33,32,50,0.2);
+  overflow: hidden;
+  // border-radius: 10px;
 }
 
 .card-trip > img {
@@ -30,7 +31,6 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
 }
 
 // .card-trip-infos .card-trip-user {
