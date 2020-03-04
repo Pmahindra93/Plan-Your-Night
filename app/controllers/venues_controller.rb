@@ -35,8 +35,9 @@ def search
 
 
   def show
-    @favourite = Favourite.new
-
+    @favourite = Favourite.new()
+    @reviews = VenueReview.where(venue_id: @venue)
+    @review = VenueReview.new()
   end
 
   private

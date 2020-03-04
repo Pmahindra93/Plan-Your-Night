@@ -12,7 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :venues, only: [] do
+  resources :venues, only: [:show] do
     resources :favourites, only: :create
     resources :venue_reviews, only: :create
   end
