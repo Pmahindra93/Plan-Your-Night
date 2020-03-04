@@ -4,6 +4,9 @@
 }
 .avatar-large {
   width: 100px;
+  height: 100px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 50%;
 }
 .avatar-bordered {

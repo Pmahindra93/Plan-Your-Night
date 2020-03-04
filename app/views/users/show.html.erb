@@ -14,6 +14,7 @@
         <p class="menu-item" id="nightout">Nightouts</p>
         <p class="menu-item" id="favourite">Favourites</p>
       </div>
+      <hr id="seperation-line">
     </div>
   </div>
   <div class="container">
@@ -36,37 +37,39 @@
         <div class="hidden content" data-info-type="nightout">
           <p class="content-title">Your nightouts</p>
           <% if @nightouts.present? %>
-            <div class="row">
-              <div class="col-12">
-                <% @nightouts.each do |nightout| %>
-                  <%= link_to nightout_path(nightout) do %>
-                    <%= render 'components/card-dashboard', venue: nightout.night_venue.first  %>
-                  <% end %>
-                <% end %>
+            <% @nightouts.each do |nightout| %>
+              <div class="row">
+                <div class="col-12">
+                  <div class="night-box">
+                    <div class="d-flex align-items-baseline">
+                      <p class="content-title" id="night-date"><%= nightout.created_at.strftime("%FT%T") %></p>
+                      <i class="far fa-share-square"></i>
+                    </div>
+                    <% nightout.venues.each do |venue| %>
+                      <%= render 'components/card-dashboard', venue: venue %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
-            </div>
+            <% end %>
           <% else %>
-            <p class="mt-2"> Currently, you have no nightout! </p>
+            <p class="mt-2"> Currently, you have no nightout planned! </p>
           <% end %>
         </div>
-<!--         <div class="hidden content" data-info-type="booking">
-          <h3> Your bookings are: </h3>
-            <div class ="cards">
-                <#% if @bookings.present? %>
-                  <#% @bookings.each do |booking| %>
-                    <#%= render 'components/booking-card', booking: booking %>
-                  <#% end %>
-                <#% else %>
-                  <p> Currently, you have no bookings! </p>
-              <#% end %>
-            </div>
+        <div class="hidden content" data-info-type="favourite">
+          <p class="content-title">Your Favourites</p>
+          <% if @favourites.present? %>
+            <% @favourites.each do |fav| %>
+              <div class="row">
+                <div class="col-12">
+                  <%= render 'components/card-dashboard', venue: fav.venue %>
+                </div>
+              </div>
+            <% end %>
+          <% else %>
+            <p class="mt-2"> Currently, you have no Favourites! </p>
+          <% end %>
         </div>
-        <div class="hidden content" data-info-type="saved">
-          <h3> Your Saved Listings are: </h3>
-          <div class ="cards">
-            <#%= render 'components/savedlisting-form' %>
-          </div>
-        </div> -->
       </div>
     </div>
   </div>

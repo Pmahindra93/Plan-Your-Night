@@ -1,6 +1,9 @@
 <div class="card-dashboard rounded">
   <div class="pic">
-    <%= cl_image_tag venue.photos[0].key %>
+    <% if venue.photos.attached? %>
+      <%= cl_image_tag night.venues[0].photos[0].key %>
+    <% else %>
+      <%= image_tag asset_url('standard') %>
   </div>
   <div class="card-description">
     <h3><%= venue.name %></h3>
