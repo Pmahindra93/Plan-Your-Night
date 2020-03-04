@@ -40,6 +40,10 @@ def search
     @review = VenueReview.new()
   end
 
+  def blank_stars
+      5 - @review.rating
+  end
+
   private
 
   def find_venue
