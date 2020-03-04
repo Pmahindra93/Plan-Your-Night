@@ -6,12 +6,10 @@ Rails.application.routes.draw do
 
 
   resources :nights, only: [:new, :create] do
-     resources :venues, only: [:index, :show] do
-       resources :favourites, only: :create
-     end
+    resources :venues, only: [:index, :show]
   end
 
+  resources :venues, only: [] do
+    resources :favourites, only: :create
+  end
 end
-
-
-

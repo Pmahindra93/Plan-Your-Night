@@ -10,25 +10,12 @@ class VenuesController < ApplicationController
     @clubs = @venues.select {|venue| venue.venue_type == "club" }
   end
 
-
-  def search
-<<<<<<< HEAD
-    unless params[:search].nil?
-      location = params[:search][:location]
-      category = params[:search][:category]
-      budget = params[:search][:budget]
-
-      if (params[:search][:location] == "Berlin" && category == "all" && budget == '')
-=======
-
+def search
       @night = Night.find(params[:night_id])
-
       @location = @night.location
       @category = @night.category
       @budget = @night.budget
-
       if (@location == "Berlin" && @category == "all" && @budget == '')
->>>>>>> master
         @venues = Venue.all
       elsif (@location == "Berlin" && @category == "all" && @budget == 'Broke')
         @venues = Venue.where(price_segment: "€")
@@ -36,17 +23,6 @@ class VenuesController < ApplicationController
         @venues = Venue.where(price_segment: "€€")
       elsif (@location == "Berlin" && @category == "all" && @budget == 'Rich')
         @venues = Venue.where(price_segment: "€€€")
-<<<<<<< HEAD
-      elsif params[:search][:location] == "Berlin" && category != "" && budget == "Broke"
-        @venues = Venue.where(category: category, price_segment: "€")
-      elsif params[:search][:location] == "Berlin" && category != "" && budget == "Reasonable"
-        @venues = Venue.where(category: category, price_segment: "€€")
-      elsif params[:search][:location] == "Berlin" && category != "" && budget == "Rich"
-        @venues = Venue.where(category: category, price_segment: "€€€")
-      end
-    end
-  end
-=======
       elsif @location == "Berlin" && @category != "" && @budget == "Broke"
         @venues = Venue.where(category: @category, price_segment: "€")
       elsif @location == "Berlin" && @category != "" && @budget == "Reasonable"
@@ -57,10 +33,10 @@ class VenuesController < ApplicationController
   end
 
 
->>>>>>> master
 
   def show
     @favourite = Favourite.new
+
   end
 
   private
