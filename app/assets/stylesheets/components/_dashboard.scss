@@ -1,0 +1,44 @@
+.menu{
+  width: 100vw;
+  padding: 20px;
+}
+
+.menu-item{
+  color: rgba(0,0,0,0.3);
+  font-weight: bold;
+  &.active{
+    color: black;
+  }
+}
+
+.bold-lg{
+  font-weight: bold;
+  font-size: 25px;
+  margin-top: 10px;
+}
+
+.menu-list{
+  margin-top: 30px;
+}
+
+.hidden{
+  display: none;
+}
+
+.content-title{
+  font-size: 30px;
+}
+
+#change-links{
+  margin-top: 15px;
+}
+
+#night-date{
+  flex-grow: 1;
+}
+
+#seperation-line{
+  border-top: 1px solid rgb(0,0,0);
+  width: 100%;
+  height: 1px;
+}
