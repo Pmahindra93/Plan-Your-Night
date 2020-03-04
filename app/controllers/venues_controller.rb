@@ -1,18 +1,25 @@
 class VenuesController < ApplicationController
   before_action :find_venue, only: :show
-  before_action :search, only: :index
+  before_action :search, only: [:index, :clubs]
   skip_before_action :authenticate_user! , only: :show
 
 
 
   def index
     @bars = @venues.select {|venue| venue.venue_type == "bar" }
+
+  end
+
+  # def bars
+
+  # end
+
+  def clubs
     @clubs = @venues.select {|venue| venue.venue_type == "club" }
   end
 
 
   def search
-
       @night = Night.find(params[:night_id])
 
       @location = @night.location

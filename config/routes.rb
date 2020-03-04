@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   resources :nights, only: [:new, :create] do
      resources :venues, only: [:index, :show] do
-       resources :favourites, only: :create
+      collection do
+        get 'clubs'
+      end
      end
   end
 
