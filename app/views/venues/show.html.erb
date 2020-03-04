@@ -2,18 +2,7 @@
   <div class="row m-0">
     <div class="col-12 p-0">
       <div class="d-flex align-items-center my-2">
-        <%= link_to "#" , class:"nav-icon", id:"back" do %>
-          <i class="fas fa-chevron-left"></i>
-        <% end %>
-        <div>
-          <%= link_to "#", class:"nav-icon" do %>
-            <i class="far fa-share-square"></i>
-          <% end %>
-          <%= link_to "#", class:"nav-icon" do %>
-            <i class="far fa-heart"></i>
-          <% end %>
-
-        </div>
+        <%= render 'components/showpage_buttons' %>
       </div>
     </div>
   </div>

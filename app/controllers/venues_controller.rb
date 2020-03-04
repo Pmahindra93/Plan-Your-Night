@@ -7,7 +7,6 @@ class VenuesController < ApplicationController
 
   def index
     @bars = @venues.select {|venue| venue.venue_type == "bar" }
-
   end
 
   # def bars
@@ -18,14 +17,12 @@ class VenuesController < ApplicationController
     @clubs = @venues.select {|venue| venue.venue_type == "club" }
   end
 
-
   def search
-      @night = Night.find(params[:night_id])
 
+      @night = Night.find(params[:night_id])
       @location = @night.location
       @category = @night.category
       @budget = @night.budget
-
       if (@location == "Berlin" && @category == "all" && @budget == '')
         @venues = Venue.all
       elsif (@location == "Berlin" && @category == "all" && @budget == 'Broke')
@@ -47,6 +44,7 @@ class VenuesController < ApplicationController
 
   def show
     @favourite = Favourite.new
+
   end
 
   private
