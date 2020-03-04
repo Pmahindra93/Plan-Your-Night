@@ -1,0 +1,11 @@
+<div class="night-box">
+  <div class="d-flex align-items-baseline">
+    <p class="content-title" id="night-date"><%= nightout.created_at.strftime("%FT%T") %></p>
+    <%= link_to '#', do %>
+      <i class="far fa-share-square"></i>
+    <% end %>
+  </div>
+  <% nightout.venues.each do |venue| %>
+    <%= render 'components/card-dashboard', venue: venue %>
+  <% end %>
+</div>
