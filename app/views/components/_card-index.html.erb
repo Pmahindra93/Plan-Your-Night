@@ -1,9 +1,9 @@
-
-<div class="card-trip">
+<div class="card-trip rounded">
   <%= cl_image_tag bar.photos[0].key %>
   <div class="card-trip-infos">
     <div>
-      <h2><%= bar.name %></h2>
+      <h3 class="mb-2"><%= bar.name %></h3>
+      <p class="ct-text-light"><%= bar.venue_type %> / <%= bar.category %></p>
       <p><%= bar.address %></p>
     </div>
     <h5 class="card-trip-pricing"><%= bar.price_segment %></h5>

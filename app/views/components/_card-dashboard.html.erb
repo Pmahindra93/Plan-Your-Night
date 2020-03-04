@@ -1,0 +1,24 @@
+<div class="card-dashboard rounded">
+  <div class="pic">
+    <%= cl_image_tag bar.photos[0].key%>
+  </div>
+  <div class="card-description">
+    <h3><%= bar.name %></h3>
+    <p class="ct-text-light"><%= bar.price_segment %> <span> &bull;</span> <%= bar.venue_type %> / <%= bar.category %> </p>
+  </div>
+</div>
+
+
+<!-- Put the code under into the dashboard.html
+  to do the LINK -->
+
+
+<div class="container mt-5 m">
+    <% @bars.each do |bar| %>
+      <%= link_to venue_path(bar), id: "card-link" do %>
+        <%= render 'components/card-dashboard', bar: bar  %>
+      <% end %>
+    <% end %>
+</div>
+
+<!-- -->

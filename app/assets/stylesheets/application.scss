@@ -12,11 +12,14 @@
 // Your CSS partials
 @import "components/index";
 @import "components/custom-btns";
+@import "components/card-dashboard";
 @import "pages/index";
-
 @import "pages/home";
 @import "pages/show";
 
+
+// Your custom basic css
+@import "config/card-link";
 @import "config/basic-reboot";
 @import "config/custom-layout";
 @import "config/custom-typography";

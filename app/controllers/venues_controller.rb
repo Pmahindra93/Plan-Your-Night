@@ -12,19 +12,31 @@ class VenuesController < ApplicationController
 
 
   def search
+<<<<<<< HEAD
     unless params[:search].nil?
       location = params[:search][:location]
       category = params[:search][:category]
       budget = params[:search][:budget]
 
       if (params[:search][:location] == "Berlin" && category == "all" && budget == '')
+=======
+
+      @night = Night.find(params[:night_id])
+
+      @location = @night.location
+      @category = @night.category
+      @budget = @night.budget
+
+      if (@location == "Berlin" && @category == "all" && @budget == '')
+>>>>>>> master
         @venues = Venue.all
-      elsif (params[:search][:location] == "Berlin" && category == "all" && budget == 'Broke')
+      elsif (@location == "Berlin" && @category == "all" && @budget == 'Broke')
         @venues = Venue.where(price_segment: "€")
-      elsif (params[:search][:location] == "Berlin" && category == "all" && budget == 'Reasonable')
+      elsif (@location == "Berlin" && @category == "all" && @budget == 'Reasonable')
         @venues = Venue.where(price_segment: "€€")
-      elsif (params[:search][:location] == "Berlin" && category == "all" && budget == 'Rich')
+      elsif (@location == "Berlin" && @category == "all" && @budget == 'Rich')
         @venues = Venue.where(price_segment: "€€€")
+<<<<<<< HEAD
       elsif params[:search][:location] == "Berlin" && category != "" && budget == "Broke"
         @venues = Venue.where(category: category, price_segment: "€")
       elsif params[:search][:location] == "Berlin" && category != "" && budget == "Reasonable"
@@ -34,6 +46,18 @@ class VenuesController < ApplicationController
       end
     end
   end
+=======
+      elsif @location == "Berlin" && @category != "" && @budget == "Broke"
+        @venues = Venue.where(category: @category, price_segment: "€")
+      elsif @location == "Berlin" && @category != "" && @budget == "Reasonable"
+        @venues = Venue.where(category: @category, price_segment: "€€")
+      elsif @location == "Berlin" && @category != "" && @budget == "Rich"
+        @venues = Venue.where(category: @category, price_segment: "€€€")
+      end
+  end
+
+
+>>>>>>> master
 
   def show
     @favourite = Favourite.new
@@ -44,4 +68,5 @@ class VenuesController < ApplicationController
   def find_venue
     @venue = Venue.find(params[:id])
   end
+
 end
