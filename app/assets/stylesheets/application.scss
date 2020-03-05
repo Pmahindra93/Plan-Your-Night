@@ -25,3 +25,16 @@
 @import "config/custom-layout";
 @import "config/custom-typography";
 
+
+@import "rails-social-share-button";
+
+$size: 24px;
+$color: black;
+.rails-social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    color: $color;
+  }
+}
