@@ -1,10 +1,9 @@
-<%= link_to "#" , class:"nav-icon", id:"back" do %>
+<%= link_to night_venues_path , class:"nav-icon", id:"back" do %>
   <i class="fas fa-chevron-left"></i>
 <% end %>
 <div class="d-flex align-items-center">
-  <%= link_to "#", class:"nav-icon" do %>
-    <i class="far fa-share-square"></i>
-  <% end %>
+
+  <%= rails_social_share_button_tag(@venue.name) %>
   <%= button_to venue_favourites_path(@venue), method: :post,  class:"nav-button nav-icon" do %>
     <i class="far fa-heart"></i>
   <% end %>

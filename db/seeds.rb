@@ -8,6 +8,7 @@
 
 puts "start"
 require 'open-uri'
+Favourite.delete_all
 Venue.delete_all
 User.delete_all
 Night.delete_all
@@ -17,8 +18,8 @@ solar = Venue.new(
   category: 'retro',
   name: 'solar bar',
   address: 'Stresemannstrasse 76, Berlin',
-  longitude: 0.0,
-  latitude: 0.0,
+  # longitude: 0.0,
+  # latitude: 0.0,
   opening_hours: '17:00 – 02:00 O’Clock',
   price_segment: '€€€',
   card_accepted: true,
@@ -36,8 +37,8 @@ matrix = Venue.new(
   category: 'retro',
   name: 'matrix',
   address: 'Charlottenstraße 34, Berlin',
-  longitude: 0.0,
-  latitude: 0.0,
+  # longitude: 0.0,
+  # latitude: 0.0,
   opening_hours: "20:00 – 06:00 O’Clock",
   price_segment: '€€€',
   card_accepted: false,
