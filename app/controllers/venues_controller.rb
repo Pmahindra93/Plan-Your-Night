@@ -18,26 +18,25 @@ class VenuesController < ApplicationController
   end
 
   def search
-
-      @night = Night.find(params[:night_id])
-      @location = @night.location
-      @category = @night.category
-      @budget = @night.budget
-      if (@location == "Berlin" && @category == "all" && @budget == '')
-        @venues = Venue.all
-      elsif (@location == "Berlin" && @category == "all" && @budget == 'Broke')
-        @venues = Venue.where(price_segment: "€")
-      elsif (@location == "Berlin" && @category == "all" && @budget == 'Reasonable')
-        @venues = Venue.where(price_segment: "€€")
-      elsif (@location == "Berlin" && @category == "all" && @budget == 'Rich')
-        @venues = Venue.where(price_segment: "€€€")
-      elsif @location == "Berlin" && @category != "" && @budget == "Broke"
-        @venues = Venue.where(category: @category, price_segment: "€")
-      elsif @location == "Berlin" && @category != "" && @budget == "Reasonable"
-        @venues = Venue.where(category: @category, price_segment: "€€")
-      elsif @location == "Berlin" && @category != "" && @budget == "Rich"
-        @venues = Venue.where(category: @category, price_segment: "€€€")
-      end
+    @night = Night.find(params[:night_id])
+    @location = @night.location
+    @category = @night.category
+    @budget = @night.budget
+    if (@location == "Berlin" && @category == "all" && @budget == '')
+      @venues = Venue.all
+    elsif (@location == "Berlin" && @category == "all" && @budget == 'Broke')
+      @venues = Venue.where(price_segment: "€")
+    elsif (@location == "Berlin" && @category == "all" && @budget == 'Reasonable')
+      @venues = Venue.where(price_segment: "€€")
+    elsif (@location == "Berlin" && @category == "all" && @budget == 'Rich')
+      @venues = Venue.where(price_segment: "€€€")
+    elsif @location == "Berlin" && @category != "" && @budget == "Broke"
+      @venues = Venue.where(category: @category, price_segment: "€")
+    elsif @location == "Berlin" && @category != "" && @budget == "Reasonable"
+      @venues = Venue.where(category: @category, price_segment: "€€")
+    elsif @location == "Berlin" && @category != "" && @budget == "Rich"
+      @venues = Venue.where(category: @category, price_segment: "€€€")
+    end
   end
 
 

@@ -1,1 +1,13 @@
-<p>hey</p>
+<h4 class="font-page" style="position: relative; left: 14px; top: 18px;">Your Plan for the Night:</h4>
+
+<% if @nights.present? %>
+  <% @nights.each do |night| %>
+    <div class="container mt-5">
+      <% night.venues.each do |venue| %>
+<%= render 'components/card-index', venue: venue  %>
+    </div>
+  <% end %>
+  <% end %>
+<% end %>
+
+

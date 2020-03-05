@@ -5,8 +5,12 @@ Rails.application.routes.draw do
 
 
   resources :nights, only: [:new, :create, :show] do
-    resources :venues, only: [:index, :show]
-    resources :night_venues, only: [:create]
+    resources :venues, only: [:index, :show] do
+      collection do
+        get 'clubs'
+      end
+    end
+     resources :night_venues, only: [:create]
   end
 
   resources :venues, except: [:index, :show] do

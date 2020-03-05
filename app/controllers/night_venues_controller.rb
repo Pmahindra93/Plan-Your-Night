@@ -8,4 +8,7 @@ class NightVenuesController < ApplicationController
     @night_venue.save!
     redirect_to @night
   end
+
+  def show
+  end
 end

@@ -14,6 +14,8 @@ class NightsController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @nights = @user.nights
   end
 
   private

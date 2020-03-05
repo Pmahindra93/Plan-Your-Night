@@ -4,6 +4,7 @@
       <%= cl_image_tag night.venues[0].photos[0].key %>
     <% else %>
       <%= image_tag asset_url('standard') %>
+      <% end %>
   </div>
   <div class="card-description">
     <h3><%= venue.name %></h3>
