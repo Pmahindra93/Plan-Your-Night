@@ -3,7 +3,7 @@
     <% if venue.photos.attached? %>
       <%= cl_image_tag venue.photos[0].key %>
     <% else %>
-      <%= image_tag asset_url('standard') %>
+      <%= cl_image_tag("standard_jiqx6k") %>
       <% end %>
   </div>
   <div class="card-description">
