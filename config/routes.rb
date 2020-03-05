@@ -16,6 +16,9 @@ Rails.application.routes.draw do
       resources :nights, only: [:update]
       resources :venue_reviews, only: :create
     end
+     member do
+      get :night_save
+     end
      resources :night_venues, only: [:create]
   end
 

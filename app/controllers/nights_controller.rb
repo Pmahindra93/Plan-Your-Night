@@ -1,4 +1,6 @@
 class NightsController < ApplicationController
+  before_action :find_night, only: [:show, :night_save]
+  before_action :find_user, only: [:show, :night_save]
   def new
     @night = Night.new
   end
@@ -14,8 +16,11 @@ class NightsController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @night = Night.find(params[:id])
+  end
+
+  def night_save
+    @user.nights << @night
+    redirect_to user_path(@user)
   end
 
   def update
@@ -35,5 +40,13 @@ class NightsController < ApplicationController
 
   def night_params
     params.require(:night).permit(:location, :category, :budget)
+  end
+
+  def find_night
+    @night = Night.find(params[:id])
+  end
+
+  def find_user
+    @user = current_user
   end
 end
