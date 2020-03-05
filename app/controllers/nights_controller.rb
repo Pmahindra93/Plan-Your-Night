@@ -1,4 +1,6 @@
 class NightsController < ApplicationController
+  before_action :find_night, only: [:show, :night_save]
+  before_action :find_user, only: [:show, :night_save]
   def new
     @night = Night.new
   end
@@ -14,13 +16,37 @@ class NightsController < ApplicationController
   end
 
   def show
-    @user = current_user
-    @nights = @user.nights
+  end
+
+  def night_save
+    @user.nights << @night
+    redirect_to user_path(@user)
+  end
+
+  def update
+    @night = Night.find(params[:night_id])
+    @venue = Venue.find(params[:venue_id])
+    @night.venues << @venue
+    @night.save
+
+    if @venue.venue_type == "bar"
+      redirect_to clubs_night_venues_path
+    else
+      redirect_to night_path(@night)
+    end
   end
 
   private
 
   def night_params
     params.require(:night).permit(:location, :category, :budget)
+  end
+
+  def find_night
+    @night = Night.find(params[:id])
+  end
+
+  def find_user
+    @user = current_user
   end
 end
