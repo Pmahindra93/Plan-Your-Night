@@ -5,7 +5,7 @@
         <% if @user.photo.attached? %>
           <%= cl_image_tag @user.photo.key, class:'avatar-large' %>
         <% else %>
-          <%= image_tag asset_url('empty-avatar'), class:'avatar-large' %>
+          <%= cl_image_tag("empty-avatar_fjtvit"), class:'avatar-large' %>
         <% end %>
         <p class="bold-lg"><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
       </div>
