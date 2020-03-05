@@ -1,54 +1,53 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 puts "start"
 require 'open-uri'
+require 'json'
 Venue.delete_all
 User.delete_all
 Night.delete_all
 
-solar = Venue.new(
-  venue_type: 'bar',
-  category: 'retro',
-  name: 'solar bar',
-  address: 'Stresemannstrasse 76, Berlin',
-  longitude: 0.0,
-  latitude: 0.0,
-  opening_hours: '17:00 – 02:00 O’Clock',
-  price_segment: '€€€',
-  card_accepted: true,
-  description: 'Unser einmaliger Außenfahrstuhl führt aus dem Eingangsbereich im Erdgeschoss direkt ins Restaurant in 70 Meter Höhe im Himmel über Berlin.'
-)
+location = "Berlin"
+client_id = ENV['CLIENT_ID']
+client_secret = ENV['CLIENT_SECRET']
+v = '20180323'
+core = "https://api.foursquare.com/v2/venues/explore?client_id=#{client_id}&client_secret=#{client_secret}&v=#{v}&limit=5&near=#{location}&categoryId="
+search_url = "https://de.foursquare.com/explore?mode=url&near=Berlin%2C%20Deutschland&nearGeoId=72057594040878095&q="
 
-solar1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1583229290/solar_mdtetd.jpg')
-solar2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1583229342/solar2_uasmi8.jpg')
-solar.photos.attach(io: solar1, filename: 'solar.jpg', content_type: 'image/jpg')
-solar.photos.attach(io: solar2, filename: 'solar1.jpg', content_type: 'image/jpg')
-solar.save
+bar_id = '4bf58dd8d48988d116941735'
+bar_url = "#{core}#{bar_id}"
 
-matrix = Venue.new(
-  venue_type: 'club',
-  category: 'retro',
-  name: 'matrix',
-  address: 'Charlottenstraße 34, Berlin',
-  longitude: 0.0,
-  latitude: 0.0,
-  opening_hours: "20:00 – 06:00 O’Clock",
-  price_segment: '€€€',
-  card_accepted: false,
-  description: 'Unser einmaliger Außenfahrstuhl führt aus dem Eingangsbereich im Erdgeschoss direkt ins Restaurant in 70 Meter Höhe im Himmel über Berlin. Ein spektakuläres 270-Grad-Panorama trifft bei uns auf gemütliches und urbanes Design. Von jedem Platz aus beobachtet man den wunderschönen Sonnenuntergang und das nächtliche, bunt strahlende Lichtermeer der Hauptstadt.'
-)
-matrix1 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1583229930/matrix1_weg4lx.jpg')
-matrix2 = URI.open('https://res.cloudinary.com/bjarnehinkel/image/upload/v1583229933/matrix2_zcsote.jpg')
-matrix.photos.attach(io: matrix1, filename: 'matrix1.jpg', content_type: 'image/jpg')
-matrix.photos.attach(io: matrix2, filename: 'matrix2.jpg', content_type: 'image/jpg')
-matrix.save
+club_id = '4bf58dd8d48988d11f941735'
+club_url = "#{core}#{club_id}"
+
+response_bar = open(bar_url).read
+bars = JSON.parse(response_bar)
+
+bars["response"]["groups"][0]["items"].each do |item|
+  bar = Venue.new(
+    venue_type: 'bar',
+    category: ['Modern','Retro','Alternative','Adult','High-End','Casual'].sample,
+    name: item["venue"]["name"],
+    address: "#{item["venue"]["location"]["formattedAddress"][0]}, #{item["venue"]["location"]["formattedAddress"][1]}",
+    opening_hours: '17:00 - 02:00',
+    price_segment: ['€', '€€', '€€€'].sample,
+    card_accepted: [true, false].sample,
+  )
+  bar.save!
+end
+
+response_club = open(club_url).read
+clubs = JSON.parse(response_club)
+
+clubs["response"]["groups"][0]["items"].each do |item|
+  club = Venue.new(
+    venue_type: 'club',
+    category: rand_category = ['Modern','Retro','Alternative','Adult','High-End','Casual'].sample,
+    name: item["venue"]["name"],
+    address: "#{item["venue"]["location"]["formattedAddress"][0]}, #{item["venue"]["location"]["formattedAddress"][1]}",
+    opening_hours: '20:00 - 06:00',
+    price_segment: ['€', '€€', '€€€'].sample,
+    card_accepted: [true, false].sample,
+  )
+  club.save!
+end
 
 puts "finish"
-
-
