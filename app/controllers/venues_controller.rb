@@ -45,6 +45,13 @@ class VenuesController < ApplicationController
     @favourite = Favourite.new
     @night = Night.find(params[:night_id])
     @night_venue = NightVenue.new
+
+    @reviews = VenueReview.where(venue_id: @venue)
+    @review = VenueReview.new()
+  end
+
+  def blank_stars
+      5 - @review.rating
   end
 
   private

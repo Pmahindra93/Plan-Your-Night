@@ -22,17 +22,7 @@
       <div class="col-12">
         <div class="hidden content" data-info-type="acc-info">
           <p class="content-title">Account Info</p>
-          <div>
-            <p class="bold-lg">Name:</p>
-            <p><%= @user.first_name %> <%= @user.last_name %></p>
-            <p class="bold-lg">Email:</p>
-            <p><%= @user.email %></p>
-            <div id="change-links">
-              <%= link_to 'Change Accout Info', edit_user_registration_path %>
-              <br>
-              <%= link_to 'Change Password', edit_user_password_path %>
-            </div>
-          </div>
+          <%= render 'components/account-info', user: @user %>
         </div>
         <div class="hidden content" data-info-type="nightout">
           <p class="content-title">Your nightouts</p>
@@ -40,15 +30,7 @@
             <% @nightouts.each do |nightout| %>
               <div class="row">
                 <div class="col-12">
-                  <div class="night-box">
-                    <div class="d-flex align-items-baseline">
-                      <p class="content-title" id="night-date"><%= nightout.created_at.strftime("%FT%T") %></p>
-                      <i class="far fa-share-square"></i>
-                    </div>
-                    <% nightout.venues.each do |venue| %>
-                      <%= render 'components/card-dashboard', venue: venue %>
-                    <% end %>
-                  </div>
+                  <%= render 'components/night-card', nightout: nightout %>
                 </div>
               </div>
             <% end %>
