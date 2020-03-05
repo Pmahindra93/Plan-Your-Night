@@ -68,50 +68,16 @@
     <div id="description">
       <p class="light"><%= @venue.description %></p>
     </div>
-    <%= simple_form_for([@night, @night_venue]) do |f| %>
+<!--     <%= simple_form_for([@night, @night_venue]) do |f| %>
       <%= f.input :venue_id, input_html: {value: @venue.id}, as: :hidden%>
       <%= f.submit %>
-    <% end %>
-
-    <%= button_to night_night_venues_path(@venue), method: :post,  class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
-      <p><strong>Add to Night Out</strong></p>
-    <% end %>
-<br>
-
-<!--     <%= link_to '#', class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
-      <p><strong>Add to Night Out</strong></p>
     <% end %> -->
+
+
+
+       <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
+          <p><strong>Add to Night Out</strong></p>
+       <% end %>
+
   </div>
 
-  <!-- CONTAINER FOR THE REVIEWS -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4">
-        <% @reviews.each do |review| %>
-          <% review.rating.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% review.blank_stars.times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-          <p> <%= review.content %> </p>
-        <% end %>
-      </div>
-    </div>
-  </div>
-
-
-
-  <!-- CONTAINER FOR THE REVIEW FORM -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4">
-        <%= simple_form_for [@venue, @review ] do |f| %>
-          <%= f.input :content %>
-          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-          <%= f.submit "Send your review" %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-</div>

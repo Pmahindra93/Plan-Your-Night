@@ -13,14 +13,18 @@ Rails.application.routes.draw do
       collection do
         get 'clubs'
       end
+      resources :nights, only: [:update]
+      resources :venue_reviews, only: :create
     end
+     member do
+      get :night_save
+     end
      resources :night_venues, only: [:create]
   end
 
 
-  resources :venues, only: [:show] do
+  resources :venues do
     resources :favourites, only: :create
-    resources :venue_reviews, only: :create
   end
   resources :venue_reviews, only: [:edit, :update]
 
