@@ -1,4 +1,4 @@
-<%= simple_form_for [@venue, @review ] do |f| %>
+<%= simple_form_for [@night, @venue, @review ] do |f| %>
   <%= f.input :content, label: "Write a review"  %>
   <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
   <%= f.submit "Send your review" %>

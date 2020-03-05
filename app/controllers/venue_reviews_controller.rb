@@ -27,7 +27,7 @@ class VenueReviewsController < ApplicationController
 
     def create
 
-      # @night = Night.find(params["night_id"]) ;
+      @night = Night.find(params["night_id"]) ;
       @venue = Venue.find(params["venue_id"]) ;
 
       @review = VenueReview.new(review_params)
@@ -36,7 +36,7 @@ class VenueReviewsController < ApplicationController
       @review.user = current_user
 
       if @review.save
-        redirect_to venue_path(@venue)
+        redirect_to night_venue_path(@night, @venue)
       else
         flash[:alert] = "Something went wrong."
         redirect_to root_path
