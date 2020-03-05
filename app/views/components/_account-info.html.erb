@@ -1,0 +1,11 @@
+<div>
+  <p class="bold-lg">Name:</p>
+  <p><%= user.first_name %> <%= user.last_name %></p>
+  <p class="bold-lg">Email:</p>
+  <p><%= user.email %></p>
+  <div id="change-links">
+    <%= link_to 'Change Accout Info', edit_user_registration_path %>
+    <br>
+    <%= link_to 'Change Password', edit_user_password_path %>
+  </div>
+</div>

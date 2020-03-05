@@ -1,0 +1,11 @@
+<div class="night-box">
+  <div class="d-flex align-items-baseline mb-2">
+    <p id="night-date"><%= night.created_at.strftime("%A, %d.%m.%Y") %></p>
+    <%= link_to '#', id:'share-night' do %>
+      <i class="far fa-share-square"></i>
+    <% end %>
+  </div>
+  <% night.venues.each do |venue| %>
+    <%= render 'components/card-dashboard', venue: venue %>
+  <% end %>
+</div>
