@@ -27,8 +27,11 @@ class VenueReviewsController < ApplicationController
 
     def create
 
+      # @night = Night.find(params["night_id"]) ;
       @venue = Venue.find(params["venue_id"]) ;
+
       @review = VenueReview.new(review_params)
+
       @review.venue = @venue
       @review.user = current_user
 

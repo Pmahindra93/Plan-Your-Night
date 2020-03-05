@@ -45,7 +45,9 @@
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
         <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
+        <i class="far fa-star"></i> <p> <%= link_to(@venue.venue_reviews.length, :anchor => "my-reviews") %> </p>
+
+<!--       @venue.venue_reviews.length -->
       </div>
       <p class="pl-1 mb-1"><%= @venue.venue_type %>, <%= @venue.category  %></p>
     </div>
@@ -68,14 +70,7 @@
     <div id="description">
       <p class="light"><%= @venue.description %></p>
     </div>
-    <%= simple_form_for([@night, @night_venue]) do |f| %>
-      <%= f.input :venue_id, input_html: {value: @venue.id}, as: :hidden%>
-      <%= f.submit %>
-    <% end %>
 
-    <%= button_to night_night_venues_path(@venue), method: :post,  class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
-      <p><strong>Add to Night Out</strong></p>
-    <% end %>
 <br>
 
 <!--     <%= link_to '#', class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
@@ -84,9 +79,10 @@
   </div>
 
   <!-- CONTAINER FOR THE REVIEWS -->
-  <div class="container">
+  <div class="container" id="my-reviews">
     <div class="row">
       <div class="col-xs-4">
+
         <% @reviews.each do |review| %>
           <% review.rating.times do %>
             <i class="fas fa-star"></i>
