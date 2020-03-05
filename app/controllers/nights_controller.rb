@@ -15,7 +15,20 @@ class NightsController < ApplicationController
 
   def show
     @user = current_user
-    @nights = @user.nights
+    @night = Night.find(params[:id])
+  end
+
+  def update
+    @night = Night.find(params[:night_id])
+    @venue = Venue.find(params[:venue_id])
+    @night.venues << @venue
+    @night.save
+
+    if @venue.venue_type == "bar"
+      redirect_to clubs_night_venues_path
+    else
+      redirect_to night_path(@night)
+    end
   end
 
   private
