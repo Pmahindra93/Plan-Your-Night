@@ -1,6 +1,8 @@
 html {
   box-sizing: border-box;
-  // font-size: 16px;
+  // scroll-behavior doesn work for Safari, only Chrome
+  // if you want to do scroll-behavior for Safari, you need to use JS
+  scroll-behavior: smooth;
 }
 
 *, *:before, *:after {

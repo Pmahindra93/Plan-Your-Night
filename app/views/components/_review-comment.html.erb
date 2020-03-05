@@ -1,0 +1,26 @@
+<% @reviews.each do |review| %>
+
+    <div class="d-flex align-items-center border-top pt-3 mt-3">
+      <div class="">
+        <p> <%= image_tag review.user.photo, class: "user-pic" %>  </p>
+      </div>
+      <div class="pl-3">
+        <p> <%= review.user.first_name %> <%= review.user.last_name %>  </p>
+        <div> <!-- div stars -->
+        <% review.rating.times do %>
+          <i class="fas fa-star"></i>
+        <% end %>
+        <% review.blank_stars.times do %>
+          <i class="far fa-star"></i>
+        <% end %>
+        </div>
+      </div>
+    </div>
+
+  <div class="review-content mt-3 px-4 py-3">
+    <p> <span class="quotes">"</span> <%= review.content %> </p>
+  </div>
+<% end %>
+
+
+
