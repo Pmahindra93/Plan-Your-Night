@@ -1,0 +1,11 @@
+<% @reviews.each do |review| %>
+  <p> <%= image_tag review.user.photo, height: 50, width: 50, class: "" %></p>
+  <p> <%= review.user.first_name %> <%= review.user.last_name %>  </p>
+  <% review.rating.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+  <% review.blank_stars.times do %>
+    <i class="far fa-star"></i>
+  <% end %>
+  <p> <%= review.content %> </p>
+<% end %>
