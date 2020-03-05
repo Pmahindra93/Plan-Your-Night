@@ -4,17 +4,16 @@ import { initStarRating } from '../plugins/init_star_rating';
 initStarRating();
 
 import "bootstrap";
-// import { toggleActive } from 'components/dashboard';
+
 import { initAutocomplete } from 'plugins/init_autocomplete';
+initAutocomplete();
 
 $('.carousel').carousel({
   touch: true,
   interval: false,
 })
 
-import { toggleActive } from 'components/dashboard';
 
+import { toggleActive } from 'components/dashboard';
 toggleActive();
 
-// toggleActive();
-initAutocomplete()
