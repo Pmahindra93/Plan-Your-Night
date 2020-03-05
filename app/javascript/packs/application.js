@@ -12,5 +12,9 @@ $('.carousel').carousel({
   interval: false,
 })
 
+import { toggleActive } from 'components/dashboard';
+
+toggleActive();
+
 // toggleActive();
 initAutocomplete()
