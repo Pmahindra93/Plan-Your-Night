@@ -3,9 +3,9 @@
     <div class="col-12 menu">
       <div class="text-center">
         <% if @user.photo.attached? %>
-          <%= cl_image_tag @user.photo.key, class:'avatar-large' %>
+          <%= cl_image_tag @user.photo.key, :width => 150, :height => 150, :radius => "max" %>
         <% else %>
-          <%= cl_image_tag("empty-avatar_fjtvit"), class:'avatar-large' %>
+          <%= cl_image_tag("empty-avatar_fjtvit", :width => 150, :height => 150, :radius => "max")  %>
         <% end %>
         <p class="bold-lg"><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
       </div>
