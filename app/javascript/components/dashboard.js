@@ -1,4 +1,4 @@
-const menu = document.querySelectorAll('.menu-list');
+const menu = document.querySelectorAll('.menu-item');
 const contents = document.querySelectorAll('.content');
 
 const hideContent = () => {
