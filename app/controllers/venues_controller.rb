@@ -13,25 +13,26 @@ class VenuesController < ApplicationController
 
   def search
     @night = Night.find(params[:night_id])
-    @venues = Venue.near(@night.location, 10)
+    @venue = Venue.near(@night.location,10)
     @category = @night.category
     @budget = @night.budget
-    if (@location != "" && @category == "all" && @budget == '')
-      @venues = @venues.all
-    elsif (@location != "" && @category == "all" && @budget == 'Broke')
-      @venues = @venues.where(price_segment: "€")
-    elsif (@location != "" && @category == "all" && @budget == 'Reasonable')
-      @venues = @venues.where(price_segment: "€€")
-    elsif (@location != "" && @category == "all" && @budget == 'Rich')
-      @venues = @venues.where(price_segment: "€€€")
-    elsif @location != "" && @category != "" && @budget == "Broke"
-      @venues = @venues.where(category: @category, price_segment: "€")
-    elsif @location != "" && @category != "" && @budget == "Reasonable"
-      @venues = @venues.where(category: @category, price_segment: "€€")
-    elsif @location != "" && @category != "" && @budget == "Rich"
-      @venues = @venues.where(category: @category, price_segment: "€€€")
+    if (@category == "all" && @budget == '')
+      @venues = @venue.all
+    elsif (@category == "all" && @budget == 'Broke')
+      @venues = @venue.where(price_segment: "€")
+    elsif (@category == "all" && @budget == 'Reasonable')
+      @venues = @venue.where(price_segment: "€€")
+    elsif (@category == "all" && @budget == 'Rich')
+      @venues = @venue.where(price_segment: "€€€")
+    elsif  (@category != '') && (@budget == "Broke")
+      @venues = @venue.where(category: @category, price_segment: "€")
+    elsif (@category != '') && (@budget == "Reasonable")
+      @venues = @venue.where(category: @category, price_segment: "€€")
+    elsif (@category != '') && (@budget == "Rich")
+      @venues = @venue.where(category: @category, price_segment: "€€€")
     end
   end
+
 
   def show
     @favourite = Favourite.new

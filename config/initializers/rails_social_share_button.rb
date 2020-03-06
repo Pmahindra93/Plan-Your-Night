@@ -1,3 +1,3 @@
 RailsSocialShareButton.configure do |config|
-  config.allow_sites = %w(facebook twitter)
+  config.allow_sites = %w(twitter)
 end
