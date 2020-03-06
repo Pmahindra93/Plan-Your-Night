@@ -34,7 +34,6 @@ end
 bars["response"]["groups"][0]["items"].each do |item|
   desc_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}/tips?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=#{V}").read
   desc = JSON.parse(desc_url)
-
   image_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}/photos?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=#{V}").read
   image = JSON.parse(image_url)
   puts item["venue"]["name"]
@@ -58,33 +57,31 @@ bars["response"]["groups"][0]["items"].each do |item|
   bar.save!
 end
 
-# response_club = open(club_url).read
-# clubs = JSON.parse(response_club)
+response_club = open(club_url).read
+clubs = JSON.parse(response_club)
 
-# clubs["response"]["groups"][0]["items"].each do |item|
-#   desc_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}/tips?client_id=#{client_id}&client_secret=#{client_secret}&v=#{v}").read
-#   desc = JSON.parse(desc_url)
-#   hours_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}/hours?client_id=#{client_id}&client_secret=#{client_secret}&v=#{v}").read
-#   hours = JSON.parse(hours_url)
-#   image_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}/photos?client_id=#{client_id}&client_secret=#{client_secret}&v=#{v}").read
-#   image = JSON.parse(image_url)
-#   club = Venue.new(
-#     venue_type: 'club',
-#     category: ['Modern','Retro','Alternative','Adult','High-End','Casual'].sample,
-#     name: item["venue"]["name"],
-#     address: "#{item["venue"]["LOCATION"]["formattedAddress"][0]}, #{item["venue"]["LOCATION"]["formattedAddress"][1]}",
-#     opening_hours: "#{hours["response"]["hours"]["timeframes"][0]["open"][0]["start"]} - #{hours["response"]["hours"]["timeframes"][0]["open"][0]["end"]}",
-#     price_segment: ['€', '€€', '€€€'].sample,
-#     card_accepted: [true, false].sample,
-#     description: desc["response"]["tips"]["items"][0]["text"]
-#   )
-#   prefix = image["response"]["photos"]["items"][0]["prefix"]
-#   width = image["response"]["photos"]["items"][0]["width"]
-#   height = image["response"]["photos"]["items"][0]["height"]
-#   suffix = image["response"]["photos"]["items"][0]["suffix"]
-#   file = URI.open("#{prefix}#{width}x#{height}#{suffix}")
-#   club.photos.attach(io: file, filename: "#{item["venue"]["name"]}.jpg", content_type: 'image/jpg')
-#   club.save!
-# end
+clubs["response"]["groups"][0]["items"].each do |item|
+  desc_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}/tips?client_id=#{client_id}&client_secret=#{client_secret}&v=#{v}").read
+  desc = JSON.parse(desc_url)
+  image_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}/photos?client_id=#{client_id}&client_secret=#{client_secret}&v=#{v}").read
+  image = JSON.parse(image_url)
+  club = Venue.new(
+    venue_type: 'club',
+    category: ['Modern','Retro','Alternative','Adult','High-End','Casual'].sample,
+    name: item["venue"]["name"],
+    address: "#{item["venue"]["location"]["formattedAddress"][0]}, #{item["venue"]["location"]["formattedAddress"][1]}",
+    opening_hours: hours_find(item["venue"]["id"]),
+    price_segment: ['€', '€€', '€€€'].sample,
+    card_accepted: [true, false].sample,
+    description: desc["response"]["tips"]["items"][0]["text"]
+  )
+  prefix = image["response"]["photos"]["items"][0]["prefix"]
+  width = image["response"]["photos"]["items"][0]["width"]
+  height = image["response"]["photos"]["items"][0]["height"]
+  suffix = image["response"]["photos"]["items"][0]["suffix"]
+  file = URI.open("#{prefix}#{width}x#{height}#{suffix}")
+  club.photos.attach(io: file, filename: "#{item["venue"]["name"]}.jpg", content_type: 'image/jpg')
+  club.save!
+end
 
 puts "finish"
