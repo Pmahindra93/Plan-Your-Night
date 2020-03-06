@@ -2,6 +2,7 @@
   background: white;
   box-shadow: 0 2px 5px rgba(33,32,50,0.2);
   overflow: hidden;
+  margin-bottom: 40px;
   // border-radius: 10px;
 }
 
@@ -31,6 +32,10 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+
+.ct-text-12 {
+  font-size: 12px;
 }
 
 // .card-trip-infos .card-trip-user {
