@@ -1,9 +1,12 @@
 <div class="night-box">
   <div class="d-flex align-items-baseline mb-2">
     <p id="night-date"><%= night.created_at.strftime("%A, %d.%m.%Y") %></p>
-    <%= link_to '#', id:'share-night' do %>
-      <i class="far fa-share-square"></i>
-    <% end %>
+    <a class="js-social-share facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= yield :url %>" target="_blank">
+      <i class="fab fa-facebook-square" id="facebook"></i>
+    </a>
+    <a class="js-social-share twitter" href="https://twitter.com/intent/tweet?text="<%= yield :title %>"&url=<%= yield :url %>&via=twitter" target="_blank">
+      <i class="fab fa-twitter-square" id="twitter"></i>
+    </a>
   </div>
   <% night.venues.each do |venue| %>
     <%= render 'components/card-dashboard', venue: venue %>
