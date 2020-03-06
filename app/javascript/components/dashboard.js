@@ -1,7 +1,4 @@
-// // find the item with the same data target as the thing clicked
-//  // remove the hidden class from its content
-
-const menu = document.querySelectorAll('.menu-list');
+const menu = document.querySelectorAll('.menu-item');
 const contents = document.querySelectorAll('.content');
 
 const hideContent = () => {
@@ -29,6 +26,10 @@ const toggleActive = () => {
   });
  }
 };
+
+
+
+
 
 
 export { toggleActive };

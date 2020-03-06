@@ -1,3 +1,4 @@
+
 <div class="container mt-5 ">
   <!-- CARDS LAYOUT -->
   <div class="row">
@@ -11,7 +12,7 @@
       <% else %>
         <h6 class="align-middle text-primary"> <span class="ct-circle bg-primary text-light align-middle">1</span> Choose your bar</h6>
         <% @bars.each do |venue| %>
-          <%= link_to night_venue_path(@night, venue) do %>
+          <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
             <%= render 'components/card-index', venue: venue  %>
           <% end %>
         <% end %>

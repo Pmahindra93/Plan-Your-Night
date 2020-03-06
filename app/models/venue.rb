@@ -8,7 +8,7 @@ class Venue < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
-  def budget
+  def spend
     if price_segment == "€"
       return "Avg.spend: 30€/p"
     elsif price_segment == "€€"
