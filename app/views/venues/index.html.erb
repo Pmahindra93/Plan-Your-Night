@@ -4,10 +4,10 @@
     <div class="col-12">
 
       <% if @venues.empty? %>
-        <div class="text-center">
+        <!-- <div class="text-center"> -->
           <h3>No Search Results</h3>
           <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
-        </div>
+        <!-- </div> -->
       <% else %>
         <h6 class="align-middle text-primary"> <span class="ct-circle bg-primary text-light align-middle">1</span> Choose your bar</h6>
         <% @bars.each do |venue| %>
@@ -15,17 +15,14 @@
             <%= render 'components/card-index', venue: venue  %>
           <% end %>
         <% end %>
+        <!-- FIXED BTN LAYOUT -->
+        <div class="relative">
+          <%= link_to 'Skip this step', clubs_night_venues_path, class: "btn btn-primary btn-block ct-btn ct-fixed-btn "%>
+        </div>
       <% end %>
+
     </div>
   </div>
-  <!-- FIXED BTN LAYOUT -->
-  <div class="row">
-    <div class="col-12">
-      <%= link_to 'Skip this step', clubs_night_venues_path, class: "btn btn-primary ct-btn ct-fixed-btn ", id: "skip-btn" %>
-    </div>
-  </div>
-
-
 </div>
 
 
