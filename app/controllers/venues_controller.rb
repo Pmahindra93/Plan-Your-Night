@@ -33,6 +33,7 @@ class VenuesController < ApplicationController
     end
   end
 
+
   def show
     @favourite = Favourite.new
     @night = Night.find(params[:night_id])
