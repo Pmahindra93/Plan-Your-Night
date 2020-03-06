@@ -1,15 +1,24 @@
 <% @reviews.each do |review| %>
 
     <div class="d-flex align-items-center border-top pt-3 mt-3">
+<<<<<<< HEAD
 <!--  -->
       <div class="pl-3">
+=======
+        <% if review.user.photo.attached? %>
+            <%= cl_image_tag review.user.photo.key, class: "user-pic" %>
+        <% else %>
+          <%= cl_image_tag ("empty-avatar_fjtvit"), class: "user-pic"%>
+        <% end %>
+    <div class="pl-3">
+>>>>>>> master
         <p> <%= review.user.first_name %> <%= review.user.last_name %>  </p>
         <div> <!-- div stars -->
         <% review.rating.times do %>
-          <i class="fas fa-star"></i>
+          <i class="fas fa-star star-color"></i>
         <% end %>
         <% review.blank_stars.times do %>
-          <i class="far fa-star"></i>
+          <i class="far fa-star star-color"></i>
         <% end %>
         </div>
       </div>

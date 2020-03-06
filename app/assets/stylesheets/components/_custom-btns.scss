@@ -4,13 +4,15 @@
 
 // Custom CONTAINED & OUTLINED Btn
 .ct-btn {
-   border-radius: 5px;
-   font-size: 14px;
-   font-weight: 500;
-   letter-spacing: 1px;
-   text-transform: uppercase;
-   padding: 10px 15px;
-   box-shadow: 0 2px 2px rgba(33,32,50, 0.2);
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  // padding: 10px 15px;
+  box-shadow: 0 2px 2px rgba(33,32,50, 0.2);
+  // width: 93%; // dirty fix here, need to repair!
+  width: 335px;
 }
 
 //Custom TEXT Btn
@@ -29,11 +31,33 @@
   background: white;
 }
 
-#skip-btn{
-  position: absolute;
-  top: 620px;
-  left: 19px;
-  border-radius: 5px;
-  width: 90%
+// #skip-btn{
+//   position: absolute;
+//   top: 620px;
+//   left: 19px;
+//   border-radius: 5px;
+//   width: 90%
+// }
 
+.ct-sticky-btn {
+  position: sticky;
+  top: 20px;
+  z-index: 20;
 }
+
+.ct-fixed-btn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 15;
+}
+
+
+
+
+
+
+
+
+
+
