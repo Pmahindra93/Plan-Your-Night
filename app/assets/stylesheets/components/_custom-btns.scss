@@ -35,5 +35,10 @@
   left: 19px;
   border-radius: 5px;
   width: 90%
+}
 
+.ct-sticky-btn {
+  position: sticky;
+  top: 20px;
+  z-index: 20;
 }
