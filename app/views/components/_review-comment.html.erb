@@ -1,9 +1,7 @@
 <% @reviews.each do |review| %>
 
     <div class="d-flex align-items-center border-top pt-3 mt-3">
-      <div class="">
-        <p> <%= image_tag review.user.photo, class: "user-pic" %>  </p>
-      </div>
+<!--  -->
       <div class="pl-3">
         <p> <%= review.user.first_name %> <%= review.user.last_name %>  </p>
         <div> <!-- div stars -->
