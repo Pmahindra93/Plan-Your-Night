@@ -23,10 +23,17 @@
     </div>
   </div>
 
+ <a class="js-social-share facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= yield :url %>" target="_blank">
+ <i class="fab fa-facebook-f"></i>
+ </a>
+ <a class="js-social-share twitter" href="https://twitter.com/intent/tweet?text=<%= yield :title %>&url=<%= yield :url %>&via=twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+
   <!-- BUTTON ADD-TO-NIGHT -->
   <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary ct-btn btn-block ct-sticky-btn', id:'add-btn' do %>
     <p><strong>Add to Night Out</strong></p>
   <% end %>
+
+
 
   <!-- ROW FOR THE REVIEWS COMMENTS -->
   <div class="row mt-5" id="my-reviews">
