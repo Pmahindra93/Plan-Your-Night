@@ -6,4 +6,15 @@ class Venue < ApplicationRecord
   has_many :nights, through: :night_venues
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+
+  def budget
+    if price_segment == "€"
+      return "Avg.spend: 30€/p"
+    elsif price_segment == "€€"
+      return "Avg.spend: 50€/p"
+    elsif price_segment == "€€€"
+      return "Avg.spend: 90€/p"
+    end
+  end
+
 end
