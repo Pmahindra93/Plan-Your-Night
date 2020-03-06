@@ -23,6 +23,11 @@
     </div>
   </div>
 
+  <!-- BUTTON ADD-TO-NIGHT -->
+  <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary ct-btn btn-block ct-sticky-btn', id:'add-btn' do %>
+    <p><strong>Add to Night Out</strong></p>
+  <% end %>
+
   <!-- ROW FOR THE REVIEWS COMMENTS -->
   <div class="row mt-5" id="my-reviews">
     <div class="col-12">
@@ -36,12 +41,5 @@
       <%= render 'components/review-form' %>
     </div>
   </div>
-
-<br>
-
-  <!-- BUTTON ADD-TO-NIGHT -->
-  <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
-    <p><strong>Add to Night Out</strong></p>
-  <% end %>
 
 </div>
