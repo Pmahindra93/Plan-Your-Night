@@ -3,7 +3,8 @@ class Venue < ApplicationRecord
   has_many :night_venues, dependent: :destroy
   has_many :favourites, dependent: :destroy
   has_many :venue_reviews, dependent: :destroy
-  has_many :nights, through: :night_venues
+  has_many :night_venues, dependent: :destroy
+  has_many :nights, through: :night_venues, dependent: :destroy
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -16,5 +17,4 @@ class Venue < ApplicationRecord
       return "Avg.spend: 90€/p"
     end
   end
-
 end
