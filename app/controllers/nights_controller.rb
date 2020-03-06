@@ -1,34 +1,6 @@
 class NightsController < ApplicationController
-  # def index
-  #   @user = current_user
-  #   @nights = @user.nights
-  # end
-
-  # def new
-  #   @nights = Night.new
-  #   @venue = Venue.find(params[:venue_id])
-  # end
-
-  # def create
-  #   @night = Night.new(night_params)
-  #   @user = current_user
-  #   @night.user = @user
-  #   @venue = Venue.find(params[:venue_id])
-  #   @night.venue = @venue
-  #   # @night.total_price_segment = @night.days * @night.listing.price if @night.days
-  #   if @night.save
-  #     redirect_to user_path(@user)
-  #   else
-  #     render :new
-  #   end
-  # end
-
-
-  # private
-
-  # def night_params
-  #   params.require(:night).permit(:total_price_segment)
-  # end
+  before_action :find_night, only: [:show, :night_save]
+  before_action :find_user, only: [:show, :night_save]
   def new
     @night = Night.new
   end
@@ -43,10 +15,38 @@ class NightsController < ApplicationController
     end
   end
 
+  def show
+  end
+
+  def night_save
+    @user.nights << @night
+    redirect_to user_path(@user)
+  end
+
+  def update
+    @night = Night.find(params[:night_id])
+    @venue = Venue.find(params[:venue_id])
+    @night.venues << @venue
+    @night.save
+
+    if @venue.venue_type == "bar"
+      redirect_to clubs_night_venues_path
+    else
+      redirect_to night_path(@night)
+    end
+  end
 
   private
 
   def night_params
     params.require(:night).permit(:location, :category, :budget)
+  end
+
+  def find_night
+    @night = Night.find(params[:id])
+  end
+
+  def find_user
+    @user = current_user
   end
 end

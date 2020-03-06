@@ -1,0 +1,35 @@
+<h2><%= @venue.name.capitalize %></h2>
+<h6 class="mb-1"><strong><%= @venue.budget %></strong></h6>
+<div class="d-flex align-items-baseline">
+  <div class="d-flex star-color">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="far fa-star"></i> <p> <%= link_to(@venue.venue_reviews.length, :anchor => "my-reviews") %> </p>
+  </div>
+  <p class="pl-1 mb-1"><%= @venue.venue_type %>, <%= @venue.category  %></p>
+</div>
+
+<div class="d-flex align-items-center">
+  <i class="fas fa-map-marker-alt text-primary" id="marker"></i>
+  <p class="pl-1"><%= @venue.address %></p>
+</div>
+
+<div class="d-flex align-items-center" id="info">
+  <p class="light">Opening Hours</p>
+  <p class="pl-1"><%= @venue.opening_hours %></p>
+</div>
+
+<div class="d-flex align-items-center">
+  <p class="light">Card Payment</p>
+  <% if @venue.card_accepted %>
+    <i class="far fa-check-circle card-indicate light pl-2" id="true"></i>
+  <% else %>
+    <i class="far fa-times-circle card-indicate light pl-2" id="false"></i>
+  <% end %>
+</div>
+
+<div id="description">
+  <p class="light"><%= @venue.description %></p>
+</div>

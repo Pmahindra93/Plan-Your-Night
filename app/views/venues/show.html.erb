@@ -1,4 +1,6 @@
-<div class="w-100">
+<div class="container-fluid">
+
+  <!-- SHOWPAGE BTNS -->
   <div class="row m-0">
     <div class="col-12 p-0">
       <div class="d-flex align-items-center my-2">
@@ -6,102 +8,38 @@
       </div>
     </div>
   </div>
-  <div class="row m-0">
+
+  <!-- VENUE CARROUSEL -->
+  <div class="row">
     <div class="col-12 p-0">
-      <% if @venue.photos.attached? %>
-        <div id="showCarousel" class="carousel slide image" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <%= cl_image_tag @venue.photos[0].key, crop: :fit, class:"d-block w-100 h-100" %>
-            </div>
-            <% if @venue.photos.length > 1 %>
-              <% @venue.photos.drop(1).each do |photo| %>
-                <div class="carousel-item">
-                  <%= cl_image_tag photo.key, crop: :fit, class:"d-block w-100 h-100" %>
-                </div>
-              <% end %>
-            <% end %>
-          </div>
-          <a class="carousel-control-prev" href="#showCarousel" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#showCarousel" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-      <% else %>
-        <%= image_tag asset_url('standard'), class:'image' %>
-      <% end %>
-    </div>
-  </div>
-  <div class="container mt-3">
-    <h2><%= @venue.name.capitalize %></h2>
-    <h6 class="mb-1"><strong><%= @venue.price_segment %></strong></h6>
-    <div class="d-flex align-items-baseline">
-      <div class="d-flex">
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="fas fa-star"></i>
-        <i class="far fa-star"></i>
-      </div>
-      <p class="pl-1 mb-1"><%= @venue.venue_type %>, <%= @venue.category  %></p>
-    </div>
-    <div class="d-flex align-items-center">
-      <i class="fas fa-map-marker-alt" id="marker"></i>
-      <p class="pl-1"><%= @venue.address %></p>
-    </div>
-    <div class="d-flex align-items-center" id="info">
-      <p class="light">Opening Hours</p>
-      <p class="pl-1"><%= @venue.opening_hours %></p>
-    </div>
-    <div class="d-flex align-items-center">
-      <p class="light">Card Payment</p>
-      <% if @venue.card_accepted %>
-        <i class="far fa-check-circle card-indicate light pl-2" id="true"></i>
-      <% else %>
-        <i class="far fa-times-circle card-indicate light pl-2" id="false"></i>
-      <% end %>
-    </div>
-    <div id="description">
-      <p class="light"><%= @venue.description %></p>
-    </div>
-    <%= link_to '#', class:'btn btn-primary ct-btn btn-block', id:'add-btn' do %>
-      <p><strong>Add to Night Out</strong></p>
-    <% end %>
-  </div>
-
-  <!-- CONTAINER FOR THE REVIEWS -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4">
-        <% @reviews.each do |review| %>
-          <% review.rating.times do %>
-            <i class="fas fa-star"></i>
-          <% end %>
-          <% review.blank_stars.times do %>
-            <i class="far fa-star"></i>
-          <% end %>
-          <p> <%= review.content %> </p>
-        <% end %>
-      </div>
+      <%= render 'components/venue-carrousel' %>
     </div>
   </div>
 
-
-
-  <!-- CONTAINER FOR THE REVIEW FORM -->
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4">
-        <%= simple_form_for [@venue, @review ] do |f| %>
-          <%= f.input :content %>
-          <%= f.input :rating, collection: (1..5).to_a, label: "Rate your experience" %>
-          <%= f.submit "Send your review" %>
-        <% end %>
-      </div>
+  <!-- VENUE CONTENT -->
+  <div class="row mt-3">
+    <div class="col-12">
+      <%= render 'components/venue-content' %>
     </div>
   </div>
+
+  <!-- BUTTON ADD-TO-NIGHT -->
+  <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary ct-btn btn-block ct-sticky-btn', id:'add-btn' do %>
+    <p><strong>Add to Night Out</strong></p>
+  <% end %>
+
+  <!-- ROW FOR THE REVIEWS COMMENTS -->
+  <div class="row mt-5" id="my-reviews">
+    <div class="col-12">
+    <%= render 'components/review-comment' %>
+    </div>
+  </div>
+
+  <!-- ROW FOR THE REVIEW FORM -->
+  <div class="row mt-5 mb-5">
+    <div class="col-12">
+      <%= render 'components/review-form' %>
+    </div>
+  </div>
+
 </div>

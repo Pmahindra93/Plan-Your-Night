@@ -1,6 +1,8 @@
-puts "start"
 require 'open-uri'
 require 'json'
+
+puts "start"
+
 Venue.delete_all
 User.delete_all
 Night.delete_all
@@ -96,3 +98,4 @@ clubs["response"]["groups"][0]["items"].each do |item|
 end
 
 puts "finish"
+

@@ -6,5 +6,6 @@ class User < ApplicationRecord
   has_many :favourites, dependent: :destroy
   has_many :nights, dependent: :destroy
   has_many :venue_reviews, dependent: :destroy
+  has_many :night_venues , through: :nights
   has_one_attached :photo
 end

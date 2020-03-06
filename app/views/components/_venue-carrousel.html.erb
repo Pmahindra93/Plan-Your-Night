@@ -1,0 +1,28 @@
+<% if @venue.photos.attached? %>
+  <div id="showCarousel" class="carousel slide image" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <%= cl_image_tag @venue.photos[0].key, crop: :fit, class:"d-block w-100 h-100" %>
+      </div>
+      <% if @venue.photos.length > 1 %>
+        <% @venue.photos.drop(1).each do |photo| %>
+          <div class="carousel-item">
+            <%= cl_image_tag photo.key, crop: :fit, class:"d-block w-100 h-100" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <!-- Carrousel Btns -->
+    <a class="carousel-control-prev" href="#showCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#showCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+<% else %>
+  <%= cl_image_tag('standard_jiqx6k') %>
+<% end %>

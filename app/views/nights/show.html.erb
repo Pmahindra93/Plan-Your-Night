@@ -1,0 +1,16 @@
+<h4 class="font-page" style="position: relative; left: 14px; top: 18px;">Your Plan for the Night:</h4>
+
+    <div class="container mt-5">
+      <% @night.venues.each do |venue| %>
+       <%= render 'components/card-index', venue: venue  %>
+      <% end %>
+
+      <br>
+      <br>
+
+      <%= link_to 'Save to profile',user_path(@user), class: "btn btn-primary ct-btn btn-block" %>
+    </div>
+
+
+
+

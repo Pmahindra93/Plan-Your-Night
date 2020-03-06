@@ -1,0 +1,19 @@
+<p>hey</p>
+<% if @nights.present? %>
+  <% @nights.each do |night| %>
+    <div class="card-trip">
+      <% if night.venue.photos.attached? %>
+        <%= cl_image_tag night.venue.photos[0].key %>
+      <% end %>
+      <div class="card-trip-infos">
+        <div>
+          <h2><%= night.venue.name %></h2>
+          <p class="ct-text-light"><%= night.venue.venue_type %> / <%= night.venue.category %></p>
+        </div>
+        <h2 class="card-trip-pricing"><%= night.venue.price_segment %>€/day</h2>
+      </div>
+    </div>
+  <% end %>
+<% else %>
+  <p> Currently, you have no nights! </p>
+<% end %>

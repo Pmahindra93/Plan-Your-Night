@@ -7,7 +7,7 @@ night.</p>
   <div class="d-flex justify-content-start">
     <div class="col-12 col-md-8 col-lg-5 search-form mt-5">
       <%= simple_form_for @night, method: :post do |f| %>
-        <%= f.input :location %>
+        <%= f.input :location, input_html: { id: :venue_location } %>
         <%= f.input :category, label: 'WHAT IS YOUR STYLE?' , collection: [ "retro", "modern", "all" ] %>
 
         <%= f.input :budget, label: 'YOUR BUDGET', as: :radio_buttons, collection: ['Broke', 'Reasonable', 'Rich'] , class: "radio_buttons", collection_wrapper_tag: :div, collection_wrapper_class: 'd-flex' %>
