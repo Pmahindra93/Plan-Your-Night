@@ -1,3 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark pr-0 py-2">
+  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+  <%= link_to "Plan Your Night" , root_path, class:"navbar-brand" %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"><!-- <i class="fas fa-bars fa-lg ct-text-light"></i>  --></span>
+
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="navbar-nav ml-auto">
+
+      <% if user_signed_in? %>
+
+        <li class="nav-item"> <%= link_to 'Profile' , user_path(current_user), class:"" %> </li>
+        <li class="nav-item"> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "" %> </li>
+      <% else %>
+        <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+      <% end %>
+
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to "Plan Your Night" , root_path, class:"navbar-brand" %>
 
