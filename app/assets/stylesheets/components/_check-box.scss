@@ -4,6 +4,7 @@ svg {
   margin: 40px auto 0;
 }
 
+
 .path {
   stroke-dasharray: 1000;
   stroke-dashoffset: 0;
@@ -28,10 +29,10 @@ svg {
   margin: 20px 0 60px;
   font-size: 1.25em;
   &.success {
-    color: #73AF55;
+    color: $ct-success;
   }
   &.error {
-    color: #D06079;
+    color: $ct-danger;
   }
 }
 
