@@ -28,8 +28,12 @@
 @import "config/custom-typography";
 
 
+
+// TAKE A LOOK AT THIS
+//where is exactly this rails-social-share-button import?
 @import "rails-social-share-button";
 
+// that doesnt belong here, put somewhere else ;)
 $size: 24px;
 $color: black;
 .rails-social-share-button {
