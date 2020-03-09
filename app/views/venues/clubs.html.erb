@@ -1,22 +1,27 @@
-<div class="container position-absolute mt-5">
-  <% if @venues.empty? %>
-    <div class="text-center">
-      <h3>No Search Results</h3>
-      <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
-    </div>
-  <% else %>
-    <h5>2) Choose your club</h5>
-    <% if @night.venues.first.present? %>
-    <p>Clubs Max.5km far away from <%= @night.venues.first.name %></p>
-    <% end %>
-    <div class="container mt-5">
-      <% @clubs.each do |venue| %>
-        <%= link_to night_venue_path(@night, venue) do %>
-          <%= render 'components/card-index', venue: venue  %>
-          <% if @night.venues.first.present? %>
+<div class="container mt-5 ct-mb-big ">
+  <div class="row">
+    <div class="col-12">
+
+      <% if @venues.empty? %>
+        <h3>No Search Results</h3>
+        <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
+      <% else %>
+        <div class="d-flex justify-item-baseline">
+          <span class="ct-circle bg-primary text-light item-align">2</span>
+          <h3 class="text-primary">
+            Choose your club
+          </h3>
+        </div>
+
+
+        <% @clubs.each do |venue| %>
+          <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
+            <%= render 'components/card-index', venue: venue  %>
+              <% if @night.venues.first.present? %>
               <p> <% z = @night.venues.first%>
               <%= z.distance_to(venue.name).round(1) %>km</p>
-          <% end %>
+              <% end %>
+            <% end %>
         <% end %>
 
       <!-- FIXED BTN LAYOUT -->
