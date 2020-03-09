@@ -3,9 +3,9 @@ require 'json'
 
 puts "start"
 
-Venue.delete_all
-User.delete_all
-Night.delete_all
+Venue.destroy_all
+User.destroy_all
+Night.destroy_all
 
 LOCATION = "Berlin"
 CLIENT_ID = ENV['CLIENT_ID']
