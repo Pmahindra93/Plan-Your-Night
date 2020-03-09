@@ -15,7 +15,7 @@ const revealContent = () => {
 };
 
 const toggleActive = () => {
- if (contents) {
+ if (contents.length) {
   revealContent();
   menu.forEach(item => {
     item.addEventListener('click', (event) => {
@@ -29,9 +29,4 @@ const toggleActive = () => {
 
 
 
-
-
-
 export { toggleActive };
-
-

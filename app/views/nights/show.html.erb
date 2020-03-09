@@ -9,6 +9,12 @@
       <% @night.venues.each do |venue| %>
        <%= render 'components/card-index', venue: venue  %>
       <% end %>
+      <% if @night.venues.length >= 2 %>
+        <p>the distance between the bar and club is
+        <% x = @night.venues.first%>
+        <%= x.distance_to(@night.venues.last).round(1)%>km
+        </p>
+      <% end %>
     </div>
 
     <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-shadow ct-round-50", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>

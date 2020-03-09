@@ -14,6 +14,12 @@ $('.carousel').carousel({
 })
 
 
+import { triggerLocation } from 'components/location';
+triggerLocation();
+
 import { toggleActive } from 'components/dashboard';
 toggleActive();
 
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { initMapbox } from 'plugins/init_mapbox';
+initMapbox();

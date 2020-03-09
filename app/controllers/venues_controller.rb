@@ -13,7 +13,7 @@ class VenuesController < ApplicationController
 
   def search
     @night = Night.find(params[:night_id])
-    @venue = Venue.near(@night.location, 10)
+    @venue = Venue.near(@night.location, 5)
     @category = @night.category
     @budget = @night.budget
     if (@category == "all") && (@budget == '')
@@ -39,6 +39,7 @@ class VenuesController < ApplicationController
     @night = Night.find(params[:night_id])
     @reviews = VenueReview.where(venue_id: @venue)
     @review = VenueReview.new()
+    @marker = { lat: @venue.latitude, lng: @venue.longitude }
   end
 
   def blank_stars
