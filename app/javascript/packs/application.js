@@ -17,3 +17,6 @@ $('.carousel').carousel({
 // import { toggleActive } from 'components/dashboard';
 // toggleActive();
 
+import { triggerLocation } from 'components/location';
+triggerLocation();
+
