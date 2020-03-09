@@ -27,10 +27,30 @@
   color: $ct-light;
 }
 
+// Text Sizes
+.ct-text-12 {
+  font-size: 12px;
+}
+
+.ct-text-14 {
+  font-size: 14px;
+}
+
 // Background colors
 .ct-bg-global {
   background-color: $ct-bg-global;
 }
+
+// Opacity
+.ct-opacity-70 {
+  opacity: 0.7;
+}
+
+// Capitalize
+.ct-capitalize {
+  text-transform: capitalize;
+}
+
 
 // custom circle
 .ct-circle {
@@ -41,4 +61,11 @@
   font-size: 16px;
   margin-right: 5px;
 }
+
+// Margins
+.ct-mb-big {
+  margin-bottom: 100px;
+}
+
+
 

@@ -39,6 +39,7 @@ class VenuesController < ApplicationController
     @night = Night.find(params[:night_id])
     @reviews = VenueReview.where(venue_id: @venue)
     @review = VenueReview.new()
+    @marker = { lat: @venue.latitude, lng: @venue.longitude }
   end
 
 
