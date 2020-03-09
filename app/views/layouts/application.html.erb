@@ -16,11 +16,10 @@
   <body>
 
 
-    <p>Click the button to get your coordinates.</p>
 
     <button onclick="getLocation()">Try It</button>
 
-    <p id="demo"></p>
+    <p id="demo" style="display: none;"></p>
     <%= render 'components/navbar' %>
     <%= render 'shared/flashes' %>
     <%= yield %>
@@ -37,11 +36,16 @@
 
     function showPosition(position) {
       var query = `${position.coords.latitude}, ${position.coords.longitude}`;
-      var firstResult = Geocoder.search(query).first;
+      // var firstResult = Geocoder.search(query).first;
       console.log('dddd');
-        x.innerHTML="Latitude: " + position.coords.latitude +
+      x.innerHTML="Latitude: " + position.coords.latitude +
         "<br>Longitude: " + position.coords.longitude;
-    }
+      Rails.ajax({
+          url: "/search-ajax",
+          type: "get",
+          data: `location[latitude]=${position.coords.latitude}&location[longitude]=${position.coords.longitude}`,
+        })
+      }
     </script>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

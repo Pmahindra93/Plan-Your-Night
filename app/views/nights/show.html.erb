@@ -3,7 +3,12 @@
     <div class="container mt-5">
       <% @night.venues.each do |venue| %>
        <%= render 'components/card-index', venue: venue  %>
-       <% location_info = request.location %>
+      <% end %>
+      <% if @night.venues.length >= 2 %>
+        <p>the distance between the bar and club is
+        <% x = @night.venues.first%>
+        <%= x.distance_to(@night.venues.last).round(1)%>km
+        </p>
       <% end %>
 
       <br>

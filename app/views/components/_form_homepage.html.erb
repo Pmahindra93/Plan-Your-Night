@@ -7,6 +7,9 @@ night.</p>
   <div class="d-flex justify-content-start">
     <div class="col-12 col-md-8 col-lg-5 search-form mt-5">
       <%= simple_form_for @night, method: :post do |f| %>
+<!--     <button onclick="getLocation()">Try It</button>
+
+    <p id="demo" style="display: none;"></p> -->
         <%= f.input :location, input_html: { id: :venue_location } %>
         <%= f.input :category, label: 'WHAT IS YOUR STYLE?' , collection: [ "retro", "modern", "all" ] %>
 
