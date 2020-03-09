@@ -1,0 +1,26 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+
+      <div class="modal-body text-center">
+      <br>
+      <br>
+      <br>
+      <h3> Your plan is saved for tonight! </h3>
+      <%= render 'components/check_box' %>
+      <br>
+      </div>
+      <div class="modal-footer d-flex justify-content-around">
+        <div class="row">
+          <div class="col-6">
+            <%= link_to 'Search Again',root_path, class: "btn btn-primary ct-btn-modal-button2" %>
+          </div>
+          <div class="col-6">
+            <%= link_to 'Go to profile',user_path(@user), class: "btn btn-primary ct-btn-modal"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

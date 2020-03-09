@@ -20,7 +20,6 @@ class NightsController < ApplicationController
 
   def night_save
     @user.nights << @night
-    redirect_to user_path(@user)
   end
 
   def update

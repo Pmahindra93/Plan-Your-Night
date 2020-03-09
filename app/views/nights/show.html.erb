@@ -8,8 +8,10 @@
       <br>
       <br>
 
-      <%= link_to 'Save to profile',user_path(@user), class: "btn btn-primary ct-btn btn-block" %>
+
+      <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary ct-btn btn-block", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
     </div>
+    <%= render 'components/modal_summary_page' %>
 
 
 
