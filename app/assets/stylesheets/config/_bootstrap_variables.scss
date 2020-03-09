@@ -10,13 +10,13 @@ $body-bg:                 $light-gray;
 $font-size-base: 1rem;
 
 // Colors
-$body-color: $gray;
-$primary:    $purple;
-$success:    $green;
-$info:       $yellow;
-$danger:     $red;
-$warning:    $orange;
-$dark: $gray;
+$body-color: $gray; // Bootstrap original
+$primary:    $ct-primary;
+$success:    $ct-success;
+$info:       $yellow; // Bootstrap original
+$danger:     $ct-danger;
+$warning:    $orange; // Bootstrap original
+$dark: $ct-dark;
 
 // Buttons & inputs' radius
 $border-radius:    2px;
