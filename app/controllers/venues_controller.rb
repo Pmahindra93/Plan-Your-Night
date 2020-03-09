@@ -41,6 +41,8 @@ class VenuesController < ApplicationController
     @review = VenueReview.new()
   end
 
+
+
   def blank_stars
       5 - @review.rating
   end

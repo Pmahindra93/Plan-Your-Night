@@ -35,6 +35,13 @@ class NightsController < ApplicationController
     end
   end
 
+def venue_delete
+    @night = Night.find(params[:night_id])
+    @venue = Venue.find(params[:venue_id])
+    @night.night_venues.where(venue_id: params[:venue_id]).destroy_all
+    redirect_to night_path(@night)
+  end
+
   private
 
   def night_params

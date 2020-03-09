@@ -97,5 +97,6 @@ clubs["response"]["groups"][0]["items"].each do |item|
   club.save!
 end
 
+
 puts "finish"
 

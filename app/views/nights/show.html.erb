@@ -4,16 +4,19 @@
       <h3 class="text-primary">
         Your plan for the night
       </h3>
+      <%= link_to 'Add a bar',night_venues_path(@night), class: "btn btn-primary ct-btn"%>
+      <%= link_to 'Add a club',clubs_night_venues_path(@night), class: "btn btn-primary ct-btn"%>
 
     <div class="">
       <% @night.venues.each do |venue| %>
-       <%= render 'components/card-index', venue: venue  %>
+        <%= link_to night_venue_path(@night,venue) do %>
+          <%= render 'components/card-index', night: @night, venue: venue  %>
+        <% end %>
       <% end %>
     </div>
-      
+
     <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary ct-btn btn-block", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
     <%= render 'components/modal_summary_page' %>
-
     </div>
   </div>
 </div>
