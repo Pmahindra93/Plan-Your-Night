@@ -5,6 +5,8 @@
       <h3 class="mb-2"><%= venue.name %></h3>
       <p class="ct-text-light"><%= venue.venue_type %> / <%= venue.category %></p>
       <p><span class="ct-text-12"><%= venue.address %></span></p>
+      <p><span class="ct-text-12"><% x = Venue.geocoded.first%>
+      <%= x.distance_to(venue.name).round(1)%>km</p>
     </div>
     <h5 class="card-trip-pricing"><%= venue.price_segment %></h5>
   </div>

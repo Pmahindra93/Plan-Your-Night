@@ -3,6 +3,7 @@
     <div class="container mt-5">
       <% @night.venues.each do |venue| %>
        <%= render 'components/card-index', venue: venue  %>
+       <% location_info = request.location %>
       <% end %>
 
       <br>

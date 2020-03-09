@@ -14,6 +14,6 @@ $('.carousel').carousel({
 })
 
 
-import { toggleActive } from 'components/dashboard';
-toggleActive();
+// import { toggleActive } from 'components/dashboard';
+// toggleActive();
 
