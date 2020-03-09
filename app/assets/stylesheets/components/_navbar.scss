@@ -1,77 +1,52 @@
+// LOGO
 svg {
-  // height: 150px;
   width: 150px;
   margin-top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 
-.navbar-brand {
-  // display: flex;
-  // margin-right: 1;
-}
-
-// .navbar-toggler:focus, .navbar-toggler:active {
-//   outline: none;
-//   box-shadow: none;
-// }
+// Hamburger Icon Border
 .navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
   border: none;
   color: rgba(255, 255, 255, 1);
-  // box-shadow: none !important;
+  outline: none;
+  box-shadow: none;
 }
 
-.navbar-dark .navbar-toggler {
-  color: rgba(255, 255, 255, 1) !important;
+// BORDER COLOR HAMBURGER ICON
+// DEACTIVATED, DO NOT ERASE!
+
+// .custom-toggler .navbar-toggler {
+//     border-color: rgb(255,200,203);
+// }
+
+// Bootstrap 4 Hamburger Icon Color
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(242,245,247, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
-.navbar-toggler-icon {
+.bg-dark  {
+  background-color: rgba(27,0,44, 0.9) !important;
+}
 
+
+// DROPDOWN LINKS
+.navbar-nav {
+   height: 100vh;
 }
 
 .ct-nav-item {
-   color: $ct-light;
-    &:hover {
-      text-decoration: none;
-      color: $ct-light;
-    }
+  color: $ct-light;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-top: 50px;
+  letter-spacing: 1px;
 
-    font-size: 16px;
-    padding-top: 50px;
+   &:hover {
+    text-decoration: none;
+    color: $ct-light;
+  }
 }
 
-
-
-
-
-
-
-//////////////////////
-// .navbar-lewagon {
-//   justify-content: space-between;
-//   background: white;
-// }
-
-// .navbar-lewagon .navbar-collapse {
-//   flex-grow: 0;
-// }
-
-// .navbar-lewagon .navbar-brand img {
-//   width: 40px;
-// }
-// .navbar-header {
-// position: absolute;
-// left: 2%;
-// right: 0%;
-// top: 28%;
-// bottom: 0%;
-
-// font-family: Roboto;
-// font-style: normal;
-// font-weight: 500;
-// font-size: 24px;
-// line-height: 28px;
-// display: flex;
-// align-items: center;
-// letter-spacing: 0.02em;
-// color: #000000;
-// }
