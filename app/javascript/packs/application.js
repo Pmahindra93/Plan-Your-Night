@@ -13,6 +13,10 @@ $('.carousel').carousel({
   interval: false,
 })
 
+
+import { triggerLocation } from 'components/location';
+triggerLocation();
+
 import { toggleActive } from 'components/dashboard';
 toggleActive();
 
