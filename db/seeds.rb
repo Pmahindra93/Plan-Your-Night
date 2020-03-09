@@ -3,9 +3,9 @@ require 'json'
 
 puts "start"
 
-Venue.delete_all
-User.delete_all
-Night.delete_all
+Venue.destroy_all
+User.destroy_all
+Night.destroy_all
 
 LOCATION = "Berlin"
 CLIENT_ID = ENV['CLIENT_ID']
@@ -55,7 +55,7 @@ bars["response"]["groups"][0]["items"].each do |item|
   info = JSON.parse(info_url)
   bar = Venue.new(
     venue_type: 'bar',
-    category: ['Modern','Retro','Alternative','Adult','High-End','Casual'].sample,
+    category: ['Modern','Retro'].sample,
     name: info["response"]["venue"]["name"],
     address: "#{info["response"]["venue"]["location"]["formattedAddress"][0]}, #{info["response"]["venue"]["location"]["formattedAddress"][1]}",
     opening_hours: "#{info["response"]["venue"]["popular"]["timeframes"][0]["open"][0]["renderedTime"]}",
@@ -80,7 +80,7 @@ clubs["response"]["groups"][0]["items"].each do |item|
   info = JSON.parse(info_url)
   club = Venue.new(
     venue_type: 'club',
-    category: ['Modern','Retro','Alternative','Adult','High-End','Casual'].sample,
+    category: ['modern','retro'].sample,
     name: info["response"]["venue"]["name"],
     address: "#{info["response"]["venue"]["location"]["formattedAddress"][0]}, #{info["response"]["venue"]["location"]["formattedAddress"][1]}",
     opening_hours: club_opening(info),

@@ -1,13 +1,14 @@
 class NightsController < ApplicationController
   before_action :find_night, only: [:show, :night_save]
-  before_action :find_user, only: [:show, :night_save]
+  before_action :find_user, only: [:show, :night_save, :create]
+  after_action :clean_db, only: [:new]
   def new
     @night = Night.new
   end
 
   def create
     @night = Night.new(night_params)
-    @night.user = current_user
+    @night.user = @user
     if @night.save
       redirect_to night_venues_path(@night)
     else
@@ -20,15 +21,15 @@ class NightsController < ApplicationController
 
   def night_save
     @user.nights << @night
-    redirect_to user_path(@user)
   end
 
   def update
     @night = Night.find(params[:night_id])
     @venue = Venue.find(params[:venue_id])
-    @night.venues << @venue
+    unless @night.venues.include?(@venue)
+      @night.venues << @venue
+    end
     @night.save
-
     if @venue.venue_type == "bar"
       redirect_to clubs_night_venues_path
     else
@@ -48,5 +49,11 @@ class NightsController < ApplicationController
 
   def find_user
     @user = current_user
+  end
+
+  def clean_db
+    find_user
+    bad_nights = @user.nights.select { |night| night.venues.empty? }
+    bad_nights.each { |night| night.destroy }
   end
 end

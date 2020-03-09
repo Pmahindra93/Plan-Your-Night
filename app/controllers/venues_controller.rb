@@ -20,24 +20,26 @@ class VenuesController < ApplicationController
       @venues = @venue.all
     elsif (@category == "all") && (@budget == 'Broke')
       @venues = @venue.where(price_segment: "€")
-    elsif (@category == "all") && (@budget == 'Reasonable')
+    elsif (@category == "all") && (@budget == 'Modest')
       @venues = @venue.where(price_segment: "€€")
     elsif (@category == "all") && (@budget == 'Rich')
       @venues = @venue.where(price_segment: "€€€")
     elsif (@category != "") && (@budget == "Broke")
       @venues = @venue.where(category: @category, price_segment: "€")
-    elsif (@category != "") && (@budget == "Reasonable")
+    elsif (@category != "") && (@budget == "Modest")
       @venues = @venue.where(category: @category, price_segment: "€€")
     elsif (@category != "") && (@budget == "Rich")
       @venues = @venue.where(category: @category, price_segment: "€€€")
     end
   end
 
+
   def show
     @favourite = Favourite.new
     @night = Night.find(params[:night_id])
     @reviews = VenueReview.where(venue_id: @venue)
     @review = VenueReview.new()
+    @marker = { lat: @venue.latitude, lng: @venue.longitude }
   end
 
   def blank_stars

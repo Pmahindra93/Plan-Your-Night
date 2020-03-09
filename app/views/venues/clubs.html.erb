@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container position-absolute mt-5">
   <% if @venues.empty? %>
     <div class="text-center">
@@ -18,10 +19,15 @@
               <%= z.distance_to(venue.name).round(1) %>km</p>
           <% end %>
         <% end %>
-      <% end %>
-      <br>
-      <br>
 
-    <%= link_to 'Skip this step', night_path(@night), class: "btn btn-primary ct-btn btn-block", id: "skip-btn" %>
-  <% end %>
+      <!-- FIXED BTN LAYOUT -->
+        <div class="">
+          <%= link_to night_path(@night), class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
+            Skip <i class="fas fa-chevron-right pl-1"></i>
+          <% end %>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
 </div>

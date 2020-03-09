@@ -14,7 +14,11 @@
   color: #fadd4b;
 }
 
-// .quotes {
-//   font-size: 40px;
-// }
+#my-reviews-anchor {
+  display: block;
+  height: 50px; /*same height as header*/
+  margin-top: -50px; /*same height as header*/
+  visibility: hidden;
+}
+
 

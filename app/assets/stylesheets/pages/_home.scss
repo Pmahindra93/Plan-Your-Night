@@ -2,72 +2,23 @@
 body {
   background: white;
 }
-.font-page {
-  font-family: 'Roboto' ;
-}
 
-.first-p{
-  position: absolute;
-  left: 5%;
-  right: 0%;
-  top: 15%;
-  bottom: 0%;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 32px;
-  line-height: 37px;
-  display: flex;
-  letter-spacing: 0.02em;
-  color: #000000;
-}
+// .font-page {
+//   font-family: 'Roboto' ;
+// }
 
-.simple-form-search {
-  position: absolute;
-  width: 277px;
-  height: 63px;
-  left: 12px;
-  top: 437px;
-}
+// .first-p{
+//   position: absolute;
+//   left: 5%;
+//   right: 0%;
+//   top: 15%;
+//   bottom: 0%;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 32px;
+//   line-height: 37px;
+//   display: flex;
+//   letter-spacing: 0.02em;
+//   color: #000000;
+// }
 
-.search-button {
-  background: #9B51E0;
-  border-radius: 5px;
-  position: relative;
-  top: 16px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
-  letter-spacing: 0.03em;
-  color: #F2F2F2;
-}
-
-input.radio_buttons {
-  display: none;
-}
-
-.form-check-label {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 23px;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.03em;
-  padding: 10px;
-  color: #9B51E0;;
-  background: #F2F2F2;
-}
-
-input[type="radio"]:checked + label {
-  background-color:#9B51E0;
-  border-color: #9B51E0;
-  color: white;
-}
-
-input[type="radio"]:focus + label {
-    border: 2px dashed #444;
-}

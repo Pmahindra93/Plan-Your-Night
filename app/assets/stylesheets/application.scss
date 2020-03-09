@@ -18,6 +18,7 @@
 @import "pages/show";
 @import "components/dashboard";
 @import "components/review-comment";
+@import "components/form-homepage";
 
 
 // Your custom basic css
@@ -25,10 +26,15 @@
 @import "config/basic-reboot";
 @import "config/custom-layout";
 @import "config/custom-typography";
+@import "config/custom-css";
 
 
+
+// TAKE A LOOK AT THIS
+//where is exactly this rails-social-share-button import?
 @import "rails-social-share-button";
 
+// that doesnt belong here, put somewhere else ;)
 $size: 24px;
 $color: black;
 .rails-social-share-button {
