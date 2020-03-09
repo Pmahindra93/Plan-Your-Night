@@ -48,35 +48,45 @@
   z-index: 15;
 }
 
-
-
-.ct-btn-modal{
-  border-radius: 5px;
+.ct-btn-border {
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 1px;
+  // letter-spacing: 1px;
   text-transform: uppercase;
-  // padding: 10px 15px;
-  box-shadow: 0 2px 2px rgba(33,32,50, 0.2);
-  // width: 93%; // dirty fix here, need to repair!
-  width: 150px;
-  border: 1px solid #FFFFFF;
-
+  padding: 10px 25px;
+    &:hover {
+        text-decoration: none;
+      }
 }
 
-.ct-btn-modal-button2{
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  // padding: 10px 15px;
-  box-shadow: 0 2px 2px rgba(33,32,50, 0.2);
-  // width: 93%; // dirty fix here, need to repair!
-  width: 150px;
-  opacity: 0.6;
-  border: 1px solid #FFFFFF;
-}
+
+// .ct-btn-modal{
+//   border-radius: 5px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   letter-spacing: 1px;
+//   text-transform: uppercase;
+//   // padding: 10px 15px;
+//   box-shadow: 0 2px 2px rgba(33,32,50, 0.2);
+//   // width: 93%; // dirty fix here, need to repair!
+//   width: 150px;
+//   border: 1px solid #FFFFFF;
+
+// }
+
+// .ct-btn-modal-button2{
+//   border-radius: 5px;
+//   font-size: 14px;
+//   font-weight: 500;
+//   letter-spacing: 1px;
+//   text-transform: uppercase;
+//   // padding: 10px 15px;
+//   box-shadow: 0 2px 2px rgba(33,32,50, 0.2);
+//   // width: 93%; // dirty fix here, need to repair!
+//   width: 150px;
+//   opacity: 0.6;
+//   border: 1px solid #FFFFFF;
+// }
 
 
 
