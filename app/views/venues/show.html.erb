@@ -25,19 +25,29 @@
 
 
   <!-- BUTTON ADD-TO-NIGHT -->
-  <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary ct-btn btn-block ct-sticky-btn', id:'add-btn' do %>
-    <p><strong>Add to Night Out</strong></p>
-  <% end %>
+  <div class="row justify-content-center ct-sticky-btn">
+    <div class="col-11">
+      <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary btn-block ct-btn ct-round-50 ct-shadow ', id:'add-btn' do %>
+        Add to Night Out
+      <% end %>
+    </div>
+  </div>
 
+  <div id="my-reviews-anchor">
+    <!-- This empty div is the anchor of the reviews-->
+    <!-- DO NOT REMOVE!-->
+  </div>
 
 
   <!-- ROW FOR THE REVIEWS COMMENTS -->
   <!-- <a href="https://www.google.de/maps/plac/SOLAR+Bar+Restaurant+Lounge/@52.5043112,13.3815553,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851cd7ba364d9:0x75cd0b1b529712fc!8m2!3d52.504308!4d13.383744?hl=en&authuser=0" target="_blank">Get your map</a> -->
-  <div class="row mt-5" id="my-reviews">
-    <div class="col-12">
-    <%= render 'components/review-comment' %>
+
+    <div class="row mt-5">
+      <div class="col-12">
+      <%= render 'components/review-comment' %>
+      </div>
     </div>
-  </div>
+
 
   <!-- ROW FOR THE REVIEW FORM -->
   <div class="row mt-5 mb-5">
