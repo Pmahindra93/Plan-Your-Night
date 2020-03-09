@@ -1,0 +1,260 @@
+=> [[32m#<Geocoder::Result::Nominatim:0x000055863093e2a0[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m234423737[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m7444[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m48.8155755[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m48.902156[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m2.224122[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m2.4697602[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m48.8566969[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m2.3514616[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Ile-de-France, Metropolitan France, France[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.9417101715588673[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mIle-de-France[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mFrance[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mfr[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x000055863093d620[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m235512215[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m71525[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m48.8155755[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m48.902156[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m2.224122[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m2.4697602[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m48.8588897[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m2.320041027461107[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Ile-de-France, Metropolitan France, France[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.9417101715588673[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mIle-de-France[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mFrance[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mfr[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x000055863093c1f8[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m235511874[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m115357[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m33.6206345[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31m33.7383866[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31m-95.6279396[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31m-95.4354115[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m33.6617962[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m-95.555513[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Lamar County, Texas, 75460, United States of America[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.6061645097134651[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mLamar County[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mTexas[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mpostcode[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m75460[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mUnited States of America[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mus[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x0000558630932c20[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m235455049[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m130722[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m38.164922[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m38.238271[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-84.307326[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-84.232089[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m38.2097987[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m-84.2529869[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Bourbon County, Kentucky, United States of America[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.5586843760767399[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mBourbon County[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mKentucky[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mUnited States of America[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mus[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x0000558630932360[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m235644774[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m1641193[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m48.8155755[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m48.902156[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m2.224122[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m2.4697602[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m48.8588897[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m2.320041027461107[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Ile-de-France, Metropolitan France, France[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.5383953917728153[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mIle-de-France[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mFrance[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mfr[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x0000558630931b40[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m234977621[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m197171[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m36.266003[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m36.329016[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-88.367113[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-88.265067[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m36.3020023[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m-88.3267107[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Henry County, Tennessee, 38242, United States of America[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.5250690427980547[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mHenry County[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mTennessee[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mpostcode[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m38242[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mUnited States of America[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mus[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x0000558630931550[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m234934604[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m126166[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m39.581493[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m39.649981[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-87.721046[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-87.649203[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m39.611146[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m-87.6961374[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Edgar County, Illinois, 61944, United States of America[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.5244799592274194[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mEdgar County[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mIllinois[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mpostcode[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m61944[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mUnited States of America[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mus[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x0000558630930c68[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m513377[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mnode[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m158824862[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m44.239954[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m44.279954[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-70.520641[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-70.480641[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m44.259954[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m-70.500641[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Oxford County, Maine, 04271, United States of America[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mplace[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mvillage[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.5190701377223524[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_place_village.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mvillage[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mOxford County[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mMaine[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mpostcode[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m04271[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mUnited States of America[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mus[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x000055863094be50[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m236109207[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m6678712[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m35.2681485[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31m35.3065882[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31m-93.761965[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31m-93.6755169[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m35.2920325[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m-93.7299173[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Logan County, Arkansas, 72855, United States of America[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.5136706902956424[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mLogan County[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mArkansas[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mpostcode[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m72855[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mUnited States of America[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mus[1;31m"[0m[31m[0m}}[32m>[0m,
+ [32m#<Geocoder::Result::Nominatim:0x000055863094b518[0m
+  @cache_hit[32m=[0m[1;36mnil[0m,
+  @data[32m=[0m
+   {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m235329223[0m,
+    [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m140787[0m,
+    [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+     [[31m[1;31m"[0m[31m39.469158[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m39.489278[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-92.02148[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m-91.991679[1;31m"[0m[31m[0m],
+    [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m39.4808721[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m-92.0012811[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mParis, Monroe County, Missouri, 65275, United States of America[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.4954384749221683[0m,
+    [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+     [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+    [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+     {[31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mMonroe County[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mMissouri[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mpostcode[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m65275[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mUnited States of America[1;31m"[0m[31m[0m,
+      [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mus[1;31m"[0m[31m[0m}}[32m>[0m]

@@ -1,0 +1,25 @@
+=> [32m#<Geocoder::Result::Nominatim:0x00007f99588e5708[0m
+ @cache_hit[32m=[0m[1;36mnil[0m,
+ @data[32m=[0m
+  {[31m[1;31m"[0m[31mplace_id[1;31m"[0m[31m[0m=>[1;34m234423737[0m,
+   [31m[1;31m"[0m[31mlicence[1;31m"[0m[31m[0m=>
+    [31m[1;31m"[0m[31mData © OpenStreetMap contributors, ODbL 1.0. https://osm.org/copyright[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mosm_type[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mrelation[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mosm_id[1;31m"[0m[31m[0m=>[1;34m7444[0m,
+   [31m[1;31m"[0m[31mboundingbox[1;31m"[0m[31m[0m=>
+    [[31m[1;31m"[0m[31m48.8155755[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m48.902156[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m2.224122[1;31m"[0m[31m[0m, [31m[1;31m"[0m[31m2.4697602[1;31m"[0m[31m[0m],
+   [31m[1;31m"[0m[31mlat[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m48.8566969[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mlon[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31m2.3514616[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mdisplay_name[1;31m"[0m[31m[0m=>
+    [31m[1;31m"[0m[31mParis, Ile-de-France, Metropolitan France, France[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mboundary[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mtype[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31madministrative[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31mimportance[1;31m"[0m[31m[0m=>[1;35m0.9417101715588673[0m,
+   [31m[1;31m"[0m[31micon[1;31m"[0m[31m[0m=>
+    [31m[1;31m"[0m[31mhttps://nominatim.openstreetmap.org/images/mapicons/poi_boundary_administrative.p.20.png[1;31m"[0m[31m[0m,
+   [31m[1;31m"[0m[31maddress[1;31m"[0m[31m[0m=>
+    {[31m[1;31m"[0m[31mcity[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+     [31m[1;31m"[0m[31mcounty[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mParis[1;31m"[0m[31m[0m,
+     [31m[1;31m"[0m[31mstate[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mIle-de-France[1;31m"[0m[31m[0m,
+     [31m[1;31m"[0m[31mcountry[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mFrance[1;31m"[0m[31m[0m,
+     [31m[1;31m"[0m[31mcountry_code[1;31m"[0m[31m[0m=>[31m[1;31m"[0m[31mfr[1;31m"[0m[31m[0m}}[32m>[0m

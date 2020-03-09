@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
     <div class="col-12 mt-5 mb-3">
       <h3>
@@ -11,6 +11,8 @@
     <div class="col-12 ">
 
           <div class="mt-4 mb-4">
+            <p id="user-location">current location</p>
+            <p id="demo" style="display: none;"></p>
             <%= simple_form_for @night, method: :post do |f| %>
               <%= f.input :location, label: 'Choose a city', input_html: { id: :venue_location } %>
               <%= f.input :category, label: 'Tell us your style' , collection: [ "retro", "modern", "all" ] %>
@@ -23,8 +25,6 @@
               <%= f.button :submit, 'PLAN YOUR NIGHT!', class: "search-button btn btn-outline-light mt-4 w-100 "%>
             <% end %>
           </div>
-
-
     </div>
   </div>
 </div>
