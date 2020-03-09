@@ -1,3 +1,10 @@
+svg {
+  // height: 150px;
+  width: 150px;
+  margin-top: 0;
+}
+
+
 .navbar-brand {
   // display: flex;
   // margin-right: 1;
@@ -8,13 +15,28 @@
 //   box-shadow: none;
 // }
 .navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
-  border: none !important;
-  box-shadow: none !important;
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  // box-shadow: none !important;
+}
+
+.navbar-dark .navbar-toggler {
   color: rgba(255, 255, 255, 1) !important;
 }
 
 .navbar-toggler-icon {
 
+}
+
+.ct-nav-item {
+   color: $ct-light;
+    &:hover {
+      text-decoration: none;
+      color: $ct-light;
+    }
+
+    font-size: 16px;
+    padding-top: 50px;
 }
 
 
