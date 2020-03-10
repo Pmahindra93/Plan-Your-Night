@@ -1,0 +1,15 @@
+<div class="card-dashboard rounded mt-2 mb-4">
+  <div class="pic">
+    <% if venue.photos.attached? %>
+      <%= cl_image_tag venue.photos[0].key %>
+    <% else %>
+      <%= cl_image_tag("standard_jiqx6k") %>
+      <% end %>
+  </div>
+  <div class="card-description">
+    <h3><%= venue.name %></h3>
+    <p class="ct-text-dark"><%= venue.price_segment %> <span> &bull;</span> <%= venue.venue_type %> / <%= venue.category %> </p>
+  </div>
+</div>
+
+

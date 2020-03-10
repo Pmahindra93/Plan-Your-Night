@@ -24,9 +24,11 @@ function showPosition(position) {
   }
 
 const triggerLocation = () => {
-  location.addEventListener("click", () => {
-    getLocation()
-  })
+  if (location) {
+    location.addEventListener("click", () => {
+      getLocation()
+    })
+  }
 }
 
 export { triggerLocation }
