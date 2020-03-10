@@ -1,8 +1,8 @@
-<div class="mt-4 mb-4">
-  <p id="user-location">current location</p>
+<div class="mt-2 mb-4">
+  <p id="user-location" class="mb-3"><i class="fas fa-map-marker-alt pr-2"></i>Share your current location</p>
   <p id="demo" style="display: none;"></p>
-  <%= simple_form_for @night, method: :post do |f| %>
-    <%= f.input :location, label: 'Choose a city', input_html: { id: :venue_location } %>
+  <%= simple_form_for @night, method: :post, id: "my-form" do |f| %>
+    <%= f.input :location, label: 'Choose a city', input_html: { id: :venue_location, class: "ct-label-text" } %>
     <%= f.input :category, label: 'Tell us your style' , collection: [ "retro", "modern", "all" ] %>
 
   <div class="">
@@ -10,7 +10,7 @@
     ['Broke', 'Modest', 'Rich'] , class: "radio_buttons", collection_wrapper_tag: :div, collection_wrapper_class: 'd-flex justify-content-between' %>
   </div>
 
-    <%= f.button :submit, 'PLAN YOUR NIGHT!', class: "search-button btn btn-outline-light mt-4 w-100 "%>
+    <%= f.button :submit, 'PLAN YOUR NIGHT!', class: "search-button btn btn-outline-light mt-4 w-100 ct-shadow"%>
   <% end %>
 </div>
 

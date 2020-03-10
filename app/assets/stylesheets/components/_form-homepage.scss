@@ -1,6 +1,6 @@
 .ct-title {
   font-size: 14px;
-  text-transform: uppercase;
+  // text-transform: uppercase;
   font-weight: 500px;
 }
 
@@ -14,77 +14,105 @@
 
 // SIMPLE FORM STYLING
 
-// .simple-form-search {
-//   position: absolute;
-//   width: 277px;
-//   height: 63px;
-//   left: 12px;
-//   top: 437px;
-// }
-
 .form-check {
   padding: 0;
 }
 
-input[type="radio"]:checked + label {
-  background-color:#9B51E0;
-  border-color: #9B51E0;
-  color: white;
+// Current Location BTN
+#user-location {
+  color: $ct-light;
+  cursor: pointer;
+  font-weight: 400;
+
 }
 
-input[type="radio"]:focus + label {
-    border: 2px dashed #444;
+// LABELS
+
+#new_night .ap-suggestion {
+  line-height: 10px;
+  font-size: 12px;
 }
+
+#new_night label {
+  color: $ct-light;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700px;
+}
+
+// Radio buttons label
+#new_night legend {
+  color: $ct-light;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  font-weight: 700px;
+}
+
+// RADIO BUTTONS (Broke, Modest, Rich)
+#new_night .form-check-label {
+  border-radius: 50px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  text-align: center;
+  padding: 10px 0px;
+  color: $ct-dark;
+  background-color: $ct-light;
+  width: 90px;
+  text-transform: capitalize;
+  letter-spacing: 0px;
+  box-shadow: 0px 2px 5px rgba(30,30,30, .4);
+}
+
+// Choose City input
+#venue_location {
+  border-radius: 50px;
+}
+
+// Your Style input
+#new_night select {
+   border-radius: 50px;
+   text-transform: capitalize;
+}
+
+#new_night input[type="radio"]:checked + label {
+  background-color: $ct-yellow-contrast;
+  // border-color: #9B51E0;
+  // color: white;
+}
+
+// input[type="radio"]:focus + label {
+//     border: 2px dashed #444;
+// }
 
 // for not displaying Simple Form Radio Buttons
 input.radio_buttons {
   display: none;
 }
 
-//
-.form-control {
-  // margin-bottom: 20px;
-}
-
-// LABELS
-.optional {
-  text-transform: uppercase;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-// STYLING RADIO BUTTONS
-.form-check-label {
-  border-radius: 5px;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  text-align: center;
-  letter-spacing: 0.03em;
-  padding: 10px 20px;
-  color: #9B51E0;;
-  border: 1px solid #9B51E0;
-  width: 95px;
-  text-transform: capitalize;
-
-
-
-}
 
 // PLAN YOUR NIGHT BUTTON
 .search-button {
   background: #9B51E0;
-  border-radius: 5px;
+  border-radius: 50px;
   padding: 10px 20px;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 14px;
   letter-spacing: 0.03em;
-  color: white;
+  color: $ct-light;
+  border: none;
 
     &:hover {
         background: #63249e;
-        color: white;
+        color: $ct-light;
       }
+}
+
+// Algolia LINK not showing
+#new_night .ap-footer {
+  display: none;
 }
 
 
