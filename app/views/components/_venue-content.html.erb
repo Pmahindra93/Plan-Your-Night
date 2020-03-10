@@ -30,6 +30,22 @@
   <% end %>
 </div>
 
+<br>
+
+<% users = Venue.find_by(name: @venue.name) %>
+<% users_number = users.distinct_users.count %>
+<p class="mb-2"><strong><%= users_number %> people have chosen <%= @venue.name %> tonight</strong></p>
+  <div class="d-flex flex-wrap mr-4">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTkzNjE5MzY5M15BMl5BanBnXkFtZTgwMDI5ODMxODE@._V1_UY256_CR98,0,172,256_AL_.jpg" alt="Avatar" class="avatar mr-1">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTQ3OTA2NDQtMzBkMy00ZDVjLWFlYzUtMmZhNzRmZTc3NmM1XkEyXkFqcGdeQXVyNjc1NTc4MDA@._V1_UX172_CR0,0,172,256_AL_.jpg" alt="Avatar" class="avatar mr-1">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTY2MDc2NjY1NF5BMl5BanBnXkFtZTcwMDY2MjE3Nw@@._V1_UX172_CR0,0,172,256_AL_.jpg" alt="Avatar" class="avatar mr-1">
+    <img src="https://randomuser.me/api/portraits/women/31.jpg" alt="Avatar" class="avatar mr-1">
+    <img src="https://images.unsplash.com/photo-1502980426475-b83966705988?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=ddcb7ec744fc63472f2d9e19362aa387" alt="Avatar" class="avatar mr-1">
+    <img src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjA4MzMzNDM5MF5BMl5BanBnXkFtZTgwMjQ0MDk0NDM@._V1_UX172_CR0,0,172,256_AL_.jpg" alt="Avatar" class="avatar mr-1">
+    <img src="https://images.pexels.com/photos/412840/pexels-photo-412840.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Avatar" class="avatar mr-1">
+    <img src="https://images.pexels.com/photos/413723/pexels-photo-413723.jpeg?h=350&auto=compress&cs=tinysrgb" alt="Avatar" class="avatar mr-1">
+  </div>
+
 <div id="description">
   <p class="light"><%= @venue.description %></p>
 </div>

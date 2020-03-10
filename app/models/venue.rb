@@ -5,6 +5,7 @@ class Venue < ApplicationRecord
   has_many :venue_reviews, dependent: :destroy
   has_many :night_venues, dependent: :destroy
   has_many :nights, through: :night_venues, dependent: :destroy
+  has_many :users, through: :nights
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
 
@@ -16,5 +17,9 @@ class Venue < ApplicationRecord
     elsif price_segment == "€€€"
       return "Avg.spend: 90€/p"
     end
+  end
+
+  def distinct_users
+    users.distinct
   end
 end

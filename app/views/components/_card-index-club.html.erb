@@ -6,7 +6,7 @@
         <h3 class="mt-1"><%= venue.name %></h3>
         <p class="ct-text-14 pt-2"><span class="">
           <p class="ct-text-14 pt-2"><span class=""><% y = venue%>
-          <%= y.distance_to('Berlin, Germany').round(1) %>km away</span></p>
+          <%= y.distance_to(@night.venues.first).round(1) %>km away from <%= @night.venues.first.name %></span></p>
       </div>
       <div class="col-5 text-right">
         <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> / <%= venue.category %></p>
