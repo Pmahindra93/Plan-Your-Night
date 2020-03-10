@@ -5,6 +5,7 @@ class VenuesController < ApplicationController
 
   def index
     @bars = @venues.select {|venue| venue.venue_type == "bar" }
+    @night = Night.find(params[:night_id])
   end
 
   def clubs
