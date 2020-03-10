@@ -4,32 +4,27 @@
       <h3 class="text-primary">
         Your plan for the night
       </h3>
+      <br>
 
-    <div class="">
-      <%= link_to 'Add a bar',night_venues_path(@night), class: "btn btn-primary ct-btn"%>
+
+      <%= link_to night_venues_path(@night), class: "btn btn-primary ct-btn" do%>
+        <p>Add a Bar <i class="fas fa-glass-cheers"></i></p>
+      <% end %>
       <% @night.venues.where(venue_type: "bar").each do |venue| %>
         <%= link_to night_venue_path(@night,venue) do %>
-          <%= render 'components/card-index',venue: venue  %>
-          <%= link_to 'Remove',  venue_delete_night_venue_night_path(@night,venue) %>
+          <%= render 'components/cards-summary', venue: venue, night: @night %>
         <% end %>
       <% end %>
-    </div>
 
-    <div class="">
+      <br>
+
       <%= link_to 'Add a club',clubs_night_venues_path(@night), class: "btn btn-primary ct-btn"%>
       <% @night.venues.where(venue_type: "club").each do |venue| %>
         <%= link_to night_venue_path(@night,venue) do %>
-          <%= render 'components/card-index', night: @night, venue: venue  %>
-          <%= link_to 'Remove',  venue_delete_night_venue_night_path(@night,venue) %>
-          <% if @night.venues.length >= 2 %>
-            <p>the distance between the bar and club is
-            <% x = @night.venues.first%>
-            <%= x.distance_to(@night.venues.last).round(1)%>km
-            </p>
-          <% end %>
+          <%= render 'components/cards-summary', venue: venue, night: @night  %>
         <% end %>
       <% end %>
-    </div>
+
 
     <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-shadow ct-round-50", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
     <!-- MODAL -->
@@ -42,4 +37,10 @@
 
 
 
-
+  <!-- Majd's distance code that needs to be incorporated in the code above (under clubs) -->
+  <!--  <% if @night.venues.length >= 2 %>
+            <p>the distance between the bar and club is
+            <% x = @night.venues.first%>
+            <%= x.distance_to(@night.venues.last).round(1)%>km
+            </p>
+          <% end %> -->
