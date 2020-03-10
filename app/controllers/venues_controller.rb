@@ -40,7 +40,18 @@ class VenuesController < ApplicationController
     @night = Night.find(params[:night_id])
     @reviews = VenueReview.where(venue_id: @venue)
     @review = VenueReview.new()
-    @marker = { lat: @venue.latitude, lng: @venue.longitude }
+    @night_coord = Geocoder.coordinates("#{@night.location}")
+    @user_marker = {
+                      lat: @night_coord[0],
+                      lng: @night_coord[1],
+                      infoWindow: "Location you entered!"
+                   }
+    @venue_marker = {
+                      lat: @venue.latitude,
+                      lng: @venue.longitude,
+                      infoWindow: "#{@venue.name}"
+                    }
+    @markers = [@user_marker, @venue_marker]
   end
 
 
