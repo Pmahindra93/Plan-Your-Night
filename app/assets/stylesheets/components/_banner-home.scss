@@ -1,0 +1,19 @@
+.banner {
+  // background-image: url("https://source.unsplash.com/iTZOPe7BpTM/1600x900"), linear-gradient(#eb0, #d13531);;
+  background: linear-gradient(rgba(255,197,34,1), transparent), url("https://source.unsplash.com/iTZOPe7BpTM/1600x900") no-repeat center;
+  background-size: cover;
+  // background-color: red;
+  height: 40vh;
+  position: relative;
+}
+
+.banner-text {
+  position: absolute;
+  top: 110px;
+  left: 15px;
+  width: 335px;
+}
+
+.banner-text-shadow {
+  text-shadow: 0 3px 10px rgba(30,30,30,0.2);
+}
