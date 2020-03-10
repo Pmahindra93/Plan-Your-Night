@@ -1,18 +1,15 @@
-<div class="card-trip ct-round-5 ct-shadow mt-4 ct-capitalize position-relative">
-  <%= cl_image_tag venue.photos[0].key %>
-  <div class="position-absolute" id='card-summ'>
-    <%= link_to 'Remove',  venue_delete_night_venue_night_path(night,venue), class: "btn btn-outline-light" %>
+<div class="card-dashboard rounded mt-2 mb-4">
+  <div class="pic">
+    <% if venue.photos.attached? %>
+      <%= cl_image_tag venue.photos[0].key %>
+    <% else %>
+      <%= cl_image_tag("standard_jiqx6k") %>
+      <% end %>
   </div>
-
-  <div class="card-trip-infos px-3 pt-4 pb-3">
-    <div class="row align-items-end">
-      <div class="col-7">
-        <h3 class="mt-1"><%= venue.name %></h3>
-        <p class="ct-text-14 pt-2"><span class="">XXX 0.7 Km Distance</span></p>
-      </div>
-      <div class="col-5 text-right">
-        <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> / <%= venue.category %></p>
-      </div>
-    </div>
+  <div class="card-description">
+    <h3><%= venue.name %></h3>
+    <p class="ct-text-dark"><%= venue.price_segment %> <span> &bull;</span> <%= venue.venue_type %> / <%= venue.category %> </p>
   </div>
 </div>
+
+
