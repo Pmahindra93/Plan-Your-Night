@@ -32,13 +32,17 @@ def price_seg_gen(info)
 end
 
 def credit_card_check(info)
-  credit_card_eval = info["response"]["venue"]["attributes"]["groups"][1]["items"][0]["displayValue"]
-  if credit_card_eval == "Nein"
-    return false
-  elsif credit_card_eval == "Ja"
-    return true
+  unless info["response"]["venue"]["attributes"]["groups"][1].nil?
+    credit_card_eval = info["response"]["venue"]["attributes"]["groups"][1]["items"][0]["displayValue"]
+    if credit_card_eval == "Nein"
+      return false
+    elsif credit_card_eval == "Ja"
+      return true
+    else
+      return [true, false].sample
+    end
   else
-    return [true, false].sample
+    return false
   end
 end
 
@@ -50,9 +54,19 @@ def club_opening(info)
   end
 end
 
+def bar_opening(info)
+  unless info["response"]["venue"]["popular"].nil?
+    return "#{info["response"]["venue"]["popular"]["timeframes"][0]["open"][0]["renderedTime"]}"
+  else
+    return "Opeining Times Unknown"
+  end
+end
+
 bars["response"]["groups"][0]["items"].each do |item|
   info_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=#{V}").read
   info = JSON.parse(info_url)
+  p info["response"]["venue"]["name"]
+  p item["venue"]["id"]
   bar = Venue.new(
     venue_type: 'bar',
     category: ['Modern','Retro'].sample,
@@ -60,7 +74,7 @@ bars["response"]["groups"][0]["items"].each do |item|
     address: "#{info["response"]["venue"]["location"]["formattedAddress"][0]}, #{info["response"]["venue"]["location"]["formattedAddress"][1]}",
     longitude: info["response"]["venue"]["location"]["lng"],
     latitude: info["response"]["venue"]["location"]["lat"],
-    opening_hours: "#{info["response"]["venue"]["popular"]["timeframes"][0]["open"][0]["renderedTime"]}",
+    opening_hours: bar_opening(info),
     price_segment: price_seg_gen(info),
     card_accepted: credit_card_check(info),
     description: "#{info["response"]["venue"]["tips"]["groups"][0]["items"][0]["text"]}"
@@ -74,12 +88,16 @@ bars["response"]["groups"][0]["items"].each do |item|
   bar.save!
 end
 
+puts 'done with bars'
+
 response_club = open(club_url).read
 clubs = JSON.parse(response_club)
 
 clubs["response"]["groups"][0]["items"].each do |item|
   info_url = open("https://api.foursquare.com/v2/venues/#{item["venue"]["id"]}?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=#{V}").read
   info = JSON.parse(info_url)
+  p info["response"]["venue"]["name"]
+  p item["venue"]["id"]
   club = Venue.new(
     venue_type: 'club',
     category: ['modern','retro'].sample,
