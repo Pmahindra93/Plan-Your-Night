@@ -1,25 +1,47 @@
+// SHOWPAGE UP BAR (ICONS)
+
 #back{
   flex-grow: 1;
 }
 
-.nav-icon{
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
-  padding: 0 7px;
-  &:hover{
-    text-decoration: none;
-    color: black;
+// SOCIAL ICONS
+
+$size: 5px;
+// $color: black;
+.rails-social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+    // color: $color;
   }
 }
 
+// SOCIAL MEDIA ICONS
+// .ssb-icon {
+//   height: 5px;
+//   width: 5px;
+// }
+
+// .rails-social-share-button {
+//   height: 5px;
+//   width: 5px;
+//   display: flex;
+// }
+
+button {
+  background: none !important;
+  border: none !important;
+}
+
+// CARROUSEL
 .carousel-item{
   height: 200px;
 }
 
-.image{
-  box-shadow: 0 0 10px rgba(0,0,0,0.4);
-}
+// .image{
+//   box-shadow: 0 0 10px rgba(0,0,0,0.4);
+// }
 
 #marker{
   font-size: 20px;
@@ -30,26 +52,38 @@
 }
 
 #true{
-  color: #74D612;
+  color: $ct-success;
+  background-color: $success-light;
 }
 
 #false{
-  color: #E44336;
+  color: $ct-danger;
+  background-color: $ct-danger-light;
 }
 
 .card-indicate{
   font-size: 20px;
 }
 
-#info{
-  margin-top: 30px;
-}
+// #info{
+//   margin-top: 30px;
+// }
 
 #description{
-  margin-top: 40px;
+
+  border-radius: 5px;
+  background-color: $ct-light;
+  padding: 20px 20px;
+  padding-top: 25px;
 }
 
 #add-btn{
   margin-top: 40px;
 }
 
+#my-map-anchor {
+  display: block;
+  height: 100px; /*same height as header*/
+  margin-top: -100px; /*same height as header*/
+  visibility: hidden;
+}

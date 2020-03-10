@@ -1,0 +1,21 @@
+.summ-cards{
+  font-size: 14px;
+
+}
+
+
+.card-description-summary{
+  line-height: 32px;
+  padding-left: 30px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-transform: none;
+}
+
+.pic-summ > img {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+}

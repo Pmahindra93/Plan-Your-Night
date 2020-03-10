@@ -1,7 +1,8 @@
 .banner {
-  // background-image: url("https://source.unsplash.com/iTZOPe7BpTM/1600x900"), linear-gradient(#eb0, #d13531);;
-  background: linear-gradient(rgba(255,197,34,1), transparent), url("photo-1532452119098-a3650b3c46d3.jpg
-    ") no-repeat center;
+  // Need to do the link with cloudinary...
+  background: linear-gradient(rgba(255,197,34,1), transparent), url("photo-1532452119098-a3650b3c46d3.jpeg");
+  background: linear-gradient(rgba(255,197,34,1), transparent), url("https://source.unsplash.com/iTZOPe7BpTM/1600x900");
+
   background-size: cover;
   // background-color: red;
   height: 40vh;
@@ -10,7 +11,7 @@
 
 .banner-text {
   position: absolute;
-  top: 110px;
+  top: 130px;
   left: 15px;
   width: 335px;
 }

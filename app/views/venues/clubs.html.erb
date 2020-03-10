@@ -14,8 +14,7 @@
         </div>
         <br>
         <% if @night.venues.first.present? %>
-          <p>all clubs max.5km far away from <%= @night.venues.first.name %></p>
-
+          <p><em>Clubs near <strong><%= @night.venues.first.name %></strong></em></p>
         <% end %>
 
 
