@@ -5,8 +5,13 @@
       <div class="col-7">
         <h3 class="mt-1"><%= venue.name %></h3>
         <p class="ct-text-14 pt-2"><span class="">
-          <p class="ct-text-14 pt-2"><span class=""><% y = venue%>
-          <%= y.distance_to('Berlin, Germany').round(1) %>km away</span></p>
+          <p class="ct-text-14 pt-2" id="distance"><span class="">
+            <% if night.venues.where(venue_type: 'bar').first.present? %>
+            <% bar = night.venues.where(venue_type: 'bar').first %>
+              <%= venue.distance_to(bar.address).round(1) %>km away from <%= bar.name %></span></p>
+            <% else %>
+              <%= venue.distance_to(@night.location).round(1) %>km away from search location</span></p>
+             <% end %>
       </div>
       <div class="col-5 text-right">
         <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> / <%= venue.category %></p>
