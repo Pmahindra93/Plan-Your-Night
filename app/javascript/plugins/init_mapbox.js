@@ -12,7 +12,12 @@ const makeMap = () => {
 
 const addUserToMap = (map, userMarker) => {
   const popup = new mapboxgl.Popup().setHTML(userMarker.infoWindow);
-  new mapboxgl.Marker({ color: '#8949da' })
+  const uMarker = document.createElement('i');
+  uMarker.className = 'fas fa-map-marker-alt'
+  uMarker.style.fontSize = '25px'
+  uMarker.style.color = '#3FB1CE'
+
+  new mapboxgl.Marker(uMarker)
     .setLngLat([ userMarker.lng, userMarker.lat ])
     .setPopup(popup)
     .addTo(map);
@@ -20,7 +25,12 @@ const addUserToMap = (map, userMarker) => {
 
 const addVenueToMap = (map, venueMarker) => {
   const popup = new mapboxgl.Popup().setHTML(venueMarker.infoWindow);
-  new mapboxgl.Marker()
+const vMarker = document.createElement('i');
+  vMarker.className = 'fas fa-map-marker-alt'
+  vMarker.style.fontSize = '25px'
+  vMarker.style.color = '#8949da'
+
+  new mapboxgl.Marker(vMarker)
     .setLngLat([ venueMarker.lng, venueMarker.lat ])
     .setPopup(popup)
     .addTo(map);
