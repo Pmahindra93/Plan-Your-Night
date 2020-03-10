@@ -11,7 +11,7 @@ LOCATION = "Berlin"
 CLIENT_ID = ENV['CLIENT_ID']
 CLIENT_SECRET = ENV['CLIENT_SECRET']
 V = '20180323'
-number_of_each = 5
+number_of_each = 10
 core = "https://api.foursquare.com/v2/venues/explore?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=#{V}&limit=#{number_of_each}&near=#{LOCATION}&categoryId="
 
 bar_id = '4bf58dd8d48988d116941735'
@@ -58,6 +58,8 @@ bars["response"]["groups"][0]["items"].each do |item|
     category: ['Modern','Retro'].sample,
     name: info["response"]["venue"]["name"],
     address: "#{info["response"]["venue"]["location"]["formattedAddress"][0]}, #{info["response"]["venue"]["location"]["formattedAddress"][1]}",
+    longitude: info["response"]["venue"]["location"]["lng"],
+    latitude: info["response"]["venue"]["location"]["lat"],
     opening_hours: "#{info["response"]["venue"]["popular"]["timeframes"][0]["open"][0]["renderedTime"]}",
     price_segment: price_seg_gen(info),
     card_accepted: credit_card_check(info),
@@ -83,6 +85,8 @@ clubs["response"]["groups"][0]["items"].each do |item|
     category: ['modern','retro'].sample,
     name: info["response"]["venue"]["name"],
     address: "#{info["response"]["venue"]["location"]["formattedAddress"][0]}, #{info["response"]["venue"]["location"]["formattedAddress"][1]}",
+    longitude: info["response"]["venue"]["location"]["lng"],
+    latitude: info["response"]["venue"]["location"]["lat"],
     opening_hours: club_opening(info),
     price_segment: price_seg_gen(info),
     card_accepted: credit_card_check(info),
