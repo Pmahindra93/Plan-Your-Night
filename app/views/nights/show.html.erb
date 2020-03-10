@@ -21,16 +21,16 @@
         <%= link_to night_venue_path(@night,venue) do %>
           <%= render 'components/card-index', night: @night, venue: venue  %>
           <%= link_to 'Remove',  venue_delete_night_venue_night_path(@night,venue) %>
-          <% if @night.venues.length >= 2 %>
-            <p>the distance between from the bar to the club is
-            <% x = @night.venues.first%>
-            <%= x.distance_to(@night.venues.last).round(1)%>km
-            </p>
-          <% end %>
         <% end %>
       <% end %>
     </div>
 
+    <% if @night.venues.length >= 2 %>
+      <p>the distance is
+      <% x = @night.venues.first%>
+      <%= x.distance_to(@night.venues.last).round(1)%>km
+      </p>
+    <% end %>
     <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-shadow ct-round-50", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
     <!-- MODAL -->
     <%= render 'components/modal_summary_page' %>
