@@ -13,7 +13,10 @@
           </h3>
         </div>
         <br>
+        <% if @night.venues.first.present? %>
           <p>all clubs max.5km far away from <%= @night.venues.first.name %></p>
+
+        <% end %>
 
 
         <% @clubs.each do |venue| %>

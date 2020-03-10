@@ -5,10 +5,8 @@
       <div class="col-7">
         <h3 class="mt-1"><%= venue.name %></h3>
         <p class="ct-text-14 pt-2"><span class="">
-         <% if @night.venues.first.present? %>
-          <p> <% z = @night.venues.first%>
-          <%= z.distance_to(venue.name).round(1) %>km</p>
-          <% end %></span> from <%= @night.venues.first.name %></p>
+          <p class="ct-text-14 pt-2"><span class=""><% y = venue%>
+          <%= y.distance_to('Berlin, Germany').round(1) %>km away</span></p>
       </div>
       <div class="col-5 text-right">
         <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> / <%= venue.category %></p>
