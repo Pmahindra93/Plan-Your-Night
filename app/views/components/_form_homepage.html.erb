@@ -1,31 +1,18 @@
-<div class="container mt-5">
-  <div class="row">
-    <div class="col-12 mt-5 mb-3">
-      <h3>
-        Discover the best places to enjoy your night out.
-      </h3>
-    </div>
+<div class="mt-4 mb-4">
+  <p id="user-location">current location</p>
+  <p id="demo" style="display: none;"></p>
+  <%= simple_form_for @night, method: :post do |f| %>
+    <%= f.input :location, label: 'Choose a city', input_html: { id: :venue_location } %>
+    <%= f.input :category, label: 'Tell us your style' , collection: [ "retro", "modern", "all" ] %>
+
+  <div class="">
+    <%= f.input :budget, label: 'Select your budget', as: :radio_buttons, collection:
+    ['Broke', 'Modest', 'Rich'] , class: "radio_buttons", collection_wrapper_tag: :div, collection_wrapper_class: 'd-flex justify-content-between' %>
   </div>
 
-  <div class="d-flex bg-light ct-border-radius-5 mt-5 ">
-    <div class="col-12 ">
-
-          <div class="mt-4 mb-4">
-            <%= simple_form_for @night, method: :post do |f| %>
-              <p id="user-location" style="color: red">current location</p>
-              <p id="demo" style="display: none;"></p>
-              <%= f.input :location, label: 'Choose a city', input_html: { id: :venue_location } %>
-              <%= f.input :category, label: 'Tell us your style' , collection: [ "retro", "modern", "all" ] %>
-
-            <div class="">
-              <%= f.input :budget, label: 'Select your budget', as: :radio_buttons, collection:
-              ['Broke', 'Modest', 'Rich'] , class: "radio_buttons", collection_wrapper_tag: :div, collection_wrapper_class: 'd-flex justify-content-between' %>
-            </div>
-
-              <%= f.button :submit, 'PLAN YOUR NIGHT!', class: "search-button btn btn-outline-light mt-4 w-100 "%>
-            <% end %>
-          </div>
-    </div>
-  </div>
+    <%= f.button :submit, 'PLAN YOUR NIGHT!', class: "search-button btn btn-outline-light mt-4 w-100 "%>
+  <% end %>
 </div>
+
+
 
