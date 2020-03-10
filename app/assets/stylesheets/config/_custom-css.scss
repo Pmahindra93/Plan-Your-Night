@@ -5,6 +5,10 @@
   box-shadow: 0px 2px 5px rgba(30,30,30, .4);
 }
 
+.ct-shadow-navbar {
+  box-shadow: 0px 4px 10px rgba(30,30,30, .2);
+}
+
 // Rounded Borders
 .ct-round-5 {
   border-radius: 5px;
@@ -42,9 +46,15 @@
 }
 
 // Opacity
+.ct-opacity-90 {
+  opacity: 0.9;
+}
+
 .ct-opacity-70 {
   opacity: 0.7;
 }
+
+
 
 // Capitalize
 .ct-capitalize {
@@ -65,6 +75,15 @@
 // Margins
 .ct-mb-big {
   margin-bottom: 100px;
+}
+
+.ct-mt-big {
+  margin-top: 100px;
+}
+
+
+.ct-mt-big-xl {
+  margin-top: 150px;
 }
 
 

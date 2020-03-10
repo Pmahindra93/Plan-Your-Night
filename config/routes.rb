@@ -10,7 +10,11 @@ Rails.application.routes.draw do
       collection do
         get 'clubs'
       end
-      resources :nights, only: [:update]
+      resources :nights, only: [:update] do
+        member do
+          get 'venue_delete'
+        end
+      end
       resources :venue_reviews, only: :create
     end
      member do

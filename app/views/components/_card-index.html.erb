@@ -1,5 +1,6 @@
 <div class="card-trip ct-round-5 ct-shadow mt-4 ct-capitalize">
   <%= cl_image_tag venue.photos[0].key %>
+
   <div class="card-trip-infos px-3 pt-4 pb-3">
     <div class="row align-items-end">
       <div class="col-7">
@@ -11,9 +12,7 @@
         <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> / <%= venue.category %></p>
         <h5 class="card-trip-pricing pt-1"><%= venue.price_segment %></h5>
       </div>
-
     </div>
-
   </div>
 </div>
 

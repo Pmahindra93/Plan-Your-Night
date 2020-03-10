@@ -1,29 +1,52 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+// LOGO
+svg {
+  width: 150px;
+  margin-top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+
+// Hamburger Icon Border
+.navbar-toggler, .navbar-toggler:focus, .navbar-toggler:active {
+  border: none;
+  color: rgba(255, 255, 255, 1);
+  outline: none;
+  box-shadow: none;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-.navbar-header {
-position: absolute;
-left: 2%;
-right: 0%;
-top: 28%;
-bottom: 0%;
+// BORDER COLOR HAMBURGER ICON
+// DEACTIVATED, DO NOT ERASE!
 
-font-family: Roboto;
-font-style: normal;
-font-weight: 500;
-font-size: 24px;
-line-height: 28px;
-display: flex;
-align-items: center;
-letter-spacing: 0.02em;
-color: #000000;
+// .custom-toggler .navbar-toggler {
+//     border-color: rgb(255,200,203);
+// }
+
+// Bootstrap 4 Hamburger Icon Color
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(242,245,247, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
+
+.bg-dark  {
+  background-color: rgba(27,0,44, 0.9) !important;
+}
+
+
+// DROPDOWN LINKS
+.navbar-nav {
+   height: 100vh;
+}
+
+.ct-nav-item {
+  color: $ct-light;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding-top: 50px;
+  letter-spacing: 1px;
+
+   &:hover {
+    text-decoration: none;
+    color: $ct-light;
+  }
+}
+

@@ -42,6 +42,8 @@ class VenuesController < ApplicationController
     @marker = { lat: @venue.latitude, lng: @venue.longitude }
   end
 
+
+
   def blank_stars
       5 - @review.rating
   end
