@@ -9,7 +9,11 @@ class VenuesController < ApplicationController
   end
 
   def clubs
-    @clubs = @venues.select {|venue| venue.venue_type == "club" }
+     if @night.venues.first.present?
+        @clubs = Venue.near(@night.venues.first.address,5).where(venue_type: 'club')
+     else
+        @clubs = @venues.select {|venue| venue.venue_type == "club" }
+     end
   end
 
   def search
