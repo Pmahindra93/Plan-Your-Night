@@ -1,12 +1,12 @@
 <div class="card-trip ct-round-5 ct-shadow mt-4 ct-capitalize">
   <%= cl_image_tag venue.photos[0].key %>
-
   <div class="card-trip-infos px-3 pt-4 pb-3">
     <div class="row align-items-end">
       <div class="col-7">
         <h3 class="mt-1"><%= venue.name %></h3>
-        <p class="ct-text-14 pt-2"><span class=""><% y = venue%>
-          <%= y.distance_to(@night.location).round(1) %>km away</span></p>
+        <p class="ct-text-14 pt-2"><span class="">
+          <p class="ct-text-14 pt-2"><span class=""><% y = venue%>
+          <%= y.distance_to('Berlin, Germany').round(1) %>km away</span></p>
       </div>
       <div class="col-5 text-right">
         <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> / <%= venue.category %></p>
@@ -15,4 +15,3 @@
     </div>
   </div>
 </div>
-
