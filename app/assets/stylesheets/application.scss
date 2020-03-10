@@ -30,19 +30,19 @@
 @import "config/custom-css";
 
 
-
+// SHOWPAGE ICONS
 // TAKE A LOOK AT THIS
 //where is exactly this rails-social-share-button import?
 @import "rails-social-share-button";
 
-// that doesnt belong here, put somewhere else ;)
-$size: 24px;
-$color: black;
+$size: 20px;
+// $color: black;
 .rails-social-share-button {
   .ssb-icon {
     background-size: $size $size;
     height: $size;
     width: $size;
-    color: $color;
+    margin-left: 3px;
+    // color: $color;
   }
 }

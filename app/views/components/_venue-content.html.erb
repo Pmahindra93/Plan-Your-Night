@@ -17,7 +17,7 @@
 <div class="d-flex align-items-center">
   <div class="ct-chip">
     <i class="fas fa-map-marker-alt text-primary" id="marker"></i>
-    <p class="pl-1"><%= @venue.address %></p>
+    <p class="pl-1"> <%= link_to(@venue.address, :anchor => "my-map-anchor") %> </p>
   </div>
 </div>
 <!-- Opening Hours -->
@@ -42,8 +42,8 @@
   <% end %>
 </div>
 
-
-<div id="description" class="mt-3">
+<!-- Venue Description / NOT FOR THE MOMENT-->
+<!-- <div id="description" class="mt-4">
   <p class="pb-1"><strong>Description</strong></p>
   <p class=""><%= @venue.description %></p>
-</div>
+</div> -->

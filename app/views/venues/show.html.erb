@@ -1,10 +1,10 @@
-<body class="bg-danger">
+<body class="ct-bg-global">
 
 <div class="container-fluid mt-4 pt-3">
 
   <!-- SHOWPAGE BTNS -->
   <div class="row pt-5">
-    <div class="col-12 p-0">
+    <div class="col-12">
       <div class="d-flex align-items-center my-2">
         <%= render 'components/showpage_buttons' %>
       </div>
@@ -18,25 +18,28 @@
     </div>
   </div>
 
-  <!-- VENUE CONTENT -->
+  <!-- VENUE CONTENT NOT SHOWING-->
   <div class="row mt-3">
     <div class="col-12">
       <%= render 'components/venue-content' %>
     </div>
   </div>
 
+  <!-- BUTTON ADD-TO-NIGHT -->
+  <!-- Do not put a Sticky BTN inside a row/col, or it wont work! -->
+  <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary btn-block ct-btn ct-round-50 ct-shadow ct-sticky-btn', id:'add-btn' do %>
+    Add to Night Out
+  <% end %>
+
+  <div id="my-map-anchor">
+    <!-- This empty div is the anchor of the map-->
+    <!-- DO NOT REMOVE!-->
+  </div>
   <!-- VENUE LOCATION (MAP) -->
-  <div id="map" style="width: 100%; height: 200px; margin-top: 10px;" data-user-marker="<%= @user_marker.to_json %>" data-venue-marker="<%= @venue_marker.to_json %>" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  <div class="ct-round-5 mt-5" id="map" style="width: 100%; height: 200px; margin-top: 10px;" data-user-marker="<%= @user_marker.to_json %>" data-venue-marker="<%= @venue_marker.to_json %>" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <!-- BUTTON ADD-TO-NIGHT -->
-  <div class="row justify-content-center">
-    <div class="col-11">
-      <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary btn-block ct-btn ct-round-50 ct-shadow ct-sticky-btn', id:'add-btn' do %>
-        Add to Night Out
-      <% end %>
-    </div>
-  </div>
+
 
   <div id="my-reviews-anchor">
     <!-- This empty div is the anchor of the reviews-->

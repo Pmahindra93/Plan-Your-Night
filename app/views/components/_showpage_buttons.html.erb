@@ -1,10 +1,15 @@
-<%= link_to night_venues_path , class:"nav-icon", id:"back" do %>
-  <i class="fas fa-chevron-left"></i>
-<% end %>
+  <%= link_to night_venues_path , class:"", id:"back" do %>
+    <i class="fas fa-lg fa-chevron-left text-primary"></i>
+  <% end %>
+
 <div class="d-flex align-items-center">
 
+  <!-- <h6 class="text-light pr-2"> Share </h6> -->
   <%= rails_social_share_button_tag(@venue.name) %>
-  <%= button_to venue_favourites_path(@venue), method: :post,  class:"nav-button nav-icon" do %>
-    <i class="far fa-heart"></i>
+  <%= button_to venue_favourites_path(@venue), method: :post,  class:"pl-1 nav-button ct-social-media-icons" do %>
+    <i class="pl-3 far fa-heart fa-lg text-primary"></i>
   <% end %>
 </div>
+
+
+
