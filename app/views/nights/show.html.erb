@@ -1,8 +1,8 @@
 <div class="container mt-5 pt-5 mb-5">
   <div class="row">
     <div class="col-12">
-      <h3 class="text-primary mb-2">
-        Your plan for the night
+      <h3 class="text-primary mt-2 mb-2">
+        Your plan for tonight:
       </h3>
 
       <div class="d-flex justify-content-end">
@@ -12,10 +12,9 @@
       </div>
 
       <% @night.venues.where(venue_type: "bar").each do |venue| %>
-        <%= link_to night_venue_path(@night,venue) do %>
           <%= render 'components/cards-summary', venue: venue, night: @night %>
         <% end %>
-      <% end %>
+
 
 
      <div class="d-flex justify-content-end">
@@ -24,10 +23,10 @@
         <% end %>
       </div>
       <% @night.venues.where(venue_type: "club").each do |venue| %>
-        <%= link_to night_venue_path(@night,venue) do %>
+
           <%= render 'components/cards-summary', venue: venue, night: @night  %>
         <% end %>
-      <% end %>
+
 
     <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-shadow ct-round-50 mt-5", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
     <!-- MODAL -->
@@ -39,10 +38,4 @@
 
 
 
-  <!--  <% if @night.venues.length >= 2 %>
-            <p>the distance between the bar and club is
-            <% bar_dist = @night.venues.where(venue_type: "bar").last%>
-            <%  %>
-            <%= x.distance_to(@night.venues.last).round(1)%>km
-            </p>
-          <% end %> -->
+
