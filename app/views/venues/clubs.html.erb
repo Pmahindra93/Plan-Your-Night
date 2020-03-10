@@ -12,15 +12,13 @@
             Choose your club
           </h3>
         </div>
+        <br>
+          <p>all clubs max.5km far away from <%= @night.venues.first.name %></p>
 
 
         <% @clubs.each do |venue| %>
           <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
-            <%= render 'components/card-index', venue: venue  %>
-              <% if @night.venues.first.present? %>
-              <p> <% z = @night.venues.first%>
-              <%= z.distance_to(venue.name).round(1) %>km</p>
-              <% end %>
+            <%= render 'components/card-index-club', venue: venue  %>
             <% end %>
         <% end %>
 
