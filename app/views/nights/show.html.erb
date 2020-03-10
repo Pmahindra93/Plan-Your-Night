@@ -1,24 +1,28 @@
 <div class="container mt-5 pt-5 mb-5">
   <div class="row">
     <div class="col-12">
-      <h3 class="text-primary">
+      <h3 class="text-primary mb-2">
         Your plan for the night
       </h3>
-      <br>
 
+      <div class="d-flex justify-content-end">
+          <%= link_to night_venues_path(@night), class: "btn btn-outline-primary ct-btn-add mt-3" do%>
+            <i class="fas fa-plus"></i> Bar
+          <% end %>
+      </div>
 
-      <%= link_to night_venues_path(@night), class: "btn btn-primary ct-btn" do%>
-        <p>Add a Bar <i class="fas fa-glass-cheers"></i></p>
-      <% end %>
       <% @night.venues.where(venue_type: "bar").each do |venue| %>
         <%= link_to night_venue_path(@night,venue) do %>
           <%= render 'components/cards-summary', venue: venue, night: @night %>
         <% end %>
       <% end %>
 
-      <br>
 
-      <%= link_to 'Add a club',clubs_night_venues_path(@night), class: "btn btn-primary ct-btn"%>
+     <div class="d-flex justify-content-end">
+        <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-btn-add mt-3" do%>
+          <i class="fas fa-plus"></i> Club
+        <% end %>
+      </div>
       <% @night.venues.where(venue_type: "club").each do |venue| %>
         <%= link_to night_venue_path(@night,venue) do %>
           <%= render 'components/cards-summary', venue: venue, night: @night  %>
@@ -26,14 +30,12 @@
       <% end %>
 
 
-    <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-shadow ct-round-50", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
+    <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-shadow ct-round-50 mt-5", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
     <!-- MODAL -->
     <%= render 'components/modal_summary_page' %>
     </div>
   </div>
 </div>
-
-
 
 
 

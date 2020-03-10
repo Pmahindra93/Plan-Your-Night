@@ -59,6 +59,20 @@
       }
 }
 
+.ct-btn-add {
+  font-size: 14px;
+  border-radius: 25px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 7px 0px;
+  padding-left: 10px;
+  padding-right: 15px;
+    &:hover {
+        text-decoration: none;
+      }
+}
+
 
 // .ct-btn-modal{
 //   border-radius: 5px;
