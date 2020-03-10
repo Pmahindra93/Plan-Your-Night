@@ -8,7 +8,9 @@
   </div>
   <div class="card-description">
     <h3><%= venue.name %></h3>
+    <br>
     <p class="ct-text-dark"><%= venue.price_segment %> <span> &bull;</span> <%= venue.venue_type %> / <%= venue.category %> </p>
+    <%= link_to 'Remove', venue_delete_night_venue_night_path(night,venue) %>
   </div>
 </div>
 
