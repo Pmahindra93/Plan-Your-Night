@@ -1,9 +1,9 @@
 <div>
-  <p class="text-primary-dark">Username</p>
+  <p class="mt-4 ct-primary-dark">Username</p>
   <p class="text-light"><%= user.first_name %> <%= user.last_name %></p>
-  <p class="bold-lg">Email:</p>
-  <p><%= user.email %></p>
-  <div id="change-links">
+  <p class="mt-2 ct-primary-dark">Email</p>
+  <p class="text-light"><%= user.email %></p>
+  <div id="change-links" class="mt-4">
     <%= link_to 'Change Accout Info', edit_user_registration_path %>
     <br>
     <%= link_to 'Change Password', edit_user_password_path %>

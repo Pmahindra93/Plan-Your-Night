@@ -28,7 +28,7 @@
         <div class="col-12">
           <!-- ACCOUNT INFO -->
           <div class="hidden content" data-info-type="acc-info">
-            <p class="content-title ct-primary-light mt-3">Account Info</p>
+            <p class="content-title ct-primary-light mt-3">Account info</p>
             <%= render 'components/account-info', user: @user %>
           </div>
           <!-- NIGHTOUTS -->
@@ -48,18 +48,18 @@
           </div>
           <!-- FAVOURITES -->
           <div class="hidden content" data-info-type="favourite">
-            <p class="content-title ct-primary-light mt-3 mb-3">Your Favourites</p>
-            <% if @favourites.present? %>
-              <% @favourites.each do |fav| %>
-                <div class="row">
-                  <div class="col-12">
+            <p class="content-title ct-primary-light mt-3 mb-3">Your favourites</p>
+            <div class="row">
+              <div class="col-12 mt-3">
+                <% if @favourites.present? %>
+                  <% @favourites.each do |fav| %>
                     <%= render 'components/card-dashboard', venue: fav.venue %>
-                  </div>
-                </div>
-              <% end %>
-            <% else %>
-              <p class="mt-2"> Currently, you have no Favourites! </p>
-            <% end %>
+                  <% end %>
+                <% else %>
+                  <p class="mt-2"> Currently, you have no Favourites! </p>
+                <% end %>
+              </div>
+            </div>
           </div>
         </div>
       </div>
