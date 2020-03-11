@@ -7,14 +7,17 @@
       <% end %>
   </div>
   <div class="card-description-summary">
-    <h3><%= venue.name %></h3>
-    <p class="summ-cards"><%= venue.opening_hours %> </p>
+    <p class="ct-bold "><%= venue.name %></p>
+    <p class="ct-text-12 pt-2 ct-text-dark-medium ct-flex-none"><%= venue.opening_hours %> </p>
       <% if night.venues.length >= 2 && venue.venue_type == 'club' %>
         <% bar = night.venues.where(venue_type: "bar").last%>
         <% club = night.venues.where(venue_type: "club").first%>
-        <p class= "summ-cards"><em><strong><%= bar.distance_to(club).round(1)%>km </strong></em> from <%= bar.name %> </p>
+        <p class= "ct-text-12 "><strong><%= bar.distance_to(club).round(1)%> km. </strong> from <%= bar.name %> </p>
       <% end %>
-    <%= link_to 'Remove', venue_delete_night_venue_night_path(night,venue) %>
+
+      <p class="ct-remove-btn"><%= link_to 'Remove', venue_delete_night_venue_night_path(night,venue) %></p>
+
+
   </div>
 </div>
 
