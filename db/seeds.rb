@@ -46,7 +46,7 @@ def club_opening(info)
   unless info["response"]["venue"]["hours"].nil?
     return "#{info["response"]["venue"]["hours"]["timeframes"][0]["open"][0]["renderedTime"]}"
   else
-    return "Opeining Times Unknown"
+    return "Unknown"
   end
 end
 
