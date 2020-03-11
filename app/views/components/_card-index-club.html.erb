@@ -8,7 +8,7 @@
           <p class="ct-text-14 pt-2 ct-medium text-primary" id="distance"><span class="">
             <% if night.venues.where(venue_type: 'bar').first.present? %>
             <% bar = night.venues.where(venue_type: 'bar').first %>
-              <%= venue.distance_to(bar.address).round(1) %>km away from <%= bar.name %></span></p>
+              <%= venue.distance_to([bar.latitude, bar.longitude]).round(1) %>km away from <%= bar.name %></span></p>
             <% else %>
               <%= venue.distance_to(@night.location).round(1) %>km away from search location</span></p>
              <% end %>
