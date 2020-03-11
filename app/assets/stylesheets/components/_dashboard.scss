@@ -1,13 +1,13 @@
 .menu{
   width: 100vw;
-  padding: 20px;
+  // padding: 20px;
 }
 
 .menu-item{
-  color: rgba(0,0,0,0.3);
+  color: $ct-primary-dark;
   font-weight: bold;
   &.active{
-    color: black;
+    color: $ct-primary-light;
   }
   &:hover{
     cursor: pointer;
@@ -18,6 +18,7 @@
   font-weight: bold;
   font-size: 25px;
   margin-top: 10px;
+  color: $ct-light;
 }
 
 .menu-list{
@@ -29,7 +30,7 @@
 }
 
 .content-title{
-  font-size: 30px;
+  font-size: 24px;
 }
 
 #change-links{
@@ -38,13 +39,16 @@
 
 #night-date{
   flex-grow: 1;
-  font-size: 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  color: $ct-primary;
 }
 
 #seperation-line{
-  border-top: 1px solid rgb(0,0,0);
+  border-top: 1px solid $ct-primary-light;
   width: 100%;
   height: 1px;
+  margin-top: 8px;
 }
 
 #share-night{
@@ -53,7 +57,8 @@
 }
 
 #facebook, #twitter{
-  color: black;
+  color: $ct-primary;
   font-size: 22px;
-  margin: 0 2px;
+  margin-left: 5px;
+
 }

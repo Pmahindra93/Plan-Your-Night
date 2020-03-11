@@ -1,58 +1,67 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 menu">
-      <div class="text-center">
-        <% if @user.photo.attached? %>
-          <%= cl_image_tag @user.photo.key, :width => 150, :height => 150, :radius => "max" %>
-        <% else %>
-          <%= cl_image_tag("empty-avatar_fjtvit", :width => 150, :height => 150, :radius => "max")  %>
-        <% end %>
-        <p class="bold-lg"><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
-      </div>
-      <div class="menu-list d-flex justify-content-between">
-        <p class="menu-item active" id="nightout">Nightouts</p>
-        <p class="menu-item" id="favourite">Favourites</p>
-        <p class="menu-item" id="acc-info">Account Info</p>
-      </div>
-      <hr id="seperation-line">
-    </div>
-  </div>
-  <div class="container">
+<body class="ct-bg-global">
+
+  <div class="container mt-5 pt-5">
     <div class="row">
-      <div class="col-12">
-        <div class="hidden content" data-info-type="acc-info">
-          <p class="content-title">Account Info</p>
-          <%= render 'components/account-info', user: @user %>
-        </div>
-        <div class="hidden content" data-info-type="nightout">
-          <p class="content-title">Your nightouts</p>
-          <% if @nightouts.present? %>
-            <% @nightouts.each do |nightout| %>
-              <div class="row">
-                <div class="col-12">
-                  <%= render 'components/night-card', night: nightout %>
-                </div>
-              </div>
-            <% end %>
+      <div class="col-12 menu">
+        <!-- HEADER -->
+        <div class="text-center">
+          <% if @user.photo.attached? %>
+            <%= cl_image_tag @user.photo.key, :width => 150, :height => 150, :radius => "max", class: " ct-round-200 border border-light" %>
           <% else %>
-            <p class="mt-2"> Currently, you have no nightout planned! </p>
+            <%= cl_image_tag("empty-avatar_fjtvit", :width => 150, :height => 150, :radius => "max")  %>
           <% end %>
+          <p class="bold-lg"><%= @user.first_name %> <%= @user.last_name %></p>
         </div>
-        <div class="hidden content" data-info-type="favourite">
-          <p class="content-title">Your Favourites</p>
-          <% if @favourites.present? %>
-            <% @favourites.each do |fav| %>
-              <div class="row">
-                <div class="col-12">
-                  <%= render 'components/card-dashboard', venue: fav.venue %>
-                </div>
-              </div>
-            <% end %>
-          <% else %>
-            <p class="mt-2"> Currently, you have no Favourites! </p>
-          <% end %>
+        <div class="menu-list d-flex justify-content-between">
+          <p class="menu-item active" id="nightout">Nightouts</p>
+          <p class="menu-item" id="favourite">Favourites</p>
+          <p class="menu-item" id="acc-info">Account Info</p>
         </div>
+        <hr id="seperation-line">
+
       </div>
     </div>
+
+    <!-- Content -->
+
+      <div class="row">
+        <div class="col-12">
+          <div class="hidden content" data-info-type="acc-info">
+            <p class="content-title">Account Info</p>
+            <%= render 'components/account-info', user: @user %>
+          </div>
+          <div class="hidden content" data-info-type="nightout">
+            <p class="content-title ct-primary-light mt-3">Your nightouts</p>
+            <% if @nightouts.present? %>
+              <% @nightouts.each do |nightout| %>
+                <div class="row">
+                  <div class="col-12">
+                    <%= render 'components/night-card', night: nightout %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <p class="mt-2"> Currently, you have no nightout planned! </p>
+            <% end %>
+          </div>
+          <div class="hidden content" data-info-type="favourite">
+            <p class="content-title">Your Favourites</p>
+            <% if @favourites.present? %>
+              <% @favourites.each do |fav| %>
+                <div class="row">
+                  <div class="col-12">
+                    <%= render 'components/card-dashboard', venue: fav.venue %>
+                  </div>
+                </div>
+              <% end %>
+            <% else %>
+              <p class="mt-2"> Currently, you have no Favourites! </p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+
+
   </div>
-</div>
+</body>
