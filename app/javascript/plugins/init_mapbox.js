@@ -27,7 +27,11 @@ const addUserToMap = (map, userMarker) => {
 const addVenueToMap = (map, venueMarker) => {
   const popup = new mapboxgl.Popup().setHTML(venueMarker.infoWindow);
   const vMarker = document.createElement('i');
-  vMarker.className = 'fas fa-map-marker-alt'
+  if (venueMarker.markerType === "bar") {
+    vMarker.className = 'fas fa-glass-martini-alt';
+  } else {
+    vMarker.className = 'fas fa-music';
+  }
   vMarker.style.fontSize = '25px'
   vMarker.style.color = '#8949da'
 
