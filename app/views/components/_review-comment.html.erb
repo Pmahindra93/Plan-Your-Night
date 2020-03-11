@@ -1,6 +1,6 @@
 <% @reviews.each do |review| %>
 
-  <div class="d-flex align-items-center border-top pt-3 mt-3">
+  <div class="d-flex align-items-center border-top pt-4 mt-3">
     <!-- User Pic -->
     <div class="">
       <% if review.user.photo.attached? %>
@@ -9,7 +9,7 @@
         <%= cl_image_tag ("empty-avatar_fjtvit"), class: "user-pic"%>
       <% end %>
     </div>
-    <div class="pl-3">
+    <div class="pl-3 text-light">
       <p> <%= review.user.first_name %> <%= review.user.last_name %>  </p>
       <!-- div stars -->
       <div>
@@ -23,8 +23,8 @@
     </div>
   </div>
   <!-- Review content -->
-  <div class="review-content mt-3 px-4 py-3">
-    <p> <span class="quotes">"</span> <%= review.content %> </p>
+  <div class="review-content mt-3 px-4 py-3 mb-4">
+    <p> <%= review.content %> </p>
   </div>
 
 <% end %>
