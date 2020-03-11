@@ -25,6 +25,11 @@ class NightsController < ApplicationController
         markerType: "#{venue.venue_type}"
       }
     end
+    @night_venues = NightVenue.all
+    @night_venues.where(night_id: params[:id]).each do |night_venue|
+      spend_venue = night_venue.spend_per_venue
+      @night.total_spend += spend_venue
+    end
   end
 
   def night_save

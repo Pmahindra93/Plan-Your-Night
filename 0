@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20200311211945_add_totalspend_to_nights.rb
