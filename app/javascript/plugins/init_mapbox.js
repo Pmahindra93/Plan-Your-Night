@@ -67,9 +67,13 @@ const addMarkers = (map, markers) => {
   markers.forEach((marker) => {
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     const venueMarker = document.createElement('i');
-    venueMarker.className = 'fas fa-map-marker-alt'
-    venueMarker.style.fontSize = '25px'
-    venueMarker.style.color = '#8949da'
+    if (marker.markerType === "bar") {
+      venueMarker.className = 'fas fa-glass-martini-alt';
+    } else {
+      venueMarker.className = 'fas fa-music';
+    }
+    venueMarker.style.fontSize = '25px';
+    venueMarker.style.color = '#8949da';
 
     new mapboxgl.Marker(venueMarker)
       .setLngLat([ marker.lng, marker.lat ])
