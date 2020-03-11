@@ -7,7 +7,7 @@
   <!-- <h6 class="text-light pr-2"> Share </h6> -->
   <%= rails_social_share_button_tag(@venue.name) %>
   <%= button_to venue_favourites_path(@venue), method: :post,  class:"pl-1 nav-button ct-social-media-icons" do %>
-    <i class="pl-3 far fa-heart fa-lg text-primary"></i>
+    <i class="pl-3 far fa-heart fa-lg text-primary" id="fa-heart"></i>
   <% end %>
 </div>
 
