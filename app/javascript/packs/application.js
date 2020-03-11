@@ -20,9 +20,8 @@ import { triggerLocation } from 'components/location';
 triggerLocation();
 
 import 'mapbox-gl/dist/mapbox-gl.css';
-import { initMapbox } from 'plugins/init_mapbox';
+import { initMapbox, initSummaryMapbox } from 'plugins/init_mapbox';
 initMapbox();
 
-import { initUserNumber } from "../plugins/init_user_number";
-initUserNumber();
 
+initSummaryMapbox();

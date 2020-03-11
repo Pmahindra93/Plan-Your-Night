@@ -1,17 +1,18 @@
 .banner {
   // Need to do the link with cloudinary...
   background: linear-gradient(rgba(255,197,34,1), transparent), url("photo-1532452119098-a3650b3c46d3.jpeg");
-  background: linear-gradient(rgba(255,197,34,1), transparent), url("https://source.unsplash.com/iTZOPe7BpTM/1600x900");
+  background: linear-gradient(rgba(255,197,34,1), rgba(255,197,34,0.3), rgba(27,0,44,1)), url("https://source.unsplash.com/iTZOPe7BpTM/1600x900");
 
   background-size: cover;
   // background-color: red;
-  height: 40vh;
+  // height: 40vh;
+  height: 290px;
   position: relative;
 }
 
 .banner-text {
   position: absolute;
-  top: 130px;
+  top: 120px;
   left: 15px;
   width: 335px;
 }

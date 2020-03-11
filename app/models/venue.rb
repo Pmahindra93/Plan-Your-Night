@@ -22,4 +22,11 @@ class Venue < ApplicationRecord
   def distinct_users
     users.distinct
   end
+
+  def no_postcode
+    postcode = /\d{5}/
+    address_array = self.address.split(" ")
+    address_array.reject! { |part| postcode.match(part) }
+    address_array.join(" ")
+  end
 end

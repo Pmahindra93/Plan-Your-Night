@@ -2,10 +2,11 @@
   <div class="container mt-5 pt-5 ">
     <div class="row ct-mb-semi">
       <div class="col-12">
-
-        <% if @venues.empty? %>
-          <h3>No Search Results</h3>
-          <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
+        <% if @clubs.empty? %>
+          <h5 class="text-light ct-club">Sorry, no club that matches your preferences!
+          <br><br>To continue, Skip this step or try another search </h5>
+          <br>
+          <%= link_to 'Try Another Search', root_path, style:' text-decoration: none', class: "ct-club-btn" %>
         <% else %>
           <div class="d-flex justify-item-baseline">
             <span class="ct-circle bg-primary text-light item-align">2</span>
@@ -13,10 +14,6 @@
               Choose your club
             </h3>
           </div>
-     <!--      <br>
-          <% if @night.venues.first.present? %>
-            <p><em>Clubs near <strong><%= @night.venues.first.name %></strong></em></p>
-          <% end %> -->
 
 
           <% @clubs.each do |venue| %>
@@ -26,13 +23,12 @@
           <% end %>
 
         <!-- FIXED BTN LAYOUT -->
-          <div class="">
-            <%= link_to night_path(@night), class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
-              Skip <i class="fas fa-chevron-right pl-1"></i>
-            <% end %>
-          </div>
         <% end %>
-
+        <div class="">
+          <%= link_to night_path(@night), class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
+            Skip <i class="fas fa-chevron-right pl-1"></i>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>

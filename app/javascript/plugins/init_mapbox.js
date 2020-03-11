@@ -1,9 +1,10 @@
 import mapboxgl from 'mapbox-gl';
 
-const mapElement = document.getElementById('map');
+const showMap = document.getElementById('map');
+const summaryMap = document.getElementById('summary-map')
 
 const makeMap = () => {
-  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  mapboxgl.accessToken = showMap.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11'
@@ -25,8 +26,12 @@ const addUserToMap = (map, userMarker) => {
 
 const addVenueToMap = (map, venueMarker) => {
   const popup = new mapboxgl.Popup().setHTML(venueMarker.infoWindow);
-const vMarker = document.createElement('i');
-  vMarker.className = 'fas fa-map-marker-alt'
+  const vMarker = document.createElement('i');
+  if (venueMarker.markerType === "bar") {
+    vMarker.className = 'fas fa-glass-martini-alt';
+  } else {
+    vMarker.className = 'fas fa-music';
+  }
   vMarker.style.fontSize = '25px'
   vMarker.style.color = '#8949da'
 
@@ -43,15 +48,51 @@ const fitMapZoom = (map, markers) => {
 };
 
 const initMapbox = () => {
-  if (mapElement) {
+  if (showMap) {
     const map = makeMap();
-    const user = JSON.parse(mapElement.dataset.userMarker);
-    const venue = JSON.parse(mapElement.dataset.venueMarker);
-    const markers = JSON.parse(mapElement.dataset.markers);
+    const user = JSON.parse(showMap.dataset.userMarker);
+    const venue = JSON.parse(showMap.dataset.venueMarker);
+    const markers = JSON.parse(showMap.dataset.markers);
     addUserToMap(map, user);
     addVenueToMap(map, venue);
     fitMapZoom(map, markers);
   }
 };
 
-export { initMapbox };
+const makeSummaryMap = () => {
+  mapboxgl.accessToken = summaryMap.dataset.mapboxApiKey;
+  return new mapboxgl.Map({
+    container: 'summary-map',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+};
+
+const addMarkers = (map, markers) => {
+  markers.forEach((marker) => {
+    const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
+    const venueMarker = document.createElement('i');
+    if (marker.markerType === "bar") {
+      venueMarker.className = 'fas fa-glass-martini-alt';
+    } else {
+      venueMarker.className = 'fas fa-music';
+    }
+    venueMarker.style.fontSize = '25px';
+    venueMarker.style.color = '#8949da';
+
+    new mapboxgl.Marker(venueMarker)
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
+      .addTo(map);
+  });
+}
+
+const initSummaryMapbox = () => {
+  if (summaryMap) {
+    const map = makeSummaryMap();
+    const markers = JSON.parse(summaryMap.dataset.markers);
+    addMarkers(map, markers);
+    fitMapZoom(map, markers);
+  }
+};
+
+export { initMapbox, initSummaryMapbox };
