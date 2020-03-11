@@ -46,8 +46,6 @@
 
 <% users = Venue.find_by(name: @venue.name) %>
 <% users_number = users.distinct_users.count %>
-<!-- <% user_name = users.distinct_users.first.email  %> -->
-<!-- <%= user_name %> -->
 <p class="mb-2" style="color: white"><strong><%= users_number + 10 %> people have chosen <%= @venue.name %> tonight</strong></p>
 <br>
 
