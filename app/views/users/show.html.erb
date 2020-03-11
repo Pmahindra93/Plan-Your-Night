@@ -8,7 +8,7 @@
           <% if @user.photo.attached? %>
             <%= cl_image_tag @user.photo.key, :width => 150, :height => 150, :radius => "max", class: " ct-round-200 border border-light" %>
           <% else %>
-            <%= cl_image_tag("empty-avatar_fjtvit", :width => 150, :height => 150, :radius => "max")  %>
+            <%= cl_image_tag("empty-avatar_fjtvit", :width => 150, :height => 150, :radius => "max", class: "ct-round-200 border border-light") %>
           <% end %>
           <p class="bold-lg"><%= @user.first_name %> <%= @user.last_name %></p>
         </div>
@@ -56,7 +56,7 @@
                     <%= render 'components/card-dashboard', venue: fav.venue %>
                   <% end %>
                 <% else %>
-                  <p class="mt-2"> Currently, you have no Favourites! </p>
+                  <p class="mt-2 ct-primary-dark"> Currently, you have no Favourites! </p>
                 <% end %>
               </div>
             </div>
