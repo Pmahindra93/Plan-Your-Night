@@ -1,4 +1,4 @@
-<h2 class="text-light mb-2"><%= @venue.name.capitalize %></h2>
+<h2 class="text-light mb-2  ct-capitalize"><%= @venue.name.capitalize %></h2>
 <!-- Bar Name-->
 <span class="ct-chip"><%= @venue.spend %></span>
 <!-- Stars Rating -->
@@ -17,7 +17,7 @@
 <div class="d-flex align-items-center">
   <div class="ct-chip">
     <i class="fas fa-map-marker-alt text-primary" id="marker"></i>
-    <p class="pl-1"> <%= link_to(@venue.address, :anchor => "my-map-anchor") %> </p>
+    <p class="pl-1 ct-text-14"> <%= link_to(@venue.address, :anchor => "my-map-anchor") %> </p>
   </div>
 </div>
 <!-- Opening Hours -->

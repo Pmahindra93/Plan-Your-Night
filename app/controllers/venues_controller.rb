@@ -19,7 +19,7 @@ class VenuesController < ApplicationController
   def search
     @night = Night.find(params[:night_id])
     @venue = Venue.near(@night.location, 5)
-    @category = @night.category
+    @category = @night.category.downcase
     @budget = @night.budget
     if (@category == "all") && (@budget == '')
       @venues = @venue.all

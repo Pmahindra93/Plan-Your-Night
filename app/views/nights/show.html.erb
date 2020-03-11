@@ -13,18 +13,18 @@
 
       <% @night.venues.where(venue_type: "bar").each do |venue| %>
           <%= render 'components/cards-summary', venue: venue, night: @night %>
-        <% end %>
+      <% end %>
 
 
 
-     <div class="d-flex justify-content-end">
+      <div class="d-flex justify-content-end">
         <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-btn-add mt-3" do%>
           <i class="fas fa-plus"></i> Club
         <% end %>
       </div>
       <% @night.venues.where(venue_type: "club").each do |venue| %>
           <%= render 'components/cards-summary', venue: venue, night: @night  %>
-        <% end %>
+      <% end %>
 
 <!--     <% if @night.venues.length >= 2 %>
       <p>the distance is

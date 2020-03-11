@@ -38,8 +38,8 @@ class VenueReviewsController < ApplicationController
       if @review.save
         redirect_to night_venue_path(@night, @venue)
       else
-        flash[:alert] = "Something went wrong."
-        redirect_to root_path
+        flash[:alert] = "You need to submit a valid review!"
+        redirect_to night_venue_path(@night, @venue)
       end
     end
 

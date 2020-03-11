@@ -4,7 +4,7 @@
   // height: 250px;
   // width: 100%;
   margin-bottom: 20px;
-  // border-radius: 10px;
+  border: 2px solid $ct-light;
 }
 
 .card-trip > img {
@@ -28,8 +28,9 @@
 }
 
 #distance{
-  text-transform: none;
-  font-weight: 700;
+  line-height: 20px;
+  // text-transform: none;
+  // font-weight: 700;
 }
 
 

@@ -1,37 +1,39 @@
-<div class="container mt-5 pt-5 ">
-  <div class="row">
-    <div class="col-12">
+<body class="ct-bg-global">
+  <div class="container mt-5 pt-5 ">
+    <div class="row ct-mb-semi">
+      <div class="col-12">
 
-      <% if @venues.empty? %>
-        <h3>No Search Results</h3>
-        <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
-      <% else %>
-        <div class="d-flex justify-item-baseline">
-          <span class="ct-circle bg-primary text-light item-align">2</span>
-          <h3 class="text-primary">
-            Choose your club
-          </h3>
-        </div>
-   <!--      <br>
-        <% if @night.venues.first.present? %>
-          <p><em>Clubs near <strong><%= @night.venues.first.name %></strong></em></p>
-        <% end %> -->
+        <% if @venues.empty? %>
+          <h3>No Search Results</h3>
+          <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
+        <% else %>
+          <div class="d-flex justify-item-baseline">
+            <span class="ct-circle bg-primary text-light item-align">2</span>
+            <h3 class="text-primary">
+              Choose your club
+            </h3>
+          </div>
+     <!--      <br>
+          <% if @night.venues.first.present? %>
+            <p><em>Clubs near <strong><%= @night.venues.first.name %></strong></em></p>
+          <% end %> -->
 
 
-        <% @clubs.each do |venue| %>
-          <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
-            <%= render 'components/card-index-club', venue: venue, night: @night  %>
+          <% @clubs.each do |venue| %>
+            <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
+              <%= render 'components/card-index-club', venue: venue, night: @night  %>
+              <% end %>
+          <% end %>
+
+        <!-- FIXED BTN LAYOUT -->
+          <div class="">
+            <%= link_to night_path(@night), class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
+              Skip <i class="fas fa-chevron-right pl-1"></i>
             <% end %>
+          </div>
         <% end %>
 
-      <!-- FIXED BTN LAYOUT -->
-        <div class="">
-          <%= link_to night_path(@night), class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
-            Skip <i class="fas fa-chevron-right pl-1"></i>
-          <% end %>
-        </div>
-      <% end %>
-
+      </div>
     </div>
   </div>
-</div>
+</body>

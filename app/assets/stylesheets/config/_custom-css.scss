@@ -40,6 +40,18 @@
   font-size: 14px;
 }
 
+.ct-text-20 {
+  font-size: 20px;
+}
+
+.ct-bold {
+  font-weight: 700;
+}
+
+.ct-medium {
+  font-weight: 500;
+}
+
 // Background colors
 .ct-bg-global {
   background-color: $ct-bg-global;
@@ -61,6 +73,10 @@
   text-transform: capitalize;
 }
 
+.ct-no-capitals {
+  text-transform: none;
+}
+
 
 // custom circle
 .ct-circle {
@@ -75,6 +91,10 @@
 // Margins
 .ct-mb-big {
   margin-bottom: 100px;
+}
+
+.ct-mb-semi {
+  margin-bottom: 80px;
 }
 
 .ct-mt-big {
