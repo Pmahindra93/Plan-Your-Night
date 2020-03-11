@@ -3,7 +3,7 @@
   <p id="demo" style="display: none;"></p>
   <%= simple_form_for @night, method: :post, id: "my-form" do |f| %>
     <%= f.input :location, label: 'Choose a city', input_html: { id: :venue_location, class: "ct-label-text" } %>
-    <%= f.input :category, label: 'Tell us your style' , collection: [ "retro", "modern", "all" ] %>
+    <%= f.input :category, label: 'Tell us your style' , collection: [ "Retro", "Modern", "All" ] %>
 
   <div class="">
     <%= f.input :budget, label: 'Select your budget', as: :radio_buttons, collection:

@@ -30,8 +30,10 @@
 // LABELS
 
 #new_night .ap-suggestion {
-  line-height: 10px;
-  font-size: 12px;
+  line-height: 12px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
 }
 
 #new_night label {
