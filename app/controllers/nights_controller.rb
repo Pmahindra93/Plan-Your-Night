@@ -17,6 +17,13 @@ class NightsController < ApplicationController
   end
 
   def show
+    @markers = @night.venues.map do |venue|
+      {
+        lat: venue.latitude,
+        lng: venue.longitude,
+        infoWindow: "#{venue.name}"
+      }
+    end
   end
 
   def night_save
