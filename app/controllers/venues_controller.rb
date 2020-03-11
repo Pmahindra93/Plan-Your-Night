@@ -52,7 +52,8 @@ class VenuesController < ApplicationController
     @venue_marker = {
                       lat: @venue.latitude,
                       lng: @venue.longitude,
-                      infoWindow: "#{@venue.name}"
+                      infoWindow: "#{@venue.name}",
+                      markerType: "#{@venue.venue_type}"
                     }
     @markers = [@user_marker, @venue_marker]
   end
