@@ -1,7 +1,14 @@
+ // Modal background opacity
+ .modal {
+  background-color: rgba(30,30,30,.9);
+ }
+
+ // check icon
  .modal-body svg {
-  width: 100px;
+  width: 80px;
   display: block;
   margin: 40px auto 0;
+
 }
 
 
@@ -26,10 +33,10 @@
 
 .success {
   text-align: center;
-  margin: 20px 0 60px;
+  margin: 20px 0 40px;
   font-size: 1.25em;
   &.success {
-    color: $ct-success;
+    color: #65A726;
   }
   &.error {
     color: $ct-danger;
