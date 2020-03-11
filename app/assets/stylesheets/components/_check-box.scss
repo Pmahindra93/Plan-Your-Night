@@ -1,5 +1,14 @@
- // Modal background opacity
+ // Modal background opacity & Position
  .modal {
+  margin-top: -20px;
+  // position: absolute;
+  // top: 50px;
+  //right: 100px;
+  //bottom: 300px;
+  //left: 0;
+  z-index: 10040;
+  // overflow: auto;
+  // overflow-y: auto;
   background-color: rgba(30,30,30,.9);
  }
 
