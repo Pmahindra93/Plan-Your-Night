@@ -23,6 +23,7 @@
   color: $ct-light;
   cursor: pointer;
   font-weight: 400;
+  color: $ct-primary-light;
 
 }
 
@@ -68,12 +69,14 @@
 
 // Choose City input
 #venue_location {
-  border-radius: 50px;
+  // border-radius: 50px;
+  border-radius: 5px;
 }
 
 // Your Style input
 #new_night select {
-   border-radius: 50px;
+   // border-radius: 50px;
+   border-radius: 5px;
    text-transform: capitalize;
 }
 
