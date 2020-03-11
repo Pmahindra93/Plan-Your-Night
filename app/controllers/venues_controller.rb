@@ -10,7 +10,7 @@ class VenuesController < ApplicationController
 
   def clubs
      if @night.venues.first.present?
-        @clubs = Venue.near(@night.venues.first.address,5).where(venue_type: 'club')
+        @clubs = Venue.near(@night.venues.first.address,5).where(venue_type: 'club', price_segment: @night.venues.first.price_segment)
      else
         @clubs = @venues.select {|venue| venue.venue_type == "club" }
      end
