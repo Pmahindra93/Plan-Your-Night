@@ -13,11 +13,11 @@
 
       <% @night.venues.where(venue_type: "bar").each do |venue| %>
           <%= render 'components/cards-summary', venue: venue, night: @night %>
-        <% end %>
+      <% end %>
 
 
 
-     <div class="d-flex justify-content-end">
+      <div class="d-flex justify-content-end">
         <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-btn-add mt-3" do%>
           <i class="fas fa-plus"></i> Club
         <% end %>
@@ -25,7 +25,7 @@
       <% @night.venues.where(venue_type: "club").each do |venue| %>
 
           <%= render 'components/cards-summary', venue: venue, night: @night  %>
-        <% end %>
+      <% end %>
 
 
     <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-shadow ct-round-50 mt-5", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>

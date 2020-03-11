@@ -69,7 +69,7 @@ bars["response"]["groups"][0]["items"].each do |item|
   p item["venue"]["id"]
   bar = Venue.new(
     venue_type: 'bar',
-    category: ['Modern','Retro'].sample,
+    category: ['modern','retro'].sample,
     name: info["response"]["venue"]["name"],
     address: "#{info["response"]["venue"]["location"]["formattedAddress"][0]}, #{info["response"]["venue"]["location"]["formattedAddress"][1]}",
     longitude: info["response"]["venue"]["location"]["lng"],
