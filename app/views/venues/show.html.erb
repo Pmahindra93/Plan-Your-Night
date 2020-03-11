@@ -25,6 +25,13 @@
     </div>
   </div>
 
+  <div class="flash flash-success alert alert-dismissible fade show <%= "d-none" if @venue.distinct_users.count <= 10 %>" role="alert" id="users-number-flash" data-venue-id="<%= @venue.id %>">
+    <span id="users_number"><strong><span id="number-to-update"><%= @venue.distinct_users.count %></span> people have chosen <%= @venue.name %> tonight.</strong></span>
+    <a data-dismiss="alert" aria-label="Close">
+      <i class="fas fa-times"></i>
+    </a>
+  </div>
+
   <!-- BUTTON ADD-TO-NIGHT -->
   <!-- Do not put a Sticky BTN inside a row/col, or it wont work! -->
   <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary btn-block ct-btn ct-round-50 ct-shadow ct-sticky-btn', id:'add-btn' do %>

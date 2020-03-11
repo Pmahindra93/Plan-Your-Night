@@ -22,6 +22,7 @@
 @import "components/form-homepage";
 @import "components/navbar";
 @import "components/banner-home";
+@import "components/users-numbers";
 
 // Your custom basic css
 @import "config/card-link";
@@ -49,9 +50,3 @@ $size: 20px;
 }
 
 
-.avatar {
-  vertical-align: middle;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}

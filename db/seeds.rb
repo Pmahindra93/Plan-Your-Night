@@ -58,7 +58,7 @@ def bar_opening(info)
   unless info["response"]["venue"]["popular"].nil?
     return "#{info["response"]["venue"]["popular"]["timeframes"][0]["open"][0]["renderedTime"]}"
   else
-    return "Opeining Times Unknown"
+    return "Opening Times Unknown"
   end
 end
 

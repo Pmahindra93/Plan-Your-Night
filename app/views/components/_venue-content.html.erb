@@ -44,10 +44,6 @@
 
 <br>
 
-<% users = Venue.find_by(name: @venue.name) %>
-<% users_number = users.distinct_users.count %>
-<p class="mb-2" style="color: white"><strong><%= users_number + 10 %> people have chosen <%= @venue.name %> tonight</strong></p>
-<br>
 
 <div id="description">
   <p class="light"><%= @venue.description %></p>

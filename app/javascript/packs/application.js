@@ -23,4 +23,6 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox } from 'plugins/init_mapbox';
 initMapbox();
 
+import { initUserNumber } from "../plugins/init_user_number";
+initUserNumber();
 
