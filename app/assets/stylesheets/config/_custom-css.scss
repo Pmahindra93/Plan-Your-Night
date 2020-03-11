@@ -48,6 +48,10 @@
   font-weight: 700;
 }
 
+.ct-medium {
+  font-weight: 500;
+}
+
 // Background colors
 .ct-bg-global {
   background-color: $ct-bg-global;
@@ -67,6 +71,10 @@
 // Capitalize
 .ct-capitalize {
   text-transform: capitalize;
+}
+
+.ct-no-capitals {
+  text-transform: none;
 }
 
 
