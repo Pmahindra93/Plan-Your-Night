@@ -18,7 +18,7 @@ class Venue < ApplicationRecord
     end
   end
 
-  def format_adress
+  def no_postcode
     postcode = /\d{5}/
     address_array = self.address.split(" ")
     address_array.reject! { |part| postcode.match(part) }
