@@ -5,12 +5,12 @@
     <div class="row align-items-end">
       <div class="col-7">
         <p class="mt-1 ct-bold"><%= venue.name %></p>
-        <p class="ct-text-14 pt-1"><span class="">
+        <p class="ct-text-14"><span class="ct-no-capitals">
           <%= venue.distance_to(@night.location).round(1) %>km away</span></p>
       </div>
       <div class="col-5 text-right">
-        <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> / <%= venue.category %></p>
-        <p class="card-trip-pricing pt-1 ct-bold ct-text-14"><%= venue.price_segment %></p>
+        <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> &#8226; <%= venue.category %></p>
+        <p class="card-trip-pricing ct-bold ct-text-14"><%= venue.price_segment %></p>
       </div>
     </div>
   </div>

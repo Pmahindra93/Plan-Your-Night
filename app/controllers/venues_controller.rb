@@ -10,7 +10,7 @@ class VenuesController < ApplicationController
 
   def clubs
      if @night.venues.first.present?
-        @clubs = Venue.near(@night.venues.first.address,5).where(venue_type: 'club')
+        @clubs = Venue.near(@night.venues.first.address,5).where(venue_type: 'club', price_segment: @night.venues.first.price_segment)
      else
         @clubs = @venues.select {|venue| venue.venue_type == "club" }
      end
@@ -19,7 +19,7 @@ class VenuesController < ApplicationController
   def search
     @night = Night.find(params[:night_id])
     @venue = Venue.near(@night.location, 5)
-    @category = @night.category
+    @category = @night.category.downcase
     @budget = @night.budget
     if (@category == "all") && (@budget == '')
       @venues = @venue.all
