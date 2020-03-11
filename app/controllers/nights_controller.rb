@@ -21,7 +21,8 @@ class NightsController < ApplicationController
       {
         lat: venue.latitude,
         lng: venue.longitude,
-        infoWindow: "#{venue.name}"
+        infoWindow: "#{venue.name}",
+        markerType: "#{venue.venue_type}"
       }
     end
   end
