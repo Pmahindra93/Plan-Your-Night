@@ -1,17 +1,20 @@
 .user-pic {
+  border: 1px solid $ct-light;
   border-radius: 50px;
-  width: 60px;
   height: 60px;
+  width: 60px;
+
+
 }
 
 .review-content {
-  background-color: #f4f3ee;
+  background-color: $ct-light;
   // padding: 10px 20px;
   border-radius: 5px;
 }
 
 .star-color {
-  color: #fadd4b;
+  color: $ct-yellow;
 }
 
 #my-reviews-anchor {

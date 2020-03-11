@@ -20,6 +20,21 @@
       }
 }
 
+.ct-btn-white {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 25px;
+  border-color: $ct-light;
+  color: $ct-light;
+    &:hover {
+        text-decoration: none;
+      }
+
+}
+
+
 .ct-btn-skip {
   font-size: 14px;
   font-weight: 500;
