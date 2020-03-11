@@ -4,13 +4,13 @@
   <div class="card-trip-infos px-3 pt-4 pb-3">
     <div class="row align-items-end">
       <div class="col-7">
-        <h3 class="mt-1"><%= venue.name %></h3>
-        <p class="ct-text-14 pt-2"><span class="">
+        <p class="mt-1 ct-bold"><%= venue.name %></p>
+        <p class="ct-text-14 pt-1"><span class="">
           <%= venue.distance_to(@night.location).round(1) %>km away</span></p>
       </div>
       <div class="col-5 text-right">
         <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> / <%= venue.category %></p>
-        <h5 class="card-trip-pricing pt-1"><%= venue.price_segment %></h5>
+        <p class="card-trip-pricing pt-1 ct-bold ct-text-14"><%= venue.price_segment %></p>
       </div>
     </div>
   </div>
