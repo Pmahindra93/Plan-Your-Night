@@ -1,37 +1,40 @@
-<div class="container mt-5 ">
-  <!-- CARDS LAYOUT -->
-  <div class="row">
-    <div class="col-12">
+<body class="ct-bg-global">
+  <div class="container mt-5 ">
+    <!-- CARDS LAYOUT -->
+    <div class="row ct-mb-semi">
+      <div class="col-12">
 
-      <% if @venues.empty? %>
-          <h3 class="mt-5">No Search Results</h3>
-          <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
-      <% else %>
-        <div class="d-flex justify-item-baseline mt-5">
-          <span class="ct-circle bg-primary text-light item-align">1</span>
-          <h3 class="align-middle text-primary">
-            Choose your bar
-          </h3>
-        </div>
+        <% if @venues.empty? %>
+            <h3 class="mt-5">No Search Results</h3>
+            <%= link_to 'Try Another Search', root_path, style:' text-decoration: none' %>
+        <% else %>
+          <div class="d-flex justify-item-baseline mt-5">
+            <span class="ct-circle bg-primary text-light item-align">1</span>
+            <h3 class="pl-1 align-middle text-primary">
+              Choose your bar
+            </h3>
+          </div>
 
-        <% @bars.each do |venue| %>
-          <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
-            <%= render 'components/card-index', venue: venue  %>
+          <% @bars.each do |venue| %>
+            <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
+              <%= render 'components/card-index', venue: venue  %>
+            <% end %>
           <% end %>
+
+          <!-- FIXED BTN LAYOUT -->
+          <div class="">
+            <%= link_to clubs_night_venues_path, class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
+              Skip <i class="fas fa-chevron-right pl-1"></i>
+            <% end %>
+          </div>
+
         <% end %>
 
-        <!-- FIXED BTN LAYOUT -->
-        <div class="">
-          <%= link_to clubs_night_venues_path, class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
-            Skip <i class="fas fa-chevron-right pl-1"></i>
-          <% end %>
-        </div>
-
-      <% end %>
-
+      </div>
     </div>
   </div>
-</div>
+
+</body>
 
 
 
