@@ -27,7 +27,7 @@ function initUserNumber() {
             }
           });
       }
-    }, 5000);
+    }, 10000);
   }
 }
 
