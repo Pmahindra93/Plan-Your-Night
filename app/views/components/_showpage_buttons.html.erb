@@ -1,10 +1,10 @@
 <% if @venue.venue_type == 'club' %>
   <%= link_to clubs_night_venues_path , id:"back" do %>
-    <i class="fas fa-lg fa-chevron-left text-primary"></i>
+    <i class="fas fa-lg fa-chevron-left ct-primary-light"></i>
   <% end %>
 <% else %>
   <%= link_to night_venues_path , id:"back" do %>
-    <i class="fas fa-lg fa-chevron-left text-primary"></i>
+    <i class="fas fa-lg fa-chevron-left ct-primary-light"></i>
   <% end %>
 <% end %>
 
@@ -14,9 +14,9 @@
   <%= rails_social_share_button_tag(@venue.name) %>
   <%= button_to venue_favourites_path(@venue), method: :post,  class:"pl-1 nav-button ct-social-media-icons" do %>
     <% if current_user.favourites.map { |fav| fav.venue }.include?(@venue) %>
-      <i class="pl-3 fas fa-heart fa-lg text-primary"></i>
+      <i class="pl-3 fas fa-heart fa-lg ct-primary-light"></i>
     <% else %>
-      <i class="pl-3 far fa-heart fa-lg text-primary"></i>
+      <i class="pl-3 far fa-heart fa-lg ct-primary-light"></i>
     <% end %>
   <% end %>
 </div>
