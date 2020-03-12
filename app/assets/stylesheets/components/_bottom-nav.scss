@@ -1,0 +1,12 @@
+.ct-bottom-nav {
+  background: linear-gradient(180deg, rgba(36,3,56,1) 0%, rgba(27,0,44,1) 100%);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1020;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  // border-top: 2px solid rgba(36,3,56,1);
+}

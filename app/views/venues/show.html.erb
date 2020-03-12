@@ -27,9 +27,8 @@
 
   <!-- BUTTON ADD-TO-NIGHT -->
   <!-- Do not put a Sticky BTN inside a row/col, or it wont work! -->
-  <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary btn-block ct-btn ct-round-50 ct-shadow ct-sticky-btn', id:'add-btn' do %>
-    Add to Night Out
-  <% end %>
+  <%= render 'components/bottom-nav' %>
+
 
   <div id="my-map-anchor">
     <!-- This empty div is the anchor of the map-->
@@ -38,8 +37,27 @@
   <!-- VENUE LOCATION (MAP) -->
   <div class="ct-round-5 mt-5" id="map" style="width: 100%; height: 200px; margin-top: 10px;" data-user-marker="<%= @user_marker.to_json %>" data-venue-marker="<%= @venue_marker.to_json %>" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
-
+  <% if @venue.venue_type == 'bar' %>
+    <div class="mt-4">
+      <p class="ct-primary-light" style="font-size: 17px;"> From <%= @night.location %> to <%= @venue.name %>:</p>
+      <p class="">Walking takes <strong><%= (@venue.distance_to().round(1) * 20.0).round %></strong> minutes.</p>
+      <p class="ct-primary-light"><strong>Ubering takes <%= (@venue.distance_to(@night.location).round(1) * 4.0).round %></strong>minutes.</p>
+    </div>
+  <% else %>
+    <% if @night.venues.first.present? %>
+      <div class="mt-4">
+        <p class="ct-primary-light" style="font-size: 17px;">From <%= @night.venues.first.name %> to <%= @venue.name %>:</p>
+        <p class="ct-primary-light">Waling takes <strong><%= (@venue.distance_to(@venue.address).round(1) * 20.0).round %></strong> minutes.</p>
+        <p class="ct-primary-light">Ubering takes <strong><%= (@venue.distance_to(@night.venues.first.address).round(1) * 4.0).round %></strong> minutes.</p>
+      </div>
+    <% else %>
+      <div class="mt-4">
+        <p class="ct-primary-light" style="font-size: 17px;">From <%= @night.location %> to <%= @venue.name %>:</p>
+        <p class="ct-primary-light">Walking takes <strong><%= (@venue.distance_to(@night.location).round(1) * 20.0).round %></strong> minutes.</p>
+        <p class="ct-primary-light">Ubering takes <strong><%= (@venue.distance_to(@night.location).round(1) * 4.0).round %></strong> minutes.</p>
+      </div>
+    <% end %>
+  <% end %>
 
   <div id="my-reviews-anchor">
     <!-- This empty div is the anchor of the reviews-->
@@ -59,7 +77,7 @@
 
   <!-- ROW FOR THE REVIEW FORM -->
   <div class="row mt-5 mb-5">
-    <div class="col-12">
+    <div class="col-12 ct-mb-semi">
       <%= render 'components/review-form' %>
     </div>
   </div>

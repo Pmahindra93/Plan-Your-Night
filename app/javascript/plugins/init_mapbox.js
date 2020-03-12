@@ -7,7 +7,7 @@ const makeMap = () => {
   mapboxgl.accessToken = showMap.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v11'
+    style: 'mapbox://styles/mapbox/dark-v10'
   });
 };
 
@@ -63,7 +63,7 @@ const makeSummaryMap = () => {
   mapboxgl.accessToken = summaryMap.dataset.mapboxApiKey;
   return new mapboxgl.Map({
     container: 'summary-map',
-    style: 'mapbox://styles/mapbox/streets-v11'
+    style: 'mapbox://styles/mapbox/dark-v10'
   });
 };
 
