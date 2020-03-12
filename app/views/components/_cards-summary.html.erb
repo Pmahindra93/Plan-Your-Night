@@ -9,7 +9,6 @@
   <div class="card-description-summary">
     <h3><%= venue.name %></h3>
     <p class="summ-cards"><%= venue.opening_hours %> </p>
-    <p class="summ-cards"><%= venue.spend %> </p>
       <% if night.venues.length >= 2 && venue.venue_type == 'club' %>
         <% bar = night.venues.where(venue_type: "bar").last%>
         <% club = night.venues.where(venue_type: "club").first%>
