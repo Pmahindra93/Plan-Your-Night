@@ -27,9 +27,8 @@
 
   <!-- BUTTON ADD-TO-NIGHT -->
   <!-- Do not put a Sticky BTN inside a row/col, or it wont work! -->
-  <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary btn-block ct-btn ct-round-50 ct-shadow ct-sticky-btn', id:'add-btn' do %>
-    Add to Night Out
-  <% end %>
+  <%= render 'components/bottom-nav' %>
+
 
   <div id="my-map-anchor">
     <!-- This empty div is the anchor of the map-->
