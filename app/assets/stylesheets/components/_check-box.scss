@@ -1,7 +1,23 @@
-svg {
-  width: 100px;
+ // Modal background opacity & Position
+ .modal {
+  margin-top: -20px;
+  // position: absolute;
+  // top: 50px;
+  //right: 100px;
+  //bottom: 300px;
+  //left: 0;
+  z-index: 10040;
+  // overflow: auto;
+  // overflow-y: auto;
+  background-color: rgba(30,30,30,.9);
+ }
+
+ // check icon
+ .modal-body svg {
+  width: 80px;
   display: block;
   margin: 40px auto 0;
+
 }
 
 
@@ -26,10 +42,10 @@ svg {
 
 .success {
   text-align: center;
-  margin: 20px 0 60px;
+  margin: 20px 0 40px;
   font-size: 1.25em;
   &.success {
-    color: $ct-success;
+    color: #65A726;
   }
   &.error {
     color: $ct-danger;
