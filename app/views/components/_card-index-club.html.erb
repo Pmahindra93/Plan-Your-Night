@@ -5,7 +5,7 @@
       <div class="col-7">
         <p class="mt-1 ct-bold"><%= venue.name %></p>
         <p class="ct-text-14"><span class="">
-          <p class="ct-text-14 pt-2 ct-medium text-primary" id="distance"><span class="">
+          <p class="ct-text-14 pt-2 ct-medium ct-primary-dark" id="distance"><span class="">
             <% if night.venues.where(venue_type: 'bar').first.present? %>
             <% bar = night.venues.where(venue_type: 'bar').first %>
               <%= venue.distance_to([bar.latitude, bar.longitude]).round(1) %>km away from <%= bar.name %></span></p>
