@@ -1,0 +1,7 @@
+# config/meta.yml
+
+meta_product_name: "PlanYourNight."
+meta_title: "PlanYourNight - Discover the best places to go out tonight"
+meta_description: "Plan your night in Berlin based on your tastes and budget at over 40 venues. No Search Fees. "
+meta_image: "photo-1532452119098-a3650b3c46d3.jpeg" # should exist in `app/assets/images/`
+twitter_account: "@PlanNight"   # required for Twitter Cards
