@@ -30,27 +30,6 @@
   border-radius: 200px;
 }
 
-// Text Colors
-.ct-text-dark {
-  color: $ct-dark;
-}
-
-.ct-text-dark-medium {
-  color: $ct-dark-medium;
-}
-
-.ct-text-light {
-  color: $ct-light;
-}
-
-.ct-primary-light {
-  color: $ct-primary-light;
-}
-
-.ct-primary-dark {
-  color: $ct-primary-dark;
-}
-
 // Text Sizes
 .ct-text-12 {
   font-size: 12px;
@@ -72,9 +51,41 @@
   font-weight: 500;
 }
 
+
+// Text Colors
+.ct-text-dark {
+  color: $ct-dark;
+}
+
+.ct-text-dark-medium {
+  color: $ct-dark-medium;
+}
+
+.ct-text-light {
+  color: $ct-light;
+}
+
+.ct-primary-light {
+  color: $ct-primary-light;
+}
+
+.ct-primary-dark {
+  color: $ct-primary-dark;
+}
+
+.ct-primary-bg {
+  color: $ct-bg-global;
+}
+
+
+
 // Background colors
 .ct-bg-global {
   background-color: $ct-bg-global;
+}
+
+.ct-bg-primary-light {
+  background-color: $ct-primary-light;
 }
 
 // Opacity

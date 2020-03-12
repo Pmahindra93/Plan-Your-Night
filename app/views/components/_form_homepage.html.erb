@@ -1,5 +1,8 @@
 <div class="mb-4">
-  <p id="user-location" class="mb-3"><i class="fas fa-map-marker-alt pr-2"></i>Share your current location</p>
+  <p id="user-location" class="mb-3">
+    <i class="fas fa-map-marker-alt pr-2"> </i>
+    Share your current location
+  </p>
   <p id="demo" style="display: none;"></p>
   <%= simple_form_for @night, method: :post, id: "my-form" do |f| %>
     <%= f.input :location, label: 'Choose a city', input_html: { id: :venue_location, class: "ct-label-text" } %>
