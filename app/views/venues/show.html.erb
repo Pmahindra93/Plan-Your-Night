@@ -43,7 +43,7 @@
   </div>
   <% if @venue.venue_type == 'bar' %>
     <div class="mt-4">
-      <p class="ct-primary-light mb-2" style="font-size: 16px;"> From <%=  %> to <%= @venue.name %>:</p>
+      <p class="ct-primary-light mb-2" style="font-size: 16px;"> From <%= @night.location  %> to <%= @venue.name %>:</p>
       <p class="ct-text-light"> <i class="fas fa-walking pl-1 pr-1"></i> Walking takes <strong> <%= (@venue.distance_to(@night.location).round(1) * 20.0).round %></strong> minutes.</p>
       <p class="ct-text-light"> <i class="fas fa-taxi"></i> An Uber takes <strong> <%= (@venue.distance_to(@night.location).round(1) * 4.0).round %> </strong> minutes.</p>
     </div>
