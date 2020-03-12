@@ -3,16 +3,16 @@
 
   <div class="modal fade  bg-dark" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content ct-round-5 mx-2">
+      <div class="modal-content ct-round-5 bg-light mx-4">
 
         <div class="modal-body text-center">
+
           <br>
           <br>
           <br>
-          <h3> Estimated tonight's spend: <%= total_spend %>€</h3>
+          <h3 class="mt-4 text-success"> Estimated tonight's spend: <%= total_spend %>€</h3>
           <br>
           <%= render 'components/check_box' %>
-          <br>
         </div>
 
         <div class="border-top justify-content-center p-4">
