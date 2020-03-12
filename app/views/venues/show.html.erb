@@ -1,6 +1,6 @@
 <!-- Meta-tag -->
 <% content_for :meta_title, "#{@venue.name} is on #{DEFAULT_META["meta_product_name"]}" %>
-<% content_for :meta_image, cl_image_path(@venue.photo.path) %>
+<% content_for :meta_image, cl_image_path(@venue.photos[0].key) %>
 
 <body class="ct-bg-global">
 
