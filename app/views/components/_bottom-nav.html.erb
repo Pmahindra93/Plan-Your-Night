@@ -1,10 +1,7 @@
-<div class="ct-bottom-nav ct-shadow-bottom-nav px-2s">
-  <div class="row">
-    <div class="col-12">
-      <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary btn-block ct-btn ct-round-50 ct-shadow', id:'add-btn' do %>
-        Add to Night Out
-      <% end %>
-    </div>
+<div class="ct-bottom-nav ct-shadow-bottom-nav">
+  <div class="col-12">
+    <%= link_to night_venue_night_path(@night,@venue), method: :patch, class:'btn btn-primary btn-block ct-btn ct-round-50 ct-shadow ct-width-100', id:'add-btn' do %>
+      Add to Night Out
+    <% end %>
   </div>
-
 </div>
