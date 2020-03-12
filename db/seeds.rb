@@ -11,7 +11,7 @@ LOCATION = "Berlin"
 CLIENT_ID = ENV['CLIENT_ID']
 CLIENT_SECRET = ENV['CLIENT_SECRET']
 V = '20180323'
-number_of_each = 10
+number_of_each = 20
 core = "https://api.foursquare.com/v2/venues/explore?client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=#{V}&limit=#{number_of_each}&near=#{LOCATION}&categoryId="
 
 bar_id = '4bf58dd8d48988d116941735'
@@ -76,8 +76,7 @@ bars["response"]["groups"][0]["items"].each do |item|
     latitude: info["response"]["venue"]["location"]["lat"],
     opening_hours: bar_opening(info),
     price_segment: price_seg_gen(info),
-    card_accepted: credit_card_check(info),
-    description: "#{info["response"]["venue"]["tips"]["groups"][0]["items"][0]["text"]}"
+    card_accepted: credit_card_check(info)
   )
   prefix = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["prefix"]
   width = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["width"]
@@ -107,15 +106,27 @@ clubs["response"]["groups"][0]["items"].each do |item|
     latitude: info["response"]["venue"]["location"]["lat"],
     opening_hours: club_opening(info),
     price_segment: price_seg_gen(info),
-    card_accepted: credit_card_check(info),
-    description: "#{info["response"]["venue"]["tips"]["groups"][0]["items"][0]["text"]}"
+    card_accepted: credit_card_check(info)
   )
-  prefix = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["prefix"]
-  width = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["width"]
-  height = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["height"]
-  suffix = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["suffix"]
-  file = URI.open("#{prefix}#{width}x#{height}#{suffix}")
-  club.photos.attach(io: file, filename: "#{info["response"]["venue"]["name"]}.jpg", content_type: 'image/jpg')
+  if info["response"]["venue"]["photos"]["groups"][0].nil?
+    info["response"]["venue"]["listed"]["groups"][0]["items"].each do |list_item|
+      unless list_item["photo"].nil?
+        prefix = list_item["photo"]["prefix"]
+        width = list_item["photo"]["width"]
+        height = list_item["photo"]["height"]
+        suffix = list_item["photo"]["suffix"]
+        file = URI.open("#{prefix}#{width}x#{height}#{suffix}")
+        club.photos.attach(io: file, filename: "#{info["response"]["venue"]["name"]}.jpg", content_type: 'image/jpg')
+      end
+    end
+  else
+    prefix = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["prefix"]
+    width = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["width"]
+    height = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["height"]
+    suffix = info["response"]["venue"]["photos"]["groups"][0]["items"][0]["suffix"]
+    file = URI.open("#{prefix}#{width}x#{height}#{suffix}")
+    club.photos.attach(io: file, filename: "#{info["response"]["venue"]["name"]}.jpg", content_type: 'image/jpg')
+  end
   club.save!
 end
 
