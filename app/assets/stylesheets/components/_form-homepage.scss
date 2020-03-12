@@ -41,19 +41,19 @@
 
 #new_night label {
   color: $ct-light;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: .5px;
-  font-weight: 700px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
 }
 
 // Radio buttons label
 #new_night legend {
   color: $ct-light;
-  font-size: 14px;
+  font-size: 16px;
   text-transform: uppercase;
-  letter-spacing: .5px;
-  font-weight: 700px;
+  letter-spacing: 1.2px;
+  font-weight: 700;
 }
 
 // RADIO BUTTONS (Broke, Modest, Rich)
@@ -107,8 +107,8 @@ input.radio_buttons {
   border-radius: 50px;
   padding: 10px 20px;
   font-weight: 500;
-  font-size: 14px;
-  letter-spacing: 0.03em;
+  font-size: 16px;
+  letter-spacing: 1px;
   color: $ct-light;
   border: none;
 
