@@ -31,7 +31,7 @@
 
         <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-shadow ct-round-50 mt-5", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
         <!-- MODAL -->
-        <%= render 'components/modal_summary_page' %>
+        <%= render 'components/modal_summary_page', total_spend: @night.total_spend %>
       </div>
     </div>
   </div>
