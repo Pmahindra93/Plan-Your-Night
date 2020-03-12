@@ -1,5 +1,5 @@
 class VenuesController < ApplicationController
-  before_action :find_venue, only: :show
+  before_action :find_venue, only: [:show, :user_number]
   before_action :search, only: [:index, :clubs]
   skip_before_action :authenticate_user! , only: :show
 
@@ -62,6 +62,12 @@ class VenuesController < ApplicationController
 
   def blank_stars
       5 - @review.rating
+  end
+
+  def user_number
+    render json: {
+      number: @venue.distinct_users.count
+    }
   end
 
   private

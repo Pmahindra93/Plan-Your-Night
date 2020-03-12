@@ -22,6 +22,7 @@
           <% end %>
         </div>
 
+
         <% @night.venues.where(venue_type: "club").each do |venue| %>
           <%= render 'components/cards-summary', venue: venue, night: @night  %>
         <% end %>

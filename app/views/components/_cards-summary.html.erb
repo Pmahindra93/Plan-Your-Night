@@ -1,5 +1,6 @@
 <div class="card-dashboard rounded mt-2 mb-4">
   <div class="pic-summ">
+
     <% if venue.photos.attached? %>
       <%= cl_image_tag venue.photos[0].key %>
     <% else %>
@@ -20,5 +21,6 @@
 
   </div>
 </div>
+
 
 

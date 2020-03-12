@@ -26,6 +26,9 @@ Rails.application.routes.draw do
 
   resources :venues do
     resources :favourites, only: :create
+    member do
+      get "user_number"
+    end
   end
   resources :venue_reviews, only: [:edit, :update]
 
