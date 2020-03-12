@@ -22,6 +22,10 @@ triggerLocation();
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { initMapbox, initSummaryMapbox } from 'plugins/init_mapbox';
 initMapbox();
-
-
 initSummaryMapbox();
+
+
+import { initUserNumber } from 'plugins/init_user_number';
+initUserNumber();
+
+

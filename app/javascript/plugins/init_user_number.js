@@ -1,5 +1,6 @@
 function initUserNumber() {
   // Find the flash on the page
+        console.log("heeree");
   const flash = document.getElementById("users-number-flash")
   // If it's there
   if (flash) {
@@ -11,10 +12,10 @@ function initUserNumber() {
         const venueId = flash.dataset.venueId;
         fetch(`/venues/${venueId}/user_number`)
           .then(response => response.json())
-          .then(json => json.number + 1)
+          .then(json => json.number + 10)
           .then(number => {
             // If it's > 10, show the flash, otherwise hide the flash
-            if (number > 1) {
+            if (number > 11) {
               flash.classList.remove('d-none');
             } else {
               flash.classList.add('d-none');
@@ -26,7 +27,7 @@ function initUserNumber() {
             }
           });
       }
-    }, 2000);
+    }, 5000);
   }
 }
 
