@@ -1,3 +1,7 @@
+.summary-map-anchor-color {
+  color: $ct-primary-light !important;
+}
+
 // Custom Simple Snippets
 
 .ct-width-100 {
@@ -20,6 +24,10 @@
 // Rounded Borders
 .ct-round-5 {
   border-radius: 5px;
+}
+
+.ct-round-10 {
+  border-radius: 10px;
 }
 
 .ct-round-50 {
@@ -69,6 +77,10 @@
   color: $ct-primary-light;
 }
 
+.ct-primary-light-imp a {
+  color: $ct-primary-light !important;
+}
+
 .ct-primary-dark {
   color: $ct-primary-dark;
 }
@@ -77,7 +89,10 @@
   color: $ct-bg-global;
 }
 
-
+// BORDER
+.ct-border-light {
+  border: 1px solid #D0A9F9;
+}
 
 // Background colors
 .ct-bg-global {

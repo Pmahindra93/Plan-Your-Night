@@ -2,26 +2,37 @@
   <div class="container mt-5 pt-5 mb-5">
     <div class="row">
       <div class="col-12">
-        <h3 class="text-primary mt-2 mb-2">
+        <h3 class="ct-primary-light mt-2 mb-2">
           Your plan for tonight!
         </h3>
-        <%= link_to "view on map", anchor: 'summary-map-anchor' %>
+        <p class=" ct-primary-light ct-primary-light-imp mb-5"><i class="fas fa-map-marker-alt ct-primary-light mr-2 "></i> <a><%= link_to "view on map", anchor: 'summary-map-anchor' %></a></p>
+        <!-- Add A BAR-->
+        <div class="col-12 ct-border-light ct-round-10 mt-3 mb-3">
         <div class="d-flex justify-content-end ">
-          <%= link_to night_venues_path(@night), class: "btn btn-outline-primary ct-btn-add mt-3" do%>
+          <%= link_to night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add mt-3" do%>
             <i class="fas fa-plus"></i> Bar
           <% end %>
         </div>
         <% @night.venues.where(venue_type: "bar").each do |venue| %>
           <%= render 'components/cards-summary', venue: venue, night: @night %>
         <% end %>
-        <div class="d-flex justify-content-end">
-          <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-btn-add mt-3" do%>
+      </div>
+
+        <!-- Add a CLUB -->
+        <div class="col-12 ct-border-light ct-round-10 mt-3 mb-3">
+
+
+        <div class="d-flex justify-content-end ">
+          <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add mt-3" do%>
             <i class="fas fa-plus"></i> Club
           <% end %>
         </div>
+
         <% @night.venues.where(venue_type: "club").each do |venue| %>
           <%= render 'components/cards-summary', venue: venue, night: @night  %>
         <% end %>
+      </div>
+
 
       <!-- CONTINUE BTN with bottom NAV-->
         <div class="ct-bottom-nav ct-shadow-bottom-nav">
@@ -34,7 +45,9 @@
         <%= render 'components/modal_summary_page', total_spend: @night.total_spend %>
         <br>
         <br>
-        <h3 class="text-primary">Tonight's Venue Map:</h3>
+        <h3 class="ct-primary-light">Tonight's Venue Map</h3>
+
+
       <!-- MAP -->
         <div id="summary-map-anchor"></div>
         <div class="ct-round-5 mt-3 ct-mb-semi" id="summary-map" style="width: 100%; height: 200px; margin-top: 10px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
