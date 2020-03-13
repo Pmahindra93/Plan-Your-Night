@@ -10,11 +10,6 @@ class FavouritesController < ApplicationController
     @favourite.venue = @venue
     @favourite.user = current_user
     @night = current_user.nights.last
-    if @review.save
-      redirect_to night_venue_path(@night, @venue)
-    else
-      flash[:alert] = "You need to submit a valid review!"
-      redirect_to night_venue_path(@night, @venue)
-    end
+    @favourite.save
   end
 end
