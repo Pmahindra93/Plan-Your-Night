@@ -10,7 +10,7 @@
     <ul class="navbar-nav ml-auto ">
       <% if user_signed_in? %>
         <li class="pt-5 pb-5 text-center ct-mt-big-xl"> <%= link_to 'My Profile' , user_path(current_user), class:"ct-nav-item" %> </li>
-        <li class=" pb-5 text-center"> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "ct-nav-item" %> </li>
+        <li class="pb-5 text-center"> <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "ct-nav-item" %> </li>
       <% else %>
         <li class="pt-5 pb-5 text-center ct-mt-big-xl"> <%= link_to "Log in", new_user_session_path, class: "ct-nav-item" %> </li>
         <li class="pb-5 text-center"> <%= link_to "Sign up", new_user_registration_path, class: "ct-nav-item" %> </li>
