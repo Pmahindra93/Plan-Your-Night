@@ -1,3 +1,5 @@
+
+
 // LOGO
 .navbar svg {
   width: 150px;
@@ -5,6 +7,10 @@
   padding-top: 10px;
   padding-bottom: 10px;
 }
+
+// .navbar {
+//   height: 65px;
+// }
 
 
 // Hamburger Icon Border
@@ -29,12 +35,13 @@
 
 .bg-dark  {
   background-color: rgba(27,0,44, 0.9) !important;
+  // background-color: red !important;
 }
 
 
 // DROPDOWN LINKS
 .navbar-nav {
-   height: 100vh;
+  height: 100vh;
 }
 
 .ct-nav-item {
@@ -47,6 +54,48 @@
    &:hover {
     text-decoration: none;
     color: $ct-light;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  // .navbar-collapse {
+  //   display: flex;
+  //   align-items: center;
+  // }
+
+  .navbar-nav {
+    height: 50px;
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-right: 20px;
+
+      a {
+        padding-top: 0;
+      }
+    }
+
+    .pt-5 {
+      padding-top: 0 !important;
+    }
+
+    .pb-5 {
+      padding-bottom: 0 !important;
+    }
+
+    .ct-mt-big-xl {
+      margin-top: 0 !important;
+    }
+  }
+
+  .ct-nav-item {
+    text-transform: capitalize;
+    font-size: 14px;
+      &:hover {
+        color: $ct-primary-light;
+        transition: all 0.3s ease;
+      }
   }
 }
 
