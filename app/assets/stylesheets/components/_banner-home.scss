@@ -1,11 +1,7 @@
-.banner {
-  // Need to do the link with cloudinary...
+.banner-container {
   background: linear-gradient(rgba(255,197,34,1), rgba(255,197,34,0.3), rgba(27,0,44,1)), url("https://source.unsplash.com/iTZOPe7BpTM/1600x900");
-
   background-size: cover;
-  // background-color: red;
-  // height: 40vh;
-  height: 290px;
+  height: 320px;
   position: relative;
 }
 
@@ -13,8 +9,46 @@
   position: absolute;
   top: 120px;
   left: 15px;
-  width: 335px;
+  max-width: 500px;
+  // width: 340px;
 }
+
+@media only screen and (min-width: 576px) {
+  .banner-text {
+    // background-color: blue;
+    left: 50px;
+    font-size: 35px;
+    max-width: 670px;
+    // width: 340px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .banner-text {
+    // background-color: red;
+    left: 65px;
+    max-width: 720px;
+    font-size: 40px;
+
+
+    // width: 340px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .banner-container {
+    height: 75%;
+  }
+
+  .banner-text {
+    // background-color: green;
+    left: 50%;
+    transform: translateX(-50%);
+    // max-width: 2000px;
+  }
+}
+
+
 
 .banner-text-shadow {
   text-shadow: 0 3px 10px rgba(30,30,30,0.2);
