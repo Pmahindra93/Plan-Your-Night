@@ -1,10 +1,38 @@
 .card-trip {
   background-color: $ct-light;
   overflow: hidden;
-  // height: 250px;
-  // width: 100%;
   margin-bottom: 20px;
   border: 2px solid $ct-light;
+
+  // margin-right: 20px;
+}
+
+@media only screen and (min-width: 576px) {
+  .card-trip {
+    width: 40%;
+    // max-width: 250px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .card-trip {
+    width: 300px;
+    // max-width: 250px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .card-trip {
+
+    max-width: 300px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .card-trip {
+    min-width: 350px;
+
+  }
 }
 
 .card-trip > img {
@@ -13,24 +41,17 @@
   object-fit: cover;
 }
 
-// .card-trip h3 {
-//   font-size: 16px;
-//   text-transform: capitalize;
-//   font-weight: bold;
-//   margin-top: 20px;
-// }
-
 .card-trip p {
   text-transform: capitalize;
-  //font-size: 12px;
-  //opacity: .7;
-  //margin: 0;
+}
+
+.card-flex {
+  display: flex;
+  justify-content: space-between;
 }
 
 #distance{
   line-height: 20px;
-  // text-transform: none;
-  // font-weight: 700;
 }
 
 .ct-club-btn{
@@ -40,20 +61,3 @@
 .ct-club{
   font-size: 18px;
 }
-
-
-// .card-trip .card-trip-infos {
-//   padding: 20px;
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: flex-end;
-// }
-
-
-
-// .card-trip-infos .card-trip-user {
-//   position: absolute;
-//   right: 16px;
-//   top: -20px;
-//   width: 40px;
-// }

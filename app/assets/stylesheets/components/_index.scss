@@ -7,3 +7,15 @@
 @import 'map';
 @import 'cards-summary';
 
+
+
+.flex-wrapping {
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+}
+
+// .flex-wrapping::after {
+//   content: "";
+//   flex-basis: 350px;
+// }
