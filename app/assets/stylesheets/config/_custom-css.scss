@@ -14,11 +14,11 @@
 }
 
 .ct-shadow-navbar {
-  box-shadow: 0px 4px 10px rgba(30,30,30, .2);
+  box-shadow: 0px 4px 10px rgba(30,30,30, .4);
 }
 
 .ct-shadow-bottom-nav {
-  box-shadow: 0px -5px 20px -1px rgba(30,30,30, .9);
+  box-shadow: 0px -5px 20px -1px rgba(30,30,30, .4);
 }
 
 // Rounded Borders
@@ -73,6 +73,8 @@
   color: $ct-light;
 }
 
+
+
 .ct-primary-light {
   color: $ct-primary-light;
 }
@@ -97,6 +99,10 @@
 // Background colors
 .ct-bg-global {
   background-color: $ct-bg-global;
+}
+
+.ct-bg-primary {
+  background-color: $ct-primary;
 }
 
 .ct-bg-primary-light {
@@ -132,9 +138,10 @@
   padding: 2px 10px;
   font-size: 16px;
   margin-right: 5px;
+  color: $ct-light;
 }
 
-// Margins
+// Margins & Paddings
 .ct-mb-big {
   margin-bottom: 100px;
 }
@@ -147,9 +154,13 @@
   margin-top: 100px;
 }
 
-
 .ct-mt-big-xl {
   margin-top: 150px;
+}
+
+.ct-px-60 {
+  padding-left: 60px;
+  padding-right: 60px;
 }
 
 // CHIPS
@@ -163,7 +174,6 @@
   margin-right: 10px;
   display: inline-flex;
   align-items: center;
-
 }
 
 

@@ -1,3 +1,15 @@
+.nav-wrapper {
+  height: 66px;
+  width: 100%;
+}
+
+.navbar {
+  padding: 0;
+  width: 95%;
+  max-width: 1240px;
+  margin: 0px auto;
+}
+
 // LOGO
 .navbar svg {
   width: 150px;
@@ -12,6 +24,7 @@
   color: rgba(255, 255, 255, 1);
   outline: none;
   box-shadow: none;
+  padding: 0;
 }
 
 // BORDER COLOR HAMBURGER ICON
@@ -27,12 +40,11 @@
 }
 
 .bg-dark  {
-  background-color: rgba(27,0,44, 0.9) !important;
-  // background-color: red !important;
+  background-color: rgba(27,0,44, 1) !important;
 }
 
 
-// DROPDOWN LINKS
+// Dropdown Links
 .navbar-nav {
   height: 100vh;
 }
@@ -40,7 +52,7 @@
 .ct-nav-item {
   color: $ct-light;
   text-transform: uppercase;
-  font-size: 16px;
+  font-size: 18px;
   padding-top: 50px;
   letter-spacing: 1px;
 
@@ -50,10 +62,11 @@
   }
 }
 
+// Media Queries Navbar
 @media only screen and (min-width: 992px) {
 
   .navbar {
-    padding-left: 60px;
+    width: 90%;
   }
 
   .navbar-nav {
@@ -62,10 +75,13 @@
     li {
       display: flex;
       align-items: center;
-      margin-right: 20px;
 
       a {
         padding-top: 0;
+      }
+
+      &:first-child {
+        padding-right: 40px;
       }
     }
 
@@ -80,13 +96,12 @@
     .ct-mt-big-xl {
       margin-top: 0 !important;
     }
-
-    padding-right: 40px;
   }
 
   .ct-nav-item {
     text-transform: capitalize;
     font-size: 14px;
+
       &:hover {
         color: $ct-primary-light;
         transition: all 0.3s ease;

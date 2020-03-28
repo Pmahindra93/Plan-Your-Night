@@ -7,3 +7,54 @@
 @import 'map';
 @import 'cards-summary';
 
+.grid-index {
+  width: 95%;
+  max-width: 1240px;
+  margin: 0px auto;
+  padding-bottom: 90px;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+// Grid Queries
+
+@media only screen and (min-width: 576px) {
+  .grid-index {
+    width: 90%;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-index {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+@media only screen and (min-width: 960px) {
+  .grid-index {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+.grid-title {
+  width: 95%;
+  max-width: 1240px;
+  margin: 0px auto;
+  display: grid;
+
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
+}
+
+@media only screen and (min-width: 576px) {
+  .grid-title {
+    width: 90%;
+  }
+}

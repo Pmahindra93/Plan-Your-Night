@@ -15,9 +15,10 @@
   letter-spacing: 1.2px;
   text-transform: uppercase;
   padding: 12px 25px;
+
     &:hover {
-        text-decoration: none;
-      }
+      text-decoration: none;
+    }
 }
 
 .ct-btn-white {
@@ -28,12 +29,11 @@
   padding: 10px 25px;
   border-color: $ct-light;
   color: $ct-light;
+
     &:hover {
-        text-decoration: none;
-      }
-
+      text-decoration: none;
+    }
 }
-
 
 .ct-btn-skip {
   font-size: 14px;
@@ -43,9 +43,10 @@
   padding: 10px 0px;
   padding-left: 25px;
   padding-right: 20px;
+
     &:hover {
-        text-decoration: none;
-      }
+      text-decoration: none;
+    }
 }
 
 
@@ -53,25 +54,43 @@
   position: sticky;
   top: 75px;
   z-index: 20;
-
 }
 
 .ct-fixed-btn {
   position: fixed;
-  bottom: 30px;
-  right: 30px;
+  bottom: 20px;
+  right: 5%;
   z-index: 15;
 }
+
+@media only screen and (min-width: 576px) {
+  .ct-fixed-btn {
+     margin-right: 10px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .ct-fixed-btn {
+     right: 7%;
+  }
+}
+
+@media only screen and (min-width: 1475px) {
+  .ct-fixed-btn {
+     right: 9%;
+  }
+}
+
 
 .ct-btn-border {
   font-size: 14px;
   font-weight: 500;
-  // letter-spacing: 1px;
   text-transform: uppercase;
   padding: 10px 25px;
+
     &:hover {
-        text-decoration: none;
-      }
+      text-decoration: none;
+    }
 }
 
 .ct-btn-add {
@@ -85,39 +104,8 @@
   padding: 7px 0px;
   padding-left: 5px;
   padding-right: 5px;
+
     &:hover {
-        text-decoration: none;
-      }
+      text-decoration: none;
+    }
 }
-
-
-// .ct-btn-modal{
-//   border-radius: 5px;
-//   font-size: 14px;
-//   font-weight: 500;
-//   letter-spacing: 1px;
-//   text-transform: uppercase;
-//   // padding: 10px 15px;
-//   box-shadow: 0 2px 2px rgba(33,32,50, 0.2);
-//   // width: 93%; // dirty fix here, need to repair!
-//   width: 150px;
-//   border: 1px solid #FFFFFF;
-
-// }
-
-// .ct-btn-modal-button2{
-//   border-radius: 5px;
-//   font-size: 14px;
-//   font-weight: 500;
-//   letter-spacing: 1px;
-//   text-transform: uppercase;
-//   // padding: 10px 15px;
-//   box-shadow: 0 2px 2px rgba(33,32,50, 0.2);
-//   // width: 93%; // dirty fix here, need to repair!
-//   width: 150px;
-//   opacity: 0.6;
-//   border: 1px solid #FFFFFF;
-// }
-
-
-

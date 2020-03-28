@@ -1,18 +1,22 @@
-<div class="card-trip ct-round-5 ct-shadow mt-4 ct-capitalize">
+<div class="card-trip ct-round-5 ct-shadow ct-capitalize">
   <%= cl_image_tag venue.photos[0].key %>
 
-  <div class="card-trip-infos px-3 pt-4 pb-3">
-    <div class="row align-items-end">
-      <div class="col-7">
-        <p class="mt-1 ct-bold"><%= venue.name %></p>
-        <p class="ct-text-14"><span class="ct-no-capitals">
-          <%= venue.distance_to(@night.location).round(1) %>km away</span></p>
-      </div>
-      <div class="col-5 text-right">
-        <p class="ct-text-dark-medium ct-text-14"><%= venue.venue_type %> &#8226; <%= venue.category %></p>
-        <p class="card-trip-pricing ct-bold ct-text-14"><%= venue.price_segment %></p>
-      </div>
+  <div class="px-3 pt-4 pb-3 align-items-end">
+    <p class="mt-1 ct-bold"><%= venue.name %></p>
+    <p class="ct-text-14 mt-2 text-primary">
+      <span class="ct-no-capitals">
+      <%= venue.distance_to(@night.location).round(1) %>km away
+      </span>
+    </p>
+    <div class="card-flex">
+      <p class="ct-text-dark-medium ct-text-14">
+        <%= venue.venue_type %> &#8226; <%= venue.category %>
+      </p>
+      <p class="ct-bold ct-text-14">
+        <%= venue.price_segment %>
+      </p>
     </div>
   </div>
+
 </div>
 
