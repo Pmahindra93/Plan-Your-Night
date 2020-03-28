@@ -7,13 +7,45 @@
 @import 'map';
 @import 'cards-summary';
 
+.grid-index {
+  width: 90%;
+  max-width: 1240px;
+  margin: 0px auto;
 
+  display: grid;
 
-.flex-wrapping {
-  display: flex;
-  flex-wrap: wrap;
-  // justify-content: space-between;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  grid-gap: 20px;
 }
+
+@media only screen and (min-width: 576px) {
+  .grid-index {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+@media only screen and (min-width: 768px) {
+  .grid-index {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
+@media only screen and (min-width: 960px) {
+  .grid-index {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+
+
+// .flex-wrapping {
+//   display: flex;
+//   flex-wrap: wrap;
+//   // justify-content: space-between;
+// }
 
 // .flex-wrapping::after {
 //   content: "";
