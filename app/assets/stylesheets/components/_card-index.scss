@@ -1,44 +1,28 @@
 .card-trip {
   background-color: $ct-light;
+  border: 1px solid $ct-light;
   overflow: hidden;
-  margin-bottom: 20px;
-  border: 2px solid $ct-light;
+  position: relative;
+  top: 0;
+  transition: all .1s ease-in;
 
-  // margin-right: 20px;
+    &:hover {
+      top: -4px;
+    }
+
+    &:hover img{
+      -webkit-filter:brightness(115%) saturate(1.5);;
+      filter: brightness(115%) saturate(1.5);;
+    }
 }
-
-// @media only screen and (min-width: 576px) {
-//   .card-trip {
-//     width: 40%;
-//     // max-width: 250px;
-//   }
-// }
-
-// @media only screen and (min-width: 768px) {
-//   .card-trip {
-//     width: 300px;
-//     // max-width: 250px;
-//   }
-// }
-
-// @media only screen and (min-width: 992px) {
-//   .card-trip {
-
-//     max-width: 300px;
-//   }
-// }
-
-// @media only screen and (min-width: 1200px) {
-//   .card-trip {
-//     min-width: 350px;
-
-//   }
-// }
 
 .card-trip > img {
   height: 175px;
   width: 100%;
   object-fit: cover;
+  transition: transform .5s, filter .5s ease-in-out;
+  -webkit-filter: brightness(100%);
+  filter: brightness(100%);
 }
 
 .card-trip p {
