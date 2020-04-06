@@ -1,4 +1,4 @@
-<div id="review-form" class="border-top border-primary pt-4">
+<div id="review-form" class="pt-5">
   <%= simple_form_for [@night, @venue, @review ] do |f| %>
     <%= f.input :content, label: "Write a review", class: "text-light"  %>
     <div></div>
@@ -6,4 +6,3 @@
     <%= f.submit "Send your review", class: "btn btn-outline-primary ct-btn-white ct-round-50 ct-btn mt-2" %>
   <% end %>
 </div>
-

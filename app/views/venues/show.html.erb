@@ -1,91 +1,88 @@
-<!-- Meta-tag -->
+<!-- Meta-tags -->
 <% content_for :meta_title, "#{@venue.name} is on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_image, cl_image_path(@venue.photos[0].key) %>
 
 <body class="ct-bg-global">
 
-<div class="container-fluid mt-4 pt-3">
+  <div class="container-fluid mt-4 pt-3">
+    <div class="row justify-content-center pt-5">
+      <div class="col-12 col-md-8 col-lg-6 p-3">
 
-  <!-- SHOWPAGE BTNS -->
-  <div class="row pt-5">
-    <div class="col-12">
-      <div class="d-flex align-items-center my-2">
-        <%= render 'components/showpage_buttons' %>
+        <!-- Showpage top btns -->
+        <div class="d-flex align-items-center my-2">
+          <%= render 'components/showpage_buttons' %>
+        </div>
+
+        <!-- Venue pic -->
+        <div class="show-pic p-0">
+          <% if @venue.photos.attached? %>
+            <%= cl_image_tag @venue.photos[0].key %>
+          <% else %>
+            <%= cl_image_tag('standard_jiqx6k') %>
+          <% end %>
+        </div>
+
+        <!-- Venue Content -->
+        <div class="mt-3">
+            <%= render 'components/venue-content' %>
+        </div>
+
+        <!-- BTN Add-to-night-out -->
+        <!-- Do not put a Sticky BTN inside a row/col, or it wont work! -->
+        <%= render 'components/bottom-nav' %>
+
+        <div id="my-map-anchor">
+          <!-- This empty div is the anchor of the map-->
+          <!-- DO NOT REMOVE!-->
+        </div>
+
+        <!-- Map -->
+        <div class="ct-round-5 mt-5" id="map" style="width: 100%; height: 200px; margin-top: 10px;" data-user-marker="<%= @user_marker.to_json %>" data-venue-marker="<%= @venue_marker.to_json %>" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+
+        <!-- Distance -->
+        <% if @venue.venue_type == 'bar' %>
+          <div class="mt-4">
+            <p class="ct-primary-light mb-2" style="font-size: 16px;"> From <%= @night.location  %> to <%= @venue.name %>:</p>
+            <p class="ct-text-light"> <i class="fas fa-walking pl-1 pr-1"></i> Walking takes <strong> <%= (@venue.distance_to(@night.location).round(1) * 20.0).round %></strong> minutes.</p>
+            <p class="ct-text-light"> <i class="fas fa-taxi"></i> An Uber takes <strong> <%= (@venue.distance_to(@night.location).round(1) * 4.0).round %> </strong> minutes.</p>
+          </div>
+        <% else %>
+          <% if @night.venues.first.present? %>
+            <div class="mt-4">
+              <p class="ct-primary-light mb-2" style="font-size: 16px;">From <%= @night.venues.first.name %> to <%= @venue.name %>:</p>
+              <p class="ct-text-light"> <i class="fas fa-walking pl-1 pr-1"></i> Walking takes <strong><%= (@venue.distance_to(@night.venues.first.address).round(1) * 20.0).round %></strong> minutes.</p>
+              <p class="ct-text-light"> <i class="fas fa-taxi"></i> An Uber takes <strong><%= (@venue.distance_to(@night.venues.first.address).round(1) * 4.0).round %></strong> minutes.</p>
+            </div>
+          <% else %>
+            <div class="mt-4">
+              <p class="ct-primary-light mb-2" style="font-size: 16px;">From <%= @night.location %> to <%= @venue.name %>:</p>
+              <p class="ct-text-light"> <i class="fas fa-walking pl-1 pr-1"></i> Walking takes <strong><%= (@venue.distance_to(@night.location).round(1) * 20.0).round %></strong> minutes.</p>
+              <p class="ct-text-light"> <i class="fas fa-taxi"></i> An Uber takes <strong><%= (@venue.distance_to(@night.location).round(1) * 4.0).round %></strong> minutes.</p>
+            </div>
+          <% end %>
+        <% end %>
+
+        <div id="my-reviews-anchor">
+          <!-- This empty div is the anchor of the reviews-->
+          <!-- DO NOT REMOVE!-->
+        </div>
+
+        <!-- Comments -->
+        <div class=" mt-5">
+          <div class="">
+          <%= render 'components/review-comment' %>
+          </div>
+        </div>
+
+        <!-- Comments Form -->
+        <div class="mt-5 mb-5 pb-1">
+          <div class="ct-mb-semi">
+            <%= render 'components/review-form' %>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-
-  <!-- VENUE CARROUSEL -->
-  <div class="row">
-    <div class="col-12 p-0">
-      <%= render 'components/venue-carrousel' %>
-    </div>
-  </div>
-
-  <!-- VENUE CONTENT NOT SHOWING-->
-  <div class="row mt-3">
-    <div class="col-12">
-      <%= render 'components/venue-content' %>
-    </div>
-  </div>
-
-  <!-- BUTTON ADD-TO-NIGHT -->
-  <!-- Do not put a Sticky BTN inside a row/col, or it wont work! -->
-  <%= render 'components/bottom-nav' %>
-
-
-  <div id="my-map-anchor">
-    <!-- This empty div is the anchor of the map-->
-    <!-- DO NOT REMOVE!-->
-  </div>
-  <!-- VENUE LOCATION (MAP) -->
-  <div class="ct-round-5 mt-5" id="map" style="width: 100%; height: 200px; margin-top: 10px;" data-user-marker="<%= @user_marker.to_json %>" data-venue-marker="<%= @venue_marker.to_json %>" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <% if @venue.venue_type == 'bar' %>
-    <div class="mt-4">
-      <p class="ct-primary-light mb-2" style="font-size: 16px;"> From <%= @night.location  %> to <%= @venue.name %>:</p>
-      <p class="ct-text-light"> <i class="fas fa-walking pl-1 pr-1"></i> Walking takes <strong> <%= (@venue.distance_to(@night.location).round(1) * 20.0).round %></strong> minutes.</p>
-      <p class="ct-text-light"> <i class="fas fa-taxi"></i> An Uber takes <strong> <%= (@venue.distance_to(@night.location).round(1) * 4.0).round %> </strong> minutes.</p>
-    </div>
-  <% else %>
-    <% if @night.venues.first.present? %>
-      <div class="mt-4">
-        <p class="ct-primary-light mb-2" style="font-size: 16px;">From <%= @night.venues.first.name %> to <%= @venue.name %>:</p>
-        <p class="ct-text-light"> <i class="fas fa-walking pl-1 pr-1"></i> Walking takes <strong><%= (@venue.distance_to(@night.venues.first.address).round(1) * 20.0).round %></strong> minutes.</p>
-        <p class="ct-text-light"> <i class="fas fa-taxi"></i> An Uber takes <strong><%= (@venue.distance_to(@night.venues.first.address).round(1) * 4.0).round %></strong> minutes.</p>
-      </div>
-    <% else %>
-      <div class="mt-4">
-        <p class="ct-primary-light mb-2" style="font-size: 16px;">From <%= @night.location %> to <%= @venue.name %>:</p>
-        <p class="ct-text-light"> <i class="fas fa-walking pl-1 pr-1"></i> Walking takes <strong><%= (@venue.distance_to(@night.location).round(1) * 20.0).round %></strong> minutes.</p>
-        <p class="ct-text-light"> <i class="fas fa-taxi"></i> An Uber takes <strong><%= (@venue.distance_to(@night.location).round(1) * 4.0).round %></strong> minutes.</p>
-      </div>
-    <% end %>
-  <% end %>
-
-  <div id="my-reviews-anchor">
-    <!-- This empty div is the anchor of the reviews-->
-    <!-- DO NOT REMOVE!-->
-  </div>
-
-
-  <!-- ROW FOR THE REVIEWS COMMENTS -->
-  <!-- <a href="https://www.google.de/maps/plac/SOLAR+Bar+Restaurant+Lounge/@52.5043112,13.3815553,17z/data=!3m1!4b1!4m5!3m4!1s0x47a851cd7ba364d9:0x75cd0b1b529712fc!8m2!3d52.504308!4d13.383744?hl=en&authuser=0" target="_blank">Get your map</a> -->
-
-    <div class="row mt-5">
-      <div class="col-12">
-      <%= render 'components/review-comment' %>
-      </div>
-    </div>
-
-
-  <!-- ROW FOR THE REVIEW FORM -->
-  <div class="row mt-5 mb-5">
-    <div class="col-12 ct-mb-semi">
-      <%= render 'components/review-form' %>
-    </div>
-  </div>
-
-</div>
-
 </body>
