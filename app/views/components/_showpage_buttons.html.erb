@@ -1,12 +1,16 @@
 <div class="d-flex align-items-center" id="back">
   <% if @venue.venue_type == 'club' %>
     <%= link_to clubs_night_venues_path do %>
-      <i class="fas fa-lg fa-chevron-left ct-primary-light"></i>
+      <div class="d-flex align-items-center">
+        <i class="fas fa-lg fa-chevron-left ct-primary-light ct-no-underline"></i>
+        <p class="pl-2 ct-primary-light ct-no-underline">Back</p>
+      </div>
     <% end %>
   <% else %>
     <%= link_to night_venues_path do %>
       <div class="d-flex align-items-center">
-        <i class="fas fa-lg fa-chevron-left ct-primary-light ct-no-underline"></i><p class="pl-2 ct-primary-light ct-no-underline">Back</p>
+        <i class="fas fa-lg fa-chevron-left ct-primary-light ct-no-underline"></i>
+        <p class="pl-2 ct-primary-light ct-no-underline">Back</p>
       </div>
     <% end %>
   <% end %>
