@@ -1,35 +1,38 @@
 <body class="ct-bg-global">
-  <div class="container mt-5 pt-5 ">
-    <div class="row ct-mb-semi">
-      <div class="col-12">
-        <% if @clubs.empty? %>
-          <h5 class="text-light ct-club">Sorry, no club that matches your preferences!
-          <br><br>To continue, Skip this step or try another search </h5>
-          <br>
-          <%= link_to 'Try Another Search', root_path, style:' text-decoration: none', class: "ct-club-btn" %>
-        <% else %>
-          <div class="d-flex justify-item-baseline">
-            <span class="ct-circle ct-bg-primary-light ct-primary-bg ct-bold mr-2 item-align">2</span>
-            <h3 class="ct-primary-light">
-              Choose your club
-            </h3>
-          </div>
+  <div class="mt-5">
 
-
-          <% @clubs.each do |venue| %>
-            <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
-              <%= render 'components/card-index-club', venue: venue, night: @night  %>
-              <% end %>
-          <% end %>
-
-        <!-- FIXED BTN LAYOUT -->
-        <% end %>
-        <div class="">
-          <%= link_to night_path(@night), class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
-            Skip <i class="fas fa-chevron-right pl-1"></i>
-          <% end %>
+    <% if @clubs.empty? %>
+      <h5 class="text-light ct-club">
+        Sorry, no club that matches your preferences!
+        <br>
+        To continue, Skip this step or try another search
+      </h5>
+      <br>
+      <%= link_to 'Try Another Search', root_path, style:' text-decoration: none', class: "ct-club-btn" %>
+    <% else %>
+      <!-- index: Choose your CLUB text-->
+      <div class="grid-title">
+        <div class=" d-flex justify-item-baseline mt-5">
+        <span class="ct-circle ct-bold ct-bg-primary  item-align">2</span>
+        <h3 class="pl-1 pb-4 align-middle text-light">
+          Choose your club
+        </h3>
         </div>
       </div>
-    </div>
+      <!-- Clubs card -->
+      <div class="grid-index">
+        <% @clubs.each do |venue| %>
+          <%= link_to night_venue_path(@night, venue), id: "card-link" do %>
+            <%= render 'components/card-index-club', venue: venue, night: @night  %>
+          <% end %>
+        <% end %>
+
+        <!-- Fixed Skip Button -->
+        <%= link_to night_path(@night), class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
+          Skip <i class="fas fa-chevron-right pl-1"></i>
+        <% end %>
+      </div>
+    <% end %>
+
   </div>
 </body>

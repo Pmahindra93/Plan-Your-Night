@@ -1,5 +1,5 @@
 <body class="ct-bg-global">
-  <div class=" mt-5 ">
+  <div class="mt-5 ">
 
     <!-- No search results page-->
     <% if @venues.empty? %>
@@ -22,7 +22,7 @@
             <%= render 'components/card-index', venue: venue  %>
           <% end %>
         <% end %>
-        <!-- Fixed Button -->
+        <!-- Fixed Skip Button -->
         <%= link_to clubs_night_venues_path, class: "btn btn-primary ct-btn-skip ct-fixed-btn ct-shadow ct-round-50"  do %>
           Skip <i class="fas fa-chevron-right pl-1"></i>
         <% end %>
