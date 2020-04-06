@@ -1,56 +1,35 @@
-// SHOWPAGE UP BAR (ICONS)
-
+// Top bar icons
 #back{
   flex-grow: 1;
 }
 
-// SOCIAL ICONS
+#back a:hover {
+  text-decoration: none;
+}
 
+// Social media icons
 $size: 5px;
-// $color: black;
 .rails-social-share-button {
   .ssb-icon {
     background-size: $size $size;
     height: $size;
     width: $size;
-    // color: $color;
   }
 }
-
-// SOCIAL MEDIA ICONS
-// .ssb-icon {
-//   height: 5px;
-//   width: 5px;
-// }
-
-// .rails-social-share-button {
-//   height: 5px;
-//   width: 5px;
-//   display: flex;
-// }
 
 button {
   background: none !important;
   border: none !important;
 }
 
-// CARROUSEL
-.carousel-item{
-  height: 200px;
+// venue pic
+.show-pic > img {
+  height: 35vh;
+  width: 100%;
+  object-fit: cover;
 }
 
-// .image{
-//   box-shadow: 0 0 10px rgba(0,0,0,0.4);
-// }
-
-#marker{
-  font-size: 20px;
-}
-
-.light{
-  font-weight: lighter;
-}
-
+// Card payment colors
 #true{
   color: $ct-success;
   background-color: $success-light;
@@ -61,26 +40,8 @@ button {
   background-color: $ct-danger-light;
 }
 
-.card-indicate{
-  font-size: 20px;
-}
 
-// #info{
-//   margin-top: 30px;
-// }
-
-#description{
-
-  border-radius: 5px;
-  background-color: $ct-light;
-  padding: 20px 20px;
-  padding-top: 25px;
-}
-
-#add-btn{
-  //margin-top: 40px;
-}
-
+// Map
 #my-map-anchor {
   display: block;
   height: 100px; /*same height as header*/
@@ -88,4 +49,6 @@ button {
   visibility: hidden;
 }
 
-
+#marker{
+  font-size: 20px;
+}

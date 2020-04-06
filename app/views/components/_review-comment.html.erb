@@ -2,13 +2,12 @@
 
   <div class="d-flex align-items-center border-top pt-4 mt-3">
     <!-- User Pic -->
-    <div class="">
-      <% if review.user.photo.attached? %>
-          <%= cl_image_tag review.user.photo.key, class: "user-pic" %>
-      <% else %>
-        <%= cl_image_tag ("empty-avatar_fjtvit"), class: "user-pic"%>
-      <% end %>
-    </div>
+    <% if review.user.photo.attached? %>
+        <%= cl_image_tag review.user.photo.key, class: "user-pic" %>
+    <% else %>
+      <%= cl_image_tag ("empty-avatar_fjtvit"), class: "user-pic"%>
+    <% end %>
+
     <div class="pl-3 text-light">
       <p> <%= review.user.first_name %> <%= review.user.last_name %>  </p>
       <!-- div stars -->
@@ -21,6 +20,7 @@
       <% end %>
       </div>
     </div>
+
   </div>
   <!-- Review content -->
   <div class="review-content mt-3 px-4 py-3 mb-4">
