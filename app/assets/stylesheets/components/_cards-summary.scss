@@ -1,31 +1,27 @@
-// .summ-cards{
-//   font-size: 14px;
-// }
+.card-dashboard {
+  border-radius: 5px;
+  display: flex;
+  // box-shadow: 0 2px 5px rgba(33,32,50,0.2);
+  color: #2e3f46;
+  overflow: hidden;
+  background-color: $ct-light;
+  border: 1px solid $ct-light;
+}
 
 .card-description-summary{
-  // line-height: 32px;
-  padding-left: 15px;
+  padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 10px;
-  // display: flex;
-  // flex-direction: column;
-  // // align-items: flex-end;
-  // justify-content: flex-end;
-  // text-transform: none;
   position: relative;
 }
 
-// .ct-flex-none{
-//   display: block;
-// }
-
 .ct-remove-btn {
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
 }
 
 .pic-summ > img {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   object-fit: cover;
 }

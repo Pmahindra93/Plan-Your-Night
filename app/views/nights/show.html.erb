@@ -1,43 +1,52 @@
 <body class="ct-bg-global">
-  <div class="container mt-5 pt-5 mb-5">
-    <div class="row">
-      <div class="col-12">
-        <h3 class="ct-primary-light mt-2 mb-2">
-          Your plan for tonight!
-        </h3>
-        <p class=" ct-primary-light ct-primary-light-imp mb-5"><i class="fas fa-map-marker-alt ct-primary-light mr-2 "></i> <a><%= link_to "view on map", anchor: 'summary-map-anchor' %></a></p>
-        <!-- Add A BAR-->
-        <div class="col-12 ct-border-light ct-round-10 mt-3 mb-3">
-        <div class="d-flex justify-content-end ">
-          <%= link_to night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add mt-3" do%>
-            <i class="fas fa-plus"></i> Bar
+
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center mt-5 ">
+      <div class="col-12 col-md-8 col-lg-6">
+        <!-- Title -->
+        <div class="d-flex justify-item-baseline mt-5">
+          <span class="ct-circle ct-bold ct-bg-primary item-align">3</span>
+          <h3 class="pl-1 pb-4 align-middle text-light">
+            Your plan for tonight!
+          </h3>
+        </div>
+        <!-- Map Anchor -->
+        <p class="ct-primary-light ct-primary-light-imp mb-5">
+          <i class="fas fa-map-marker-alt ct-primary-light mx-1 "></i>
+          <a><%= link_to "view on map", anchor: 'summary-map-anchor' %></a>
+        </p>
+
+        <!-- Add a bar container-->
+        <div class="ct-border-light ct-round-10 mt-3 mb-3 p-3 py-4">
+          <div class="d-flex justify-content-end">
+            <!-- add bar BTN-->
+            <%= link_to night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add" do%>
+              <i class="fas fa-plus"></i> Bar
+            <% end %>
+          </div>
+          <!-- Bar card-->
+          <% @night.venues.where(venue_type: "bar").each do |venue| %>
+            <%= render 'components/cards-summary', venue: venue, night: @night %>
           <% end %>
         </div>
-        <% @night.venues.where(venue_type: "bar").each do |venue| %>
-          <%= render 'components/cards-summary', venue: venue, night: @night %>
-        <% end %>
-      </div>
 
-        <!-- Add a CLUB -->
-        <div class="col-12 ct-border-light ct-round-10 mt-3 mb-3">
-
-
-        <div class="d-flex justify-content-end ">
-          <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add mt-3" do%>
-            <i class="fas fa-plus"></i> Club
+        <!-- Add a CLUB container -->
+        <div class="ct-border-light ct-round-10 mt-3 mb-3 p-3 py-4">
+          <div class="d-flex justify-content-end">
+            <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add mt-3" do%>
+              <i class="fas fa-plus"></i> Club
+            <% end %>
+          </div>
+          <% @night.venues.where(venue_type: "club").each do |venue| %>
+            <%= render 'components/cards-summary', venue: venue, night: @night  %>
           <% end %>
         </div>
-
-        <% @night.venues.where(venue_type: "club").each do |venue| %>
-          <%= render 'components/cards-summary', venue: venue, night: @night  %>
-        <% end %>
-      </div>
 
 
       <!-- CONTINUE BTN with bottom NAV-->
-        <div class="ct-bottom-nav ct-shadow-bottom-nav">
-          <div class="col-12">
-            <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-round-50 ct-shadow ct-width-100", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
+        <div class="ct-bottom-nav ct-shadow-bottom-nav justify-content-center">
+          <div class="col-12 col-md-4 col-lg-3">
+            <%= link_to 'Continue',night_save_night_path(@night), class: "btn btn-primary btn-block ct-btn ct-round-50 ct-shadow", 'data-toggle'=> "modal", 'data-target'=>"#exampleModalCenter" %>
           </div>
         </div>
 
