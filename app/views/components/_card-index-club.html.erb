@@ -3,7 +3,7 @@
 
   <div class="px-3 pt-4 pb-3 align-items-end">
     <p class="mt-1 ct-bold"> <%= venue.name %> </p>
-    <p class="ct-text-14 mt-2 text-primary">
+    <p class="ct-text-14 mt-2 ct-text-primary-dark">
       <span class="ct-no-capitals">
         <% if night.venues.where(venue_type: 'bar').first.present? %>
           <% bar = night.venues.where(venue_type: 'bar').first %>

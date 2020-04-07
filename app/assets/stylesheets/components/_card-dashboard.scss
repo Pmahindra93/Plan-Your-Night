@@ -1,12 +1,11 @@
 .card-dashboard {
   border-radius: 5px;
   display: flex;
-  box-shadow: 0 2px 5px rgba(33,32,50,0.2);
+  // box-shadow: 0 2px 5px rgba(33,32,50,0.2);
   color: #2e3f46;
   overflow: hidden;
-  margin-bottom: 20px;
   background-color: $ct-light;
-  border: 2px solid $ct-light;
+  border: 1px solid $ct-light;
 }
 
 .card-description {
