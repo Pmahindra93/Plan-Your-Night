@@ -58,6 +58,11 @@
   font-weight: 500;
 }
 
+// line-height
+.ct-line-height-sm {
+  line-height: 15px;
+}
+
 
 // Text Colors
 .ct-text-dark {
@@ -72,6 +77,9 @@
   color: $ct-light;
 }
 
+.ct-text-primary-dark {
+  color: $ct-primary-dark
+}
 
 
 .ct-primary-light {
@@ -161,6 +169,10 @@
 .ct-px-60 {
   padding-left: 60px;
   padding-right: 60px;
+}
+
+.ct-margin-center {
+  margin: 0 auto;
 }
 
 // CHIPS

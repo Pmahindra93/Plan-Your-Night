@@ -1,7 +1,6 @@
 .card-dashboard {
   border-radius: 5px;
   display: flex;
-  // box-shadow: 0 2px 5px rgba(33,32,50,0.2);
   color: #2e3f46;
   overflow: hidden;
   background-color: $ct-light;
@@ -10,7 +9,7 @@
 
 .card-description-summary{
   padding-left: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 10px;
   position: relative;
 }
@@ -20,8 +19,13 @@
   bottom: 10px;
 }
 
+.ct-remove-btn a:hover {
+  text-decoration: none;
+  color: $ct-primary;
+}
+
 .pic-summ > img {
-  width: 140px;
-  height: 140px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
 }

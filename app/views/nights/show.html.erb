@@ -17,7 +17,7 @@
         </p>
 
         <!-- Add a bar container-->
-        <div class="ct-border-light ct-round-10 mt-3 mb-3 p-3 py-4">
+        <div class="ct-border-light ct-round-10 mt-3 mb-3 p-2 pt-4">
           <div class="d-flex justify-content-end">
             <!-- add bar BTN-->
             <%= link_to night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add" do%>
@@ -31,9 +31,9 @@
         </div>
 
         <!-- Add a CLUB container -->
-        <div class="ct-border-light ct-round-10 mt-3 mb-3 p-3 py-4">
+        <div class="ct-border-light ct-round-10 mt-3 mb-3 p-2 pt-3">
           <div class="d-flex justify-content-end">
-            <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add mt-3" do%>
+            <%= link_to clubs_night_venues_path(@night), class: "btn btn-outline-primary ct-primary-light ct-btn-add" do%>
               <i class="fas fa-plus"></i> Club
             <% end %>
           </div>
@@ -42,7 +42,6 @@
           <% end %>
         </div>
 
-
       <!-- CONTINUE BTN with bottom NAV-->
         <div class="ct-bottom-nav ct-shadow-bottom-nav justify-content-center">
           <div class="col-12 col-md-4 col-lg-3">
@@ -50,20 +49,22 @@
           </div>
         </div>
 
-      <!-- MODAL -->
+      <!-- Modal -->
         <%= render 'components/modal_summary_page', total_spend: @night.total_spend %>
         <br>
         <br>
-        <h3 class="ct-primary-light">Tonight's Venue Map</h3>
+        <h3 class="text-light">Tonight's Venue Map</h3>
 
-
-      <!-- MAP -->
+      <!-- Map -->
         <div id="summary-map-anchor"></div>
         <div class="ct-round-5 mt-3 ct-mb-semi" id="summary-map" style="width: 100%; height: 200px; margin-top: 10px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
+        <div class="mb-5 ct-mt-big-xl"></div>
+
       </div>
     </div>
   </div>
+
 </body>
 
 

@@ -9,20 +9,20 @@
   </div>
 
   <div class="card-description-summary">
-    <p class="ct-bold"> <%= venue.name %> </p>
-    <p class="ct-text-14 pt-2 ct-text-dark-medium ct-flex-none">
+    <p class="ct-bold text-dark"> <%= venue.name %> </p>
+    <p class="ct-text-12 pt-2 ct-text-dark-medium ct-flex-none">
       <%= venue.opening_hours %>
     </p>
     <% if night.venues.length >= 2 && venue.venue_type == 'club' %>
       <% bar = night.venues.where(venue_type: "bar").last%>
       <% club = night.venues.where(venue_type: "club").first%>
-      <p class= "ct-text-14"><strong><%= bar.distance_to(club).round(1)%> km. </strong> from <%= bar.name %> </p>
+      <p class= "ct-text-12 ct-line-height-sm"><strong><%= bar.distance_to(club).round(1)%> km. </strong> from <%= bar.name %> </p>
     <% end %>
     <p class="ct-remove-btn">
-      <%= link_to 'Remove', venue_delete_night_venue_night_path(night,venue) %>
+      <%= link_to venue_delete_night_venue_night_path(night,venue) do%>
+        <i class="far fa-times-circle mr-1"></i>Remove
+      <% end %>
     </p>
   </div>
 
 </div>
-
-
